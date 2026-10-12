@@ -27,8 +27,9 @@ export type Product = {
 export const siteInfo = {
   name: "Standard Test Equipment",
   tagline: "Precision Testing Instruments & Measuring Equipment",
-  logo: "https://www.standardtestequipment.net/image/catalog/logo/STE.png",
-  footerLogo: "https://www.standardtestequipment.net/image/catalog/STE.png",
+  logo: "/Logo_y5mqli-removebg-preview.png",
+  footerLogo:
+    "/Logo_y5mqli-removebg-preview.png",
   phone: "+91 95017-95146",
   phoneHref: "+919501795146",
   whatsappHref: "919501795146",
@@ -41,10 +42,10 @@ export const siteInfo = {
   mapUrl:
     "https://maps.google.com/maps?q=Plot%20No.%20146%20JLPL%20Industrial%20Area%20Sector%2082%20Mohali%20Punjab%20160062",
   banners: [
-    "https://www.standardtestequipment.net/image/catalog/spectrodiameter.png",
-    "https://www.standardtestequipment.net/image/catalog/2nd.png",
-    "https://www.standardtestequipment.net/image/catalog/494X455.png",
-    "https://www.standardtestequipment.net/image/catalog/aluminum.png",
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791788465/second-915x415_osoasq.jpg",
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791788731/background-915x415_akxa14.jpg",
+    "/aluminum-hero.webp",
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791788832/494X455_op3wtc.png",
   ],
   intro:
     "Welcome to Standard Test Equipment. Please read these terms and conditions carefully before using our website, or services.",
@@ -70,7 +71,7 @@ export const categories: Category[] = [
     name: "TESTING APPARATUS LUMINARY TEST - LM 79 AND MORE",
     description:
       "Photometric and spectroradiometric testing solutions for luminary testing as per LM-79 and more, including spectroradiometers, integrating spheres and standard test lamp sources.",
-    count: 11,
+    count: 10,
   },
   {
     slug: "spring-hammer-test-apparatus",
@@ -78,13 +79,6 @@ export const categories: Category[] = [
     description:
       "Our product range includes a wide range of Universal Spring Hammer (0.14 - 1 Joule) as per IEC 60068-2-75 and Spring Hammer Test Apparatus as per IEC 60068-2-75.",
     count: 2,
-  },
-  {
-    slug: "impact-ik-test-apparatus",
-    name: "IMPACT/IK TEST APPARTUS",
-    description:
-      "Impact (IK) rating test apparatus for evaluating enclosure robustness as per IEC standards.",
-    count: 0,
   },
   {
     slug: "ip-test-apparatus",
@@ -558,20 +552,6 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "gl-spectis-1-0-touch-with-flicker",
-    name: "GL Spectis 1.0 Touch With Flicker",
-    price: 25000,
-    categorySlug: "testing-apparatus-luminary-test",
-    subcategorySlug: "gl-spectis-spectroradiometers",
-    description:
-      "GL Spectis 1.0 Touch with flicker measurement capability for LM-79 compliant spectral and flicker analysis of light sources.",
-    specs: [
-      { label: "Measuring Signal Frequency Range", value: "0.1 Hz to 12.5 kHz" },
-      { label: "Luminous Flux", value: "0.015 - 150 lm" },
-      { label: "Radiant Power", value: "0.03 - 500 mW" },
-    ],
-  },
-  {
     slug: "gl-spectis-5-0-touch",
     name: "GL Spectis 5.0 Touch",
     price: 25000,
@@ -847,6 +827,105 @@ export const products: Product[] = [
     latest: true,
   },
 ];
+
+export const productImages: Record<string, string> = {
+  "black-test-probe-13-short-test-pin-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791613912/7._Test_Probe_-13_Fig-9_as_per_IEC_61032_q2jxgn.jpg",
+  "ip-1x-test-probe-as-per-a-as-iec-60529-and-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791614244/iec-60529-and-61032-ip-1x-test-probe-500x500-330x409_kix3wa.jpg",
+  "ip4x-test-probe-d-as-per-iec-60259-and-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791778109/unnamed_fkptu2.jpg",
+  "test-probe-11-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791778335/unnamed_pblpf0.jpg",
+  "test-probe-12-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791778404/unnamed_gi6nda.jpg",
+  "ball-pressure-test-apparatus":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779142/d9816ece-9273-4af3-8bd4-8717add63777_ydynqd.png",
+  "dielectric-strength-tester-as-per-iec-62368":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779126/unnamed_nvzlsu.jpg",
+  "salt-spray-test-chamber":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779792/9f59f11f-72bd-48ca-8aa2-24d881d02bf6_okgyoi.png",
+  "3mm-long-test-pin-probe-as-per-iec-61010":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779701/unnamed_dzreb4.jpg",
+  "4mm-long-test-pin-probe-as-per-iec-61010":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779907/unnamed_pbltiz.jpg",
+  "test-probe-14-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779976/unnamed_oet4vp.jpg",
+  "test-probe-17-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780066/unnamed_tnofyz.jpg",
+  "test-probe-31-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780210/11._Test_Probe_31_Fig-14_as_per_IEC_61032_rqfqwy.jpg",
+  "test-probe-32-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780249/12._Test_Probe_32_as_per_IEC_61032_gb1u2h.jpg",
+  "test-probe-43-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780316/14._Test_Probe_43_as_per_IEC_61032_jskzgx.jpg",
+  "test-probe-with-round-end-as-per-iec-60529":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780378/15._Test_Prob-B_Test_finger_Fig.-2._IEC_60529_61032._k75hwb.jpg",
+  "test-probe-41-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791780540/16._Test_prob-41_Fig-16_as_per_IEC_61032_w2dw2k.jpg",
+  "aluminium-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791782545/aluminium-tape-330x409_yzi5xx.jpg",
+  "amucor-foil-and-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791782650/amucor-foil-and-tape-330x409_vsifsd.jpg",
+  "black-amucor-foil-with-a-reinforcement-net":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783118/amucor-foil-with-a-reinforcement-net-500x500-330x409_hs4vsv.jpg",
+  "black-mounting-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783167/mounting-tape-330x409_yqxthc.jpg",
+  "black-mu-ferro-sd-shielding-foil":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783207/mu-ferro-sd-shielding-foil-330x409_xp9vsa.jpg",
+  "conductive-non-woven-fabric":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783237/conductive-non-woven-fabric-500x500-330x409_dsvbwc.jpg",
+  "conductive-textile-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783316/conductive-textile-330x409_wi1scw.jpg",
+  "contact-surface-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783350/contact-surface-tape-330x409_aactuk.png",
+  "electrically-conductive-foam-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783403/electrically-conductive-foam-tape-330x409_f4h7ad.jpg",
+  "mu-copper-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783438/mu-copper-tape-330x409_rtcxes.jpg",
+  "non-woven-semi-conductive-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783474/semiconductive-non-woven-330x409_le6m8x.jpg",
+  "semiconductive-conductor-separation-tape":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783474/semiconductive-non-woven-330x409_le6m8x.jpg",
+  "ip-testing":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783797/ip-testing-1000x1000-330x409_pizaaa.png",
+  "rain-test-chamber-ip-x1-x2-as-per-iec-60529":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783863/rain-test-chamber-330x409_u2dpxq.jpg",
+  "sand-and-dust-chamber-as-per-iec-60529":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783969/dust-chamber-pic-330x409_wqpesj.jpg",
+  "ss-ip-x7-x8-immersion-water-tank-as-per-60529":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784123/img-20190112-110525-330x409_jgw71g.jpg",
+  "turn-table-for-ip-testing-for-laboratory":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784342/unnamed_hgydhd.jpg",
+  "spring-hammer-test-apparatus-as-per-iec-60068-2-75":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784480/0-2-j-1-j-spring-hammer-test-apparatus-500x500-330x409_yi7olu.jpg",
+  "universal-spring-hammer-0-14-1-joule-as-per-iec-60068-2-75":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784526/universal-spring-hammer-0-14-0-7-joule--330x409_asyltz.jpg",
+  "gl-spectis-1-0":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784676/1-330x409_lianuh.jpg",
+  "gl-spectis-1-0-touch":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791784809/image_0901-330x409_dn46lx.jpg",
+  "gl-spectis-6-0":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791785205/32-330x409_jgdh2a.jpg",
+  "gl-spectis-5-0-touch":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791785676/34-330x409_drhg5j.jpg",
+  "gl-spectis-8-0-spectroradiometer":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791785676/34-330x409_drhg5j.jpg",
+  "aluminum-baso4-gl-optic-sphere-205":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786286/gl-opti-sphere-205-330x409_bxusfn.jpg",
+  "baso4-gl-optic-sphere-1100":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786389/gl-opti-sphere-1100-330x409_sw0nt3.jpg",
+  "baso4-gl-optic-sphere-500":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786594/gl-opti-sphere-500-330x409_kavb3h.jpg",
+  "gl-opti-sphere-48":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786767/48-gl-optic-sphere-500x500-330x409_k4row9.jpg",
+  "gl-optic-sphere-2000":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786807/gl-opti-sphere-2000-330x409_ee1wog.jpg",
+  "white-ip-2x-test-finger-test-probe-b-as-per-iec-60529-and-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786934/iec-60529-and-61032-ip-2x-test-finger-test-probe-500x500-330x409_qnykvj.jpg",
+  "white-stainless-steel-ip3x-test-probe-c-as-per-iec-60529-and-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786978/iec-60529-and-61032-ip3x-test-probe-500x500-330x409_ytv2ms.jpg",
+};
 
 export function formatPrice(price: number): string {
   return `Rs ${price.toLocaleString("en-IN", {

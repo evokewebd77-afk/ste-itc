@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         hostname: "www.standardtestequipment.net",
         pathname: "/image/**",
       },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/didtfhfme/**",
+      },
     ],
   },
   turbopack: {

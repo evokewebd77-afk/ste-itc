@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   categories,
@@ -125,6 +126,13 @@ export default async function CategoryPage({
     ? `Products under ${subcategory.name} from Standard Test Equipment, Mohali, India.`
     : category!.description;
 
+  const heroImage =
+    slug === "test-probes-and-test-pins"
+      ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612291/d79993d3-3742-412b-88d4-9d24a40da898_bwuusb.png"
+      : slug === "testing-apparatus-luminary-test"
+        ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612933/6004734b-3d43-4b44-909e-c15ec3184449_vkabi1.png"
+        : undefined;
+
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Breadcrumb Header */}
@@ -159,12 +167,24 @@ export default async function CategoryPage({
             {/* Category Hero Banner */}
             <div className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-xs">
               <div className="flex items-start gap-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white shadow-md">
-                  <CategoryIcon
-                    slug={subcategory?.parentId ?? slug}
-                    className="h-8 w-8"
-                  />
-                </div>
+                {heroImage ? (
+                  <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl shadow-md">
+                    <Image
+                      src={heroImage}
+                      alt={title}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white shadow-md">
+                    <CategoryIcon
+                      slug={subcategory?.parentId ?? slug}
+                      className="h-8 w-8"
+                    />
+                  </div>
+                )}
                 <div>
                   <span className="text-[11px] font-bold uppercase tracking-wider text-brand-700">
                     IEC Tested Apparatus Range

@@ -1,9 +1,16 @@
 import Link from "next/link";
-import { formatPrice, getCategory, type Product } from "@/lib/data";
+import Image from "next/image";
+import {
+  formatPrice,
+  getCategory,
+  productImages,
+  type Product,
+} from "@/lib/data";
 import { CategoryIcon } from "@/components/icons";
 
 export function ProductCard({ product }: { product: Product }) {
   const category = getCategory(product.categorySlug);
+  const image = productImages[product.slug];
 
   return (
     <Link
@@ -21,10 +28,20 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       {/* Visual Product Box */}
-      <div className="mb-4 relative flex h-36 items-center justify-center rounded-xl bg-gradient-to-br from-slate-50 via-brand-50/40 to-slate-100 text-brand-700 transition duration-300 group-hover:from-brand-600 group-hover:to-cyan-600 group-hover:text-white">
-        <div className="transition duration-300 group-hover:scale-110">
-          <CategoryIcon slug={product.categorySlug} className="h-16 w-16" />
-        </div>
+      <div className={`relative mb-4 flex h-36 items-center justify-center overflow-hidden rounded-xl ${image ? "bg-white" : "bg-gradient-to-br from-slate-50 via-brand-50/40 to-slate-100 text-brand-700 transition duration-300 group-hover:from-brand-600 group-hover:to-cyan-600 group-hover:text-white"}`}>
+        {image ? (
+          <Image
+            src={image}
+            alt={product.name}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="transition duration-300 group-hover:scale-110">
+            <CategoryIcon slug={product.categorySlug} className="h-16 w-16" />
+          </div>
+        )}
       </div>
 
       {/* Product Title */}

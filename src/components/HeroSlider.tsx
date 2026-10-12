@@ -11,34 +11,38 @@ const slideTitles = [
   "EMI Shielding & Conductive Materials",
 ];
 
+const SLIDE_MS = 5500;
+
 export function HeroSlider() {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [runId, setRunId] = useState(0);
   const banners = siteInfo.banners;
 
   useEffect(() => {
+    if (paused) return;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % banners.length);
-    }, 4500);
+    }, SLIDE_MS);
     return () => clearInterval(id);
-  }, [banners.length]);
+  }, [banners.length, paused, runId]);
 
   return (
     <div className="relative w-full">
-      {/* Decorative ambient glow */}
-      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/30 to-brand-500/30 blur-xl opacity-50" />
+      {/* Soft ambient glow */}
+      <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-cyan-500/20 to-brand-500/20 blur-2xl opacity-40" />
 
       {/* Main Slider Unit */}
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/20 bg-slate-900/60 shadow-2xl backdrop-blur-md">
-        {/* Top tech badge */}
-        <div className="absolute top-4 left-4 z-20 flex items-center gap-2 rounded-full border border-white/20 bg-slate-900/80 px-3 py-1.5 backdrop-blur-md">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-200">
-            Featured Instrument
-          </span>
-        </div>
-
+      <div
+        className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-white/15 bg-slate-900/60 shadow-2xl"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => {
+          setPaused(false);
+          setRunId((n) => n + 1);
+        }}
+      >
         {/* Slide Counter */}
-        <div className="absolute top-4 right-4 z-20 rounded-full border border-white/20 bg-slate-900/80 px-3 py-1 text-xs font-mono font-medium text-cyan-300 backdrop-blur-md">
+        <div className="absolute top-4 right-4 z-20 rounded-full border border-white/15 bg-slate-900/70 px-3 py-1 text-xs font-mono font-medium text-cyan-300 backdrop-blur-sm">
           0{index + 1} / 0{banners.length}
         </div>
 
@@ -58,80 +62,70 @@ export function HeroSlider() {
                 alt={`Testing Instrument ${i + 1}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-contain drop-shadow-2xl"
+                className={`object-contain drop-shadow-xl ${
+                  i === index ? "animate-[ken-burns_5.5s_ease-out_forwards]" : ""
+                }`}
                 priority={i === 0}
               />
             </div>
           </div>
         ))}
 
-        {/* Bottom Title Bar */}
-        <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 sm:p-5">
-          <p className="text-xs font-semibold text-cyan-400 uppercase tracking-widest">
-            Industry Benchmark
-          </p>
-          <p className="text-sm sm:text-base font-bold text-white line-clamp-1">
+        {/* Bottom Caption */}
+        <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 pt-10 sm:p-5 sm:pt-12">
+          <p
+            key={index}
+            className="animate-[caption-in_0.5s_ease-out] text-sm sm:text-base font-bold text-white line-clamp-1"
+          >
             {slideTitles[index] || "High-Accuracy Testing Solution"}
           </p>
+
+          {/* Timed progress bars */}
+          <div className="mt-3 flex gap-1.5">
+            {banners.map((src, i) => (
+              <button
+                key={src}
+                type="button"
+                aria-label={`Show slide ${i + 1}`}
+                onClick={() => setIndex(i)}
+                className="relative h-1 flex-1 overflow-hidden rounded-full bg-white/20"
+              >
+                <span
+                  key={`${i}-${runId}`}
+                  style={
+                    i === index
+                      ? { animationPlayState: paused ? "paused" : "running" }
+                      : undefined
+                  }
+                  className={`absolute inset-y-0 left-0 w-full origin-left rounded-full bg-gradient-to-r from-cyan-400 to-brand-400 ${
+                    i === index
+                      ? "animate-[slide-progress_5.5s_linear_forwards]"
+                      : i < index
+                        ? "scale-x-100"
+                        : "scale-x-0"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Slider Controls */}
-      <div className="mt-4 flex items-center justify-between px-2">
-        {/* Indicator Dots */}
-        <div className="flex gap-2">
-          {banners.map((src, i) => (
-            <button
-              key={src}
-              type="button"
-              aria-label={`Show slide ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className={`h-2.5 rounded-full transition-all duration-300 ${
-                i === index
-                  ? "w-8 bg-cyan-400 shadow-sm shadow-cyan-400/50"
-                  : "w-2.5 bg-white/30 hover:bg-white/60"
-              }`}
-            />
-          ))}
-        </div>
-
-        {/* Arrows */}
-        <div className="flex items-center gap-1.5">
+      <div className="mt-4 flex items-center justify-center gap-2">
+        {banners.map((src, i) => (
           <button
+            key={src}
             type="button"
-            aria-label="Previous slide"
-            onClick={() =>
-              setIndex((i) => (i - 1 + banners.length) % banners.length)
-            }
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
-          >
-            <svg
-              className="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="m15 18-6-6 6-6" />
-            </svg>
-          </button>
-          <button
-            type="button"
-            aria-label="Next slide"
-            onClick={() => setIndex((i) => (i + 1) % banners.length)}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white transition hover:bg-white/20"
-          >
-            <svg
-              className="h-4 w-4"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-            >
-              <path d="m9 18 6-6-6-6" />
-            </svg>
-          </button>
-        </div>
+            aria-label={`Show slide ${i + 1}`}
+            onClick={() => setIndex(i)}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === index
+                ? "w-7 bg-cyan-400"
+                : "w-2 bg-white/30 hover:bg-white/60"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

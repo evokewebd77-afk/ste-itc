@@ -15,7 +15,6 @@ export function Header() {
     { href: "/products", label: "Products" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Contact Us" },
-    { href: "/blogs", label: "Blogs" },
   ];
 
   return (
@@ -98,7 +97,7 @@ export function Header() {
           </div>
           <div className="hidden sm:block">
             <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-700">
-              Mohali • Punjab
+              Standard Testing Equipments
             </span>
             <span className="block text-[10px] text-slate-400 font-medium">
               Precision Instruments

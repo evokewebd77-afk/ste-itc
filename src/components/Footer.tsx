@@ -21,43 +21,6 @@ export async function Footer() {
 
   return (
     <footer className="mt-auto border-t border-slate-800 bg-gradient-to-b from-ink-950 to-[#040810] text-slate-300">
-      {/* Top Assistance Banner */}
-      <div className="border-b border-white/10 bg-white/5 py-8 px-4">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white shadow-md">
-              <svg className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-white">
-                Looking for Technical Specifications or Custom Calibration?
-              </h4>
-              <p className="text-xs text-slate-400">
-                Our Mohali-based engineering laboratory provides custom fabrication according to customer standards.
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-500 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-md transition hover:bg-cyan-400"
-            >
-              <span>Request Quote</span>
-              <span aria-hidden="true">→</span>
-            </Link>
-            <a
-              href={`tel:${siteInfo.phoneHref}`}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-bold text-white transition hover:bg-white/10"
-            >
-              <span>{siteInfo.phone}</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer Columns */}
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
         {/* Company Identity */}

@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   formatPrice,
   getCategory,
   getProduct,
   getRelatedProducts,
+  productImages,
   products,
   siteInfo,
 } from "@/lib/data";
 import { CategoryIcon } from "@/components/icons";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductEnquiryForm } from "@/components/ProductEnquiryForm";
 
 type Params = { slug: string };
 
@@ -44,6 +47,7 @@ export default async function ProductPage({
 
   const category = getCategory(product.categorySlug);
   const related = getRelatedProducts(product);
+  const image = productImages[product.slug];
   const enquirySubject = encodeURIComponent(`Quotation Request: ${product.name}`);
   const enquiryBody = encodeURIComponent(
     `Hello Standard Test Equipment,\n\nI would like to receive pricing and availability for:\n${product.name}\n\nCompany Name:\nLocation:\nQuantity:\n\nThank you.`,
@@ -86,12 +90,23 @@ export default async function ProductPage({
           <div className="flex flex-col">
             <div className="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/90 bg-white p-12 shadow-sm">
               <div className="absolute inset-0 bg-radial-glow opacity-60 rounded-3xl" />
-              <div className="relative text-brand-700 transition duration-300 hover:scale-105">
-                <CategoryIcon
-                  slug={product.categorySlug}
-                  className="h-44 w-44 drop-shadow-lg"
+              {image ? (
+                <Image
+                  src={image}
+                  alt={product.name}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="rounded-3xl object-contain p-8"
+                  priority
                 />
-              </div>
+              ) : (
+                <div className="relative text-brand-700 transition duration-300 hover:scale-105">
+                  <CategoryIcon
+                    slug={product.categorySlug}
+                    className="h-44 w-44 drop-shadow-lg"
+                  />
+                </div>
+              )}
             </div>
 
             <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs">
@@ -193,33 +208,48 @@ export default async function ProductPage({
                 <span>Email Enquiry</span>
               </a>
             </div>
-
-            {/* Specifications Table */}
-            {product.specs && product.specs.length > 0 && (
-              <div className="mt-10">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
-                  Technical Specifications
-                </h2>
-                <dl className="mt-3 overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs">
-                  {product.specs.map((spec, i) => (
-                    <div
-                      key={spec.label}
-                      className={`grid grid-cols-1 gap-1 px-5 py-3 text-xs sm:text-sm sm:grid-cols-3 sm:gap-4 ${
-                        i % 2 === 1 ? "bg-slate-50/70" : "bg-white"
-                      }`}
-                    >
-                      <dt className="font-semibold text-slate-600">
-                        {spec.label}
-                      </dt>
-                      <dd className="font-medium text-slate-900 sm:col-span-2">
-                        {spec.value}
-                      </dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
-            )}
           </div>
+        </div>
+
+        {/* Technical Specifications & Enquiry Form */}
+        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-start">
+          {product.specs && product.specs.length > 0 ? (
+            <div>
+              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Technical Specifications
+              </h2>
+              <dl className="mt-3 overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs">
+                {product.specs.map((spec, i) => (
+                  <div
+                    key={spec.label}
+                    className={`grid grid-cols-1 gap-1 px-5 py-3 text-xs sm:text-sm sm:grid-cols-3 sm:gap-4 ${
+                      i % 2 === 1 ? "bg-slate-50/70" : "bg-white"
+                    }`}
+                  >
+                    <dt className="font-semibold text-slate-600">
+                      {spec.label}
+                    </dt>
+                    <dd className="font-medium text-slate-900 sm:col-span-2">
+                      {spec.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ) : (
+            <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 shadow-xs">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                Technical Specifications
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                Detailed specifications for {product.name} are available on
+                request. Share your requirements and our engineering team will
+                provide a complete datasheet, calibration details and lead time.
+              </p>
+            </div>
+          )}
+
+          <ProductEnquiryForm productName={product.name} />
         </div>
 
         {/* Related Products Section */}

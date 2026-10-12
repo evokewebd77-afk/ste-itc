@@ -11,19 +11,19 @@ export const metadata: Metadata = {
 const reasons = [
   {
     title: "Decades of Experience",
-    body: "With over 15 years in the precision testing equipment domain, our expertise is second to none. Our engineering team possesses in-depth knowledge of international standards, mechanical tolerances, and sensor electronics.",
+    body: "With over a decade in the industry, our expertise in testing equipment is unparalleled. Our team is equipped with in-depth knowledge of various testing procedures and machinery.",
   },
   {
-    title: "Uncompromising Quality Assurance",
-    body: "Every instrument undergoes strict pre-dispatch inspection and is verified against relevant IEC, ISO and national standards for repeat accuracy and rugged field durability.",
+    title: "Quality Assurance",
+    body: "We only offer products that meet stringent quality checks and come with necessary certifications to ensure they meet international standards.",
   },
   {
-    title: "Customer-Centric Engineering Support",
-    body: "We understand that every quality control laboratory has unique test fixtures and constraints. Our dedicated application support engineers help you select, calibrate, and deploy the right equipment.",
+    title: "Customer-Centric Approach",
+    body: "We pride ourselves on understanding the unique needs of our clients and providing them with the right solutions. Our customer support team is always available to offer assistance and technical guidance.",
   },
   {
-    title: "Direct Competitive Manufacturer Pricing",
-    body: "By developing, assembling, and calibrating instruments in-house at Mohali, Punjab, we provide direct manufacturer pricing without distributor markups.",
+    title: "Competitive Pricing",
+    body: "While we never compromise on quality, we also ensure that our pricing is competitive, offering the best value for money to our clients.",
   },
 ];
 
@@ -34,16 +34,13 @@ export default function AboutPage() {
         {/* Main Introduction Card */}
         <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-10 shadow-xs">
           <div className="inline-block rounded-md bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60 mb-4">
-            Established 2009 • Mohali, India
+            Established 2009 • Delhi, India
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Engineering Precision For Critical Industrial Testing
           </h2>
           <p className="mt-4 leading-relaxed text-slate-600 text-sm sm:text-base">
-            Standard Test Equipment has established itself as a premier manufacturer and supplier of high-quality testing instruments and measuring equipment, serving quality control divisions, R&amp;D laboratories, and manufacturing plants across India. Since our inception in 2009, we have been steadfastly committed to instruments known for pinpoint accuracy, compliance, and long-term durability.
-          </p>
-          <p className="mt-4 leading-relaxed text-slate-600 text-sm sm:text-base">
-            Headquartered in the JLPL Industrial Area of Mohali, Punjab, we specialize in IEC 60529 IP ingress testing chambers, IEC 61032 finger and pin test probes, EMI shielding conductive fabrics and tapes, spring hammer impact testers, and photometric luminary analysis apparatus.
+            Standard Test Equipment has established itself as a premier supplier of high-quality testing instruments and measuring equipment, serving diverse industries across India. Since our inception in 2009, we have been committed to providing products that meet the highest standards of performance, durability, and accuracy. Based in Delhi, we are proud to be a trusted name in the industry, known for delivering precision-engineered instruments.
           </p>
         </div>
 
@@ -57,7 +54,7 @@ export default function AboutPage() {
               Reliable Accuracy for Every Quality Laboratory
             </h3>
             <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
-              To equip industries with dependable, internationally compliant testing apparatus that ensures the safety, performance, and certification readiness of their manufactured products.
+              At Standard Test Equipment, our mission is to equip industries with cutting-edge tools that ensure the accuracy, reliability, and safety of their processes. We believe in building lasting relationships with our clients by delivering only the best quality equipment and providing exceptional after-sales support.
             </p>
           </div>
 
@@ -69,7 +66,7 @@ export default function AboutPage() {
               India&apos;s Foremost Precision Testing Partner
             </h3>
             <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
-              To continuously innovate testing instrumentation, adopting advanced digital sensing and computerized reporting to lead Indian testing standards on the global stage.
+              As we move forward, we aim to expand our reach and continue offering innovative testing solutions to new markets and industries. Our focus remains on maintaining the highest level of customer satisfaction by offering advanced technology and reliable service.
             </p>
           </div>
         </div>
