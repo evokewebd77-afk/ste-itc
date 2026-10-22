@@ -22,23 +22,23 @@ export async function Footer() {
   return (
     <footer className="mt-auto border-t border-slate-800 bg-gradient-to-b from-ink-950 to-[#040810] text-slate-300">
       {/* Main Footer Columns */}
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-4 gap-y-8 px-4 py-10 sm:gap-x-8 sm:gap-y-10 sm:py-14 lg:grid-cols-4">
         {/* Company Identity */}
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <div className="inline-block rounded-xl bg-white p-2.5 ring-1 ring-white/20 shadow-sm">
             <Image
               src={siteInfo.footerLogo}
               alt="Standard Test Equipment"
               width={160}
               height={160}
-              className="h-16 w-auto object-contain"
+              className="h-12 w-auto object-contain sm:h-16"
             />
           </div>
-          <p className="mt-4 text-[13px] leading-relaxed text-slate-300">
+          <p className="mt-3 text-[13px] leading-relaxed text-slate-300 sm:mt-4">
             {siteInfo.name} — Premier manufacturer of IEC 60529, IEC 61032, LM-79, and spring hammer test apparatus since 2009.
           </p>
 
-          <div className="mt-5 flex items-center gap-2 text-xs text-cyan-400 font-semibold">
+          <div className="mt-4 flex items-center gap-2 text-xs text-cyan-400 font-semibold sm:mt-5">
             <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             <span>Mohali, Punjab, India</span>
           </div>
@@ -46,10 +46,10 @@ export async function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-cyan-300 sm:text-xs">
             Information &amp; Policies
           </h3>
-          <ul className="mt-4 space-y-2.5 text-xs">
+          <ul className="mt-3 space-y-2 text-xs sm:mt-4 sm:space-y-2.5">
             {information.map((item) => (
               <li key={item.href}>
                 <Link
@@ -65,10 +65,10 @@ export async function Footer() {
 
         {/* Product Categories */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-cyan-300 sm:text-xs">
             Testing Categories
           </h3>
-          <ul className="mt-4 space-y-2.5 text-xs">
+          <ul className="mt-3 space-y-2 text-xs sm:mt-4 sm:space-y-2.5">
             {categories.slice(0, 6).map((cat) => (
               <li key={cat.slug}>
                 <Link
@@ -83,11 +83,11 @@ export async function Footer() {
         </div>
 
         {/* Contact Info */}
-        <div>
-          <h3 className="text-xs font-bold uppercase tracking-widest text-cyan-300">
+        <div className="col-span-2 lg:col-span-1">
+          <h3 className="text-[11px] font-bold uppercase tracking-widest text-cyan-300 sm:text-xs">
             Get in Touch
           </h3>
-          <ul className="mt-4 space-y-3.5 text-xs">
+          <ul className="mt-3 space-y-3 text-xs sm:mt-4 sm:space-y-3.5">
             <li className="font-semibold text-white">{siteInfo.name}</li>
             <li className="flex gap-3 text-slate-300">
               <svg
@@ -149,7 +149,7 @@ export async function Footer() {
 
       {/* Copyright Bar */}
       <div className="border-t border-white/10 bg-black/40">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-slate-400 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-4 py-4 text-xs text-slate-400 sm:flex-row sm:gap-3 sm:py-5">
           <p>
             Copyright © {year} {siteInfo.name}. All rights reserved.
           </p>
