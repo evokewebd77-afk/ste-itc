@@ -99,7 +99,7 @@ export function Header() {
             <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-700">
               Standard Testing Equipments
             </span>
-            <span className="block text-[10px] text-slate-400 font-medium">
+            <span className="block text-[11px] text-slate-600 font-medium">
               Precision Instruments
             </span>
           </div>
@@ -178,7 +178,7 @@ export function Header() {
                         className="group/item flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-slate-700 transition hover:bg-brand-50 hover:text-brand-700"
                       >
                         <span className="line-clamp-1">{cat.name}</span>
-                        <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-500 font-semibold group-hover/item:bg-brand-100 group-hover/item:text-brand-800">
+                        <span className="shrink-0 rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600 font-semibold group-hover/item:bg-brand-100 group-hover/item:text-brand-800">
                           {cat.count ?? 0}
                         </span>
                       </Link>
@@ -271,7 +271,7 @@ export function Header() {
 
             <div className="mt-3 border-t border-slate-100 pt-3">
               <div className="flex items-center justify-between px-4 pb-2">
-                <span className="text-xs font-bold uppercase tracking-wider text-slate-400">
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-600">
                   Categories
                 </span>
                 <Link
@@ -292,7 +292,7 @@ export function Header() {
                     className="flex items-center justify-between rounded-lg px-4 py-2 text-sm text-slate-600 hover:bg-brand-50 hover:text-brand-700"
                   >
                     <span>{cat.name}</span>
-                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-500">
+                    <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-600">
                       {cat.count ?? 0}
                     </span>
                   </Link>

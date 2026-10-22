@@ -39,7 +39,7 @@ export default function AboutPage() {
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Engineering Precision For Critical Industrial Testing
           </h2>
-          <p className="mt-4 leading-relaxed text-slate-600 text-sm sm:text-base">
+          <p className="mt-4 leading-relaxed text-slate-700 text-[15px] sm:text-base">
             Standard Test Equipment has established itself as a premier supplier of high-quality testing instruments and measuring equipment, serving diverse industries across India. Since our inception in 2009, we have been committed to providing products that meet the highest standards of performance, durability, and accuracy. Based in Delhi, we are proud to be a trusted name in the industry, known for delivering precision-engineered instruments.
           </p>
         </div>
@@ -53,7 +53,7 @@ export default function AboutPage() {
             <h3 className="mt-2 text-xl font-bold text-slate-900">
               Reliable Accuracy for Every Quality Laboratory
             </h3>
-            <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
+            <p className="mt-3 text-[13px] sm:text-sm leading-relaxed text-slate-700">
               At Standard Test Equipment, our mission is to equip industries with cutting-edge tools that ensure the accuracy, reliability, and safety of their processes. We believe in building lasting relationships with our clients by delivering only the best quality equipment and providing exceptional after-sales support.
             </p>
           </div>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             <h3 className="mt-2 text-xl font-bold text-white">
               India&apos;s Foremost Precision Testing Partner
             </h3>
-            <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
+            <p className="mt-3 text-[13px] sm:text-sm leading-relaxed text-slate-200">
               As we move forward, we aim to expand our reach and continue offering innovative testing solutions to new markets and industries. Our focus remains on maintaining the highest level of customer satisfaction by offering advanced technology and reliable service.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
                 <h3 className="mt-4 font-bold text-slate-900 text-base">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-slate-600">
+                <p className="mt-2 text-[13px] sm:text-sm leading-relaxed text-slate-700">
                   {item.body}
                 </p>
               </div>

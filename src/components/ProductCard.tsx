@@ -22,7 +22,7 @@ export function ProductCard({ product }: { product: Product }) {
         <span className="inline-block rounded-md bg-brand-50 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/50">
           {category?.name ?? "Equipment"}
         </span>
-        <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-widest">
+        <span className="text-[11px] font-semibold text-slate-500 uppercase tracking-widest">
           IEC Standard
         </span>
       </div>
@@ -35,7 +35,7 @@ export function ProductCard({ product }: { product: Product }) {
             alt={product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+            className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
           <div className="transition duration-300 group-hover:scale-110">
@@ -50,16 +50,16 @@ export function ProductCard({ product }: { product: Product }) {
       </h3>
 
       {/* Description Snippet */}
-      <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-slate-500">
+      <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-slate-600">
         {product.description}
       </p>
 
       {/* Price & Action */}
       <div className="mt-auto flex items-end justify-between border-t border-slate-100 pt-4">
         <div>
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-            Ex Tax Price
-          </p>
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+              Ex Tax Price
+            </p>
           <p className="text-lg font-extrabold text-brand-700 group-hover:text-brand-600">
             {formatPrice(product.price)}
           </p>

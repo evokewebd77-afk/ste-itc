@@ -75,10 +75,10 @@ export function ProductsExplorer() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search probe, IP chamber, hammer..."
-                className="w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-10 pr-4 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+                className="w-full rounded-xl border border-slate-200 bg-slate-50/70 pl-10 pr-4 py-2.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
               />
               <svg
-                className="absolute left-3.5 top-3 h-4 w-4 text-slate-400"
+                className="absolute left-3.5 top-3 h-4 w-4 text-slate-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -131,7 +131,7 @@ export function ProductsExplorer() {
         {/* Active Filters Bar */}
         {hasFilters && (
           <div className="mt-4 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-3">
-            <div className="flex items-center gap-2 text-xs text-slate-600 font-medium">
+            <div className="flex items-center gap-2 text-[13px] text-slate-700 font-medium">
               <span>Filtering results</span>
             </div>
             <button
@@ -147,7 +147,7 @@ export function ProductsExplorer() {
 
       {/* Results Header */}
       <div className="mt-6 flex items-center justify-between">
-        <p className="text-sm font-semibold text-slate-600">
+        <p className="text-sm font-semibold text-slate-700">
           Showing <span className="text-brand-700 font-bold">{filtered.length}</span> of {products.length} instruments
         </p>
       </div>
@@ -168,7 +168,7 @@ export function ProductsExplorer() {
             </svg>
           </div>
           <p className="mt-4 text-base font-bold text-slate-800">No matching instruments found</p>
-          <p className="mt-1 text-xs text-slate-500">
+          <p className="mt-1 text-sm text-slate-600">
             Try adjusting your search query or selecting a different category.
           </p>
           <button

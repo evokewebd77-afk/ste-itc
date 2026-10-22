@@ -41,9 +41,9 @@ function Sidebar({ activeSlug }: { activeSlug: string }) {
   return (
     <aside className="lg:w-72 lg:shrink-0">
       <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs">
-        <h2 className="text-xs font-bold uppercase tracking-wider text-slate-500">
-          Categories Directory
-        </h2>
+          <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
+            Categories Directory
+          </h2>
         <ul className="mt-4 space-y-1.5">
           {categories.map((cat) => {
             const isActive = activeSlug === cat.slug;
@@ -62,7 +62,7 @@ function Sidebar({ activeSlug }: { activeSlug: string }) {
                     className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
                       isActive
                         ? "bg-white/20 text-white"
-                        : "bg-slate-100 text-slate-500"
+                        : "bg-slate-100 text-slate-700"
                     }`}
                   >
                     {cat.count ?? 0}
@@ -78,11 +78,11 @@ function Sidebar({ activeSlug }: { activeSlug: string }) {
                           <li key={sub.slug}>
                             <Link
                               href={`/category/${sub.slug}`}
-                              className={`block rounded-lg px-2.5 py-1.5 text-[11px] font-medium transition ${
-                                isSubActive
-                                  ? "bg-brand-50 font-bold text-brand-700"
-                                  : "text-slate-500 hover:text-brand-700"
-                              }`}
+                      className={`block rounded-lg px-2.5 py-1.5 text-[11px] font-medium transition ${
+                        isSubActive
+                          ? "bg-brand-50 font-bold text-brand-700"
+                          : "text-slate-600 hover:text-brand-700"
+                      }`}
                             >
                               {sub.name}
                             </Link>
@@ -134,11 +134,11 @@ export default async function CategoryPage({
         : undefined;
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-100 min-h-screen">
       {/* Breadcrumb Header */}
       <div className="border-b border-slate-200/80 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5">
-          <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-semibold text-slate-600 uppercase tracking-wider">
             <Link href="/" className="transition hover:text-brand-600">
               Home
             </Link>
@@ -193,7 +193,7 @@ export default async function CategoryPage({
                     {title}
                   </h1>
                   {description && (
-                    <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-600">
+                    <p className="mt-3 text-sm sm:text-[15px] leading-relaxed text-slate-700">
                       {description}
                     </p>
                   )}
@@ -204,7 +204,7 @@ export default async function CategoryPage({
             {/* Subcategory Filter Pills */}
             {childSubs.length > 0 && (
               <div className="mt-6">
-                <h2 className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
                   Subcategories
                 </h2>
                 <div className="mt-2.5 flex flex-wrap gap-2">
@@ -216,7 +216,7 @@ export default async function CategoryPage({
                         href={`/category/${sub.slug}`}
                         className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 shadow-2xs transition hover:border-brand-400 hover:bg-brand-50 hover:text-brand-700"
                       >
-                        {sub.name} <span className="text-slate-400">({count})</span>
+                        {sub.name} <span className="text-slate-500">({count})</span>
                       </Link>
                     );
                   })}
@@ -228,7 +228,7 @@ export default async function CategoryPage({
             {products.length > 0 ? (
               <div className="mt-8">
                 <div className="flex items-center justify-between pb-4">
-                  <p className="text-xs font-bold uppercase tracking-wider text-slate-500">
+                  <p className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
                     Available Instruments ({products.length})
                   </p>
                 </div>
@@ -246,7 +246,7 @@ export default async function CategoryPage({
                 <p className="mt-4 text-base font-bold text-slate-800">
                   No products in this category yet
                 </p>
-                <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto">
+                <p className="mt-1 text-sm text-slate-600 max-w-sm mx-auto">
                   We are continuously expanding our catalogue. Contact our Mohali engineering office for custom manufacturing or lead times.
                 </p>
                 <Link

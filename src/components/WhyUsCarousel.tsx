@@ -64,7 +64,7 @@ export function WhyUsCarousel({ items }: { items: WhyUsItem[] }) {
                 <h3 className="mt-5 text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 text-[13px] sm:text-sm leading-relaxed text-slate-200">
                   {item.body}
                 </p>
               </div>

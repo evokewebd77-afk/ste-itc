@@ -34,7 +34,7 @@ export async function Footer() {
               className="h-16 w-auto object-contain"
             />
           </div>
-          <p className="mt-4 text-xs leading-relaxed text-slate-400">
+          <p className="mt-4 text-[13px] leading-relaxed text-slate-300">
             {siteInfo.name} — Premier manufacturer of IEC 60529, IEC 61032, LM-79, and spring hammer test apparatus since 2009.
           </p>
 
@@ -54,7 +54,7 @@ export async function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-slate-400 transition hover:text-cyan-300"
+                  className="text-slate-300 transition hover:text-cyan-300"
                 >
                   {item.label}
                 </Link>
@@ -73,7 +73,7 @@ export async function Footer() {
               <li key={cat.slug}>
                 <Link
                   href={`/category/${cat.slug}`}
-                  className="line-clamp-1 text-slate-400 transition hover:text-cyan-300"
+                  className="line-clamp-1 text-slate-300 transition hover:text-cyan-300"
                 >
                   {cat.name}
                 </Link>
@@ -89,7 +89,7 @@ export async function Footer() {
           </h3>
           <ul className="mt-4 space-y-3.5 text-xs">
             <li className="font-semibold text-white">{siteInfo.name}</li>
-            <li className="flex gap-3 text-slate-400">
+            <li className="flex gap-3 text-slate-300">
               <svg
                 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400"
                 viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export async function Footer() {
                 {siteInfo.address.line3}
               </span>
             </li>
-            <li className="flex gap-3 text-slate-400">
+            <li className="flex gap-3 text-slate-300">
               <svg
                 className="h-4 w-4 shrink-0 text-cyan-400"
                 viewBox="0 0 24 24"
@@ -125,7 +125,7 @@ export async function Footer() {
                 {siteInfo.phone}
               </a>
             </li>
-            <li className="flex gap-3 text-slate-400">
+            <li className="flex gap-3 text-slate-300">
               <svg
                 className="h-4 w-4 shrink-0 text-cyan-400"
                 viewBox="0 0 24 24"
@@ -149,7 +149,7 @@ export async function Footer() {
 
       {/* Copyright Bar */}
       <div className="border-t border-white/10 bg-black/40">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-slate-500 sm:flex-row">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-5 text-xs text-slate-400 sm:flex-row">
           <p>
             Copyright © {year} {siteInfo.name}. All rights reserved.
           </p>

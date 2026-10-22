@@ -73,7 +73,7 @@ export function FloatingActions() {
           type="button"
           onClick={scrollToTop}
           aria-label="Scroll back to top"
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-600 shadow-md backdrop-blur-sm transition-all hover:bg-slate-100 hover:text-slate-900"
+          className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white/95 text-slate-700 shadow-md backdrop-blur-sm transition-all hover:bg-slate-100 hover:text-slate-900"
         >
           <svg
             className="h-4 w-4"

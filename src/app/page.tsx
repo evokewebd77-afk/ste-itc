@@ -217,12 +217,12 @@ export default function Home() {
               <span className="text-white">Confidence in Every Result.</span>
             </p>
 
-            <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-slate-300">
+            <p className="mt-5 max-w-xl text-base sm:text-lg leading-relaxed text-slate-200">
               Premier supplier of high-precision testing instruments and measuring apparatus, serving quality control labs, R&amp;D facilities, and manufacturers across India since 2009.
             </p>
 
             {/* Slim feature list */}
-            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs font-semibold text-slate-300">
+            <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] font-semibold text-slate-200">
               {["IEC 61032 & IEC 60529", "Factory Calibrated", "Fast Pan-India Dispatch"].map(
                 (label) => (
                   <span key={label} className="inline-flex items-center gap-1.5">
@@ -269,7 +269,7 @@ export default function Home() {
 
               <a
                 href={`tel:${siteInfo.phoneHref}`}
-                className="inline-flex items-center gap-2 text-xs font-semibold text-slate-300 transition hover:text-white"
+                className="inline-flex items-center gap-2 text-[13px] font-semibold text-slate-200 transition hover:text-white"
               >
                 <svg className="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -279,16 +279,16 @@ export default function Home() {
             </div>
 
             {/* Popular quick links (inline, lightweight) */}
-            <div className="mt-8 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-xs text-slate-400">
-              <span className="font-semibold uppercase tracking-wider text-slate-500">
+            <div className="mt-8 flex flex-wrap items-center gap-x-2.5 gap-y-2 text-[13px] text-slate-300">
+              <span className="font-semibold uppercase tracking-wider text-slate-400">
                 Popular:
               </span>
               {popularLinks.map((item, i) => (
                 <span key={item.slug} className="inline-flex items-center gap-2.5">
-                  {i > 0 && <span className="text-slate-600">·</span>}
+                  {i > 0 && <span className="text-slate-500">·</span>}
                   <Link
                     href={`/category/${item.slug}`}
-                    className="font-medium text-slate-300 transition hover:text-cyan-300"
+                    className="font-medium text-slate-200 transition hover:text-cyan-300"
                   >
                     {item.label}
                   </Link>
@@ -317,7 +317,7 @@ export default function Home() {
                 <span className="font-bold text-white bg-slate-800 px-2 py-0.5 rounded border border-slate-700">
                   {std.code}
                 </span>
-                <span className="text-slate-300 hidden md:inline">{std.label}</span>
+                <span className="text-slate-200 hidden md:inline">{std.label}</span>
               </div>
             ))}
           </div>
@@ -338,7 +338,7 @@ export default function Home() {
               <p className="mt-1.5 text-sm font-bold text-slate-800">
                 {stat.label}
               </p>
-              <p className="text-xs text-slate-500 font-medium">{stat.sub}</p>
+              <p className="text-[13px] text-slate-600 font-medium">{stat.sub}</p>
             </div>
           ))}
         </div>
@@ -354,7 +354,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               Specialized Product Categories
             </h2>
-            <p className="mt-2 text-sm text-slate-500 max-w-xl">
+            <p className="mt-2 text-sm text-slate-600 max-w-xl">
               Precision apparatus built to IEC standard specifications for electrical, mechanical and ingress verification.
             </p>
           </div>
@@ -398,12 +398,12 @@ export default function Home() {
                           : cat.slug === "test-probes-and-test-pins"
                             ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612291/d79993d3-3742-412b-88d4-9d24a40da898_bwuusb.png"
                             : cat.slug === "testing-apparatus-luminary-test"
-                              ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612933/6004734b-3d43-4b44-909e-c15ec3184449_vkabi1.png"
+                              ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643985/15fec92f-0fcb-4764-95dc-51e7b330aa49_kuh6rp.png"
                               : cat.slug === "spring-hammer-test-apparatus"
-                                ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791613503/8a61ff8c-5d13-409c-85f0-e135defcaf72_evbjmr.png"
+                                ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643102/bf1bf9b4-4d05-4590-b126-972804b9f553_legkpv.png"
                                 : cat.slug === "ip-test-apparatus"
-                                  ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791613651/47964f1e-2300-41ad-a017-8fb738f840a8_og5fms.png"
-                                  : "https://res.cloudinary.com/didtfhfme/image/upload/v1791613737/3fc37b17-719c-4459-8e4b-237a081e8195_jgtupm.png"
+                                  ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643434/e61681d0-20d9-4fb6-8d24-2855a591ee42_tdlyec.png"
+                                  : "https://res.cloudinary.com/didtfhfme/image/upload/v1792643578/87714f97-754a-4aa4-986a-eafd3f68a521_scjwhx.png"
                       }
                       alt={
                         cat.slug === "emi-shielding-material"
@@ -466,12 +466,12 @@ export default function Home() {
                     </span>
                   </div>
 
-                  <p className="mt-2 line-clamp-3 text-xs leading-relaxed text-slate-500">
+                  <p className="mt-2 line-clamp-3 text-[13px] leading-relaxed text-slate-600">
                     {cat.description}
                   </p>
 
                   <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5">
-                    <span className="text-[10px] font-semibold uppercase tracking-widest text-slate-400">
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-600">
                       Standard Test Equipment
                     </span>
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 transition group-hover:text-cyan-600">
@@ -497,7 +497,7 @@ export default function Home() {
               <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                 Filter &amp; Explore Testing Equipment
               </h2>
-              <p className="mt-2 text-sm text-slate-500 max-w-2xl">
+              <p className="mt-2 text-sm text-slate-600 max-w-2xl">
                 Quickly search across our complete inventory of 50+ instruments, filter by test categories, or sort by specifications.
               </p>
             </div>
@@ -524,7 +524,7 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
               Featured Testing Apparatus
             </h2>
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-slate-600">
               Top choice apparatus trusted by testing laboratories and certification agencies across India.
             </p>
           </div>
@@ -556,7 +556,7 @@ export default function Home() {
             <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl tracking-tight text-white max-w-3xl">
               Built on Quality, Backed by Engineering Experience
             </h2>
-            <p className="mt-4 text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+            <p className="mt-4 text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl">
               At Standard Test Equipment, our mission is to empower testing laboratories, quality control facilities, and manufacturers with instruments that guarantee accuracy, repeatability, and safety.
             </p>
           </div>
@@ -581,7 +581,7 @@ export default function Home() {
                 <h3 className="mt-5 text-lg font-bold text-white">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-xs sm:text-sm leading-relaxed text-slate-300">
+                <p className="mt-3 text-[13px] sm:text-sm leading-relaxed text-slate-200">
                   {item.body}
                 </p>
               </div>
@@ -676,11 +676,11 @@ export default function Home() {
                     <figcaption className="text-sm font-bold text-slate-900">
                       {t.name}
                     </figcaption>
-                    <p className="text-xs text-slate-500">{t.role}</p>
+                    <p className="text-[13px] text-slate-600">{t.role}</p>
                   </div>
                 </div>
 
-                <blockquote className="mt-4 text-xs leading-relaxed text-slate-600">
+                <blockquote className="mt-4 text-sm leading-relaxed text-slate-700">
                   “{t.content}”
                 </blockquote>
 

@@ -10,7 +10,7 @@ export default function NotFound() {
         <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
           Instrument or Page Not Found
         </h1>
-        <p className="mt-3 text-sm text-slate-500 leading-relaxed">
+        <p className="mt-3 text-sm text-slate-600 leading-relaxed">
           The requested page or test apparatus may have been renamed or relocated. Please browse our equipment catalogue or return home.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">

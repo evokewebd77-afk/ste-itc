@@ -43,10 +43,10 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                     Works &amp; Office Address
                   </p>
-                  <p className="mt-0.5 text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+                  <p className="mt-0.5 text-[13px] sm:text-sm text-slate-700 leading-relaxed font-medium">
                     {siteInfo.address.line1}
                     <br />
                     {siteInfo.address.line2}
@@ -70,7 +70,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                     Direct Phone / Toll Free
                   </p>
                   <a
@@ -93,7 +93,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                     Instant WhatsApp Chat
                   </p>
                   <a
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
                     Official Quotations Email
                   </p>
                   <a
@@ -169,7 +169,7 @@ export default function ContactPage() {
             <h2 className="mt-1 text-2xl font-extrabold text-slate-900 tracking-tight">
               Request Equipment Quotation
             </h2>
-            <p className="mt-2 text-xs sm:text-sm text-slate-500 leading-relaxed">
+            <p className="mt-2 text-[13px] sm:text-sm text-slate-600 leading-relaxed">
               Submit your inquiry with details of required testing apparatus or compliance standards. Our team responds with technical datasheets and official pricing.
             </p>
             <div className="mt-8">

@@ -10,7 +10,7 @@ export function PageShell({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-100 min-h-screen">
       {/* Page Header Banner */}
       <div className="relative overflow-hidden bg-gradient-to-r from-ink-950 via-brand-950 to-ink-900 text-white border-b border-slate-800">
         <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-20" />
@@ -23,15 +23,15 @@ export function PageShell({
         />
 
         <div className="relative mx-auto max-w-7xl px-4 py-12 sm:py-16">
-          <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold text-cyan-300 uppercase tracking-wider">
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-semibold text-cyan-300 uppercase tracking-wider">
             <Link
               href="/"
               className="transition hover:text-white"
             >
               Home
             </Link>
-            <span aria-hidden="true" className="text-slate-500">/</span>
-            <span className="text-slate-200">{crumb}</span>
+            <span aria-hidden="true" className="text-slate-400">/</span>
+            <span className="text-slate-100">{crumb}</span>
           </nav>
           <h1 className="mt-3 text-3xl font-extrabold sm:text-4xl text-white tracking-tight">
             {title}

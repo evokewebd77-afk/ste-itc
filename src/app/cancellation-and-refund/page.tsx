@@ -35,7 +35,7 @@ export default function CancellationRefundPage() {
     >
       <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-10 shadow-xs">
         <article className="space-y-6">
-          <p className="leading-relaxed text-slate-600 text-sm sm:text-base">
+          <p className="leading-relaxed text-slate-700 text-sm sm:text-base">
             At Standard Test Equipment, we are committed to delivering verified, high-accuracy instruments to testing laboratories and manufacturers across India. This policy outlines our return and refund guidelines.
           </p>
 
@@ -45,14 +45,14 @@ export default function CancellationRefundPage() {
                 <h2 className="text-base font-bold text-brand-800">
                   {section.heading}
                 </h2>
-                <p className="mt-2 leading-relaxed text-slate-600 text-sm">
+                <p className="mt-2 leading-relaxed text-slate-700 text-sm">
                   {section.body}
                 </p>
               </section>
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700">
             For any queries regarding this policy, please reach us at{" "}
             <a href={`mailto:${siteInfo.email}`} className="font-bold text-brand-700 underline">
               {siteInfo.email}

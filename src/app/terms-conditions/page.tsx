@@ -43,7 +43,7 @@ export default function TermsPage() {
     <PageShell title="Terms &amp; Conditions" crumb="Terms &amp; Conditions">
       <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-10 shadow-xs">
         <article className="space-y-6">
-          <p className="leading-relaxed text-slate-600 text-sm sm:text-base">
+          <p className="leading-relaxed text-slate-700 text-sm sm:text-base">
             Welcome to Standard Test Equipment. Please review these terms and conditions carefully before utilizing our website, requesting quotations, or procuring testing instruments.
           </p>
 
@@ -53,14 +53,14 @@ export default function TermsPage() {
                 <h2 className="text-base font-bold text-brand-800">
                   {section.heading}
                 </h2>
-                <p className="mt-2 leading-relaxed text-slate-600 text-sm">
+                <p className="mt-2 leading-relaxed text-slate-700 text-sm">
                   {section.body}
                 </p>
               </section>
             ))}
           </div>
 
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-600">
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700">
             For further legal inquiries or terms clarification, please contact{" "}
             <a href="mailto:steindiamkt@gmail.com" className="font-bold text-brand-700 underline">
               steindiamkt@gmail.com

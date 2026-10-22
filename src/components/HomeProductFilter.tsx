@@ -91,10 +91,10 @@ export function HomeProductFilter() {
                 setVisibleCount(8);
               }}
               placeholder="Search probes, test apparatus, chambers..."
-              className="w-full rounded-2xl border border-slate-200 bg-slate-50/70 pl-11 pr-10 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+              className="w-full rounded-2xl border border-slate-200 bg-slate-50/70 pl-11 pr-10 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
             />
             <svg
-              className="absolute left-4 top-3.5 h-4 w-4 text-slate-400"
+              className="absolute left-4 top-3.5 h-4 w-4 text-slate-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -124,7 +124,7 @@ export function HomeProductFilter() {
 
           {/* Sort Selector */}
           <div className="flex items-center gap-2 self-end sm:self-auto">
-            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 hidden sm:inline">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-600 hidden sm:inline">
               Sort:
             </span>
             <select
@@ -143,7 +143,7 @@ export function HomeProductFilter() {
         {/* Category Pills (Horizontal scrolling or wrapped) */}
         <div className="mt-5 border-t border-slate-100 pt-4">
           <div className="flex items-center justify-between pb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
               Filter by Category
             </span>
             {hasActiveFilter && (
@@ -204,14 +204,14 @@ export function HomeProductFilter() {
 
       {/* Results Header / Counter */}
       <div className="mt-7 flex items-center justify-between px-1">
-        <p className="text-sm font-semibold text-slate-600">
+        <p className="text-sm font-semibold text-slate-700">
           Showing{" "}
           <span className="font-bold text-brand-700">
             {displayedProducts.length}
           </span>{" "}
           of {filteredProducts.length} matching items
           {selectedCategory !== "all" && (
-            <span className="text-slate-400 font-normal">
+            <span className="text-slate-500 font-normal">
               {" "}
               in {categories.find((c) => c.slug === selectedCategory)?.name}
             </span>
@@ -250,7 +250,7 @@ export function HomeProductFilter() {
           <h4 className="mt-4 text-base font-bold text-slate-800">
             No instruments match your criteria
           </h4>
-          <p className="mt-1 text-xs text-slate-500 max-w-sm mx-auto">
+          <p className="mt-1 text-sm text-slate-600 max-w-sm mx-auto">
             Try adjusting your search terms or select &ldquo;All Instruments&rdquo; to view the complete catalog.
           </p>
           <button

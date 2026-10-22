@@ -42,7 +42,7 @@ export default function PrivacyPage() {
   return (
     <PageShell title="Privacy Policy" crumb="Privacy Policy">
       <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-10 shadow-xs">
-        <article className="space-y-8 text-slate-600 text-sm sm:text-base">
+        <article className="space-y-8 text-slate-700 text-sm sm:text-base">
         <section>
           <h2 className="text-lg font-bold text-brand-800">General</h2>
           <div className="mt-3 space-y-4 leading-relaxed">

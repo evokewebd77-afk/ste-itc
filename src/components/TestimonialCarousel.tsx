@@ -60,7 +60,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
                       <figcaption className="text-base font-bold text-slate-900">
                         {t.name}
                       </figcaption>
-                      <p className="text-sm text-slate-500">{t.role}</p>
+                      <p className="text-sm text-slate-600">{t.role}</p>
                     </div>
                   </div>
                   <svg

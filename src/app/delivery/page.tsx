@@ -18,10 +18,10 @@ export default function DeliveryPage() {
             <h3 className="mt-4 text-base font-bold text-brand-700">
               Packaging &amp; Instrument Handling
             </h3>
-            <p className="mt-3 leading-relaxed text-slate-600 text-sm sm:text-base">
+            <p className="mt-3 leading-relaxed text-slate-700 text-sm sm:text-base">
               Precision testing apparatus and probes are generally dispatched within 2 business days after receipt of payment or formal purchase order confirmation. Heavy apparatus such as IP test chambers and spectroradiometer integrating spheres are secured in specialized wooden crate packaging to ensure transit integrity.
             </p>
-            <p className="mt-4 leading-relaxed text-slate-600 text-sm sm:text-base">
+            <p className="mt-4 leading-relaxed text-slate-700 text-sm sm:text-base">
               Shipping fees include handling, protective foam packaging, and transport insurance. Tracking details and dispatch consignment notes (LR/AWB) are provided promptly upon handover to logistics partners.
             </p>
           </section>

@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-100 min-h-screen">
       {/* Top Breadcrumb Bar */}
       <div className="border-b border-slate-200/80 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5">
-          <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-semibold text-slate-600 uppercase tracking-wider">
             <Link href="/" className="transition hover:text-brand-600">
               Home
             </Link>
@@ -35,7 +35,7 @@ export default function ProductsPage() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
             Testing Instruments &amp; Measuring Equipment
           </h1>
-          <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-300 leading-relaxed">
+          <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-200 leading-relaxed">
             Engineered and calibrated in Mohali, Punjab to rigorous IEC, ISO, and ASTM test standards. Filter by category, keywords, or sorting preferences below.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function ProductsPage() {
           fallback={
             <div className="py-20 text-center">
               <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-brand-600 border-r-transparent" />
-              <p className="mt-3 text-sm text-slate-500 font-medium">Loading instrument catalogue...</p>
+              <p className="mt-3 text-sm text-slate-600 font-medium">Loading instrument catalogue...</p>
             </div>
           }
         >

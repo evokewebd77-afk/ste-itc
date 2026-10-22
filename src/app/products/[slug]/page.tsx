@@ -57,11 +57,11 @@ export default async function ProductPage({
   );
 
   return (
-    <div className="bg-slate-50 min-h-screen">
+    <div className="bg-slate-100 min-h-screen">
       {/* Breadcrumb Header */}
       <div className="border-b border-slate-200/80 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-4 sm:py-5">
-          <nav className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+          <nav className="flex flex-wrap items-center gap-2 text-[13px] font-semibold text-slate-600 uppercase tracking-wider">
             <Link href="/" className="transition hover:text-brand-600">
               Home
             </Link>
@@ -84,11 +84,11 @@ export default async function ProductPage({
         </div>
       </div>
 
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14">
-        <div className="grid gap-10 lg:grid-cols-2">
+      <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
           {/* Product Image & Badges */}
           <div className="flex flex-col">
-            <div className="relative flex aspect-square items-center justify-center rounded-3xl border border-slate-200/90 bg-white p-12 shadow-sm">
+            <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-3xl border border-slate-200/90 bg-white shadow-sm">
               <div className="absolute inset-0 bg-radial-glow opacity-60 rounded-3xl" />
               {image ? (
                 <Image
@@ -96,7 +96,7 @@ export default async function ProductPage({
                   alt={product.name}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="rounded-3xl object-contain p-8"
+                  className="rounded-3xl object-cover"
                   priority
                 />
               ) : (
@@ -109,24 +109,24 @@ export default async function ProductPage({
               )}
             </div>
 
-            <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs">
+            <div className="mt-5 grid grid-cols-3 gap-3 text-center text-xs lg:mt-auto lg:pt-5">
               <div className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-2xs">
                 <p className="font-bold text-brand-700">IEC Compliant</p>
-                <p className="mt-0.5 text-[10px] text-slate-400">Tested to Standard</p>
+                <p className="mt-0.5 text-[11px] text-slate-600">Tested to Standard</p>
               </div>
               <div className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-2xs">
                 <p className="font-bold text-emerald-600">In Stock</p>
-                <p className="mt-0.5 text-[10px] text-slate-400">Ready for Dispatch</p>
+                <p className="mt-0.5 text-[11px] text-slate-600">Ready for Dispatch</p>
               </div>
               <div className="rounded-2xl border border-slate-200/80 bg-white p-3.5 shadow-2xs">
                 <p className="font-bold text-slate-800">Made in India</p>
-                <p className="mt-0.5 text-[10px] text-slate-400">Mohali Manufacturing</p>
+                <p className="mt-0.5 text-[11px] text-slate-600">Mohali Manufacturing</p>
               </div>
             </div>
           </div>
 
           {/* Product Info & Purchase CTAs */}
-          <div>
+          <div className="flex flex-col">
             {category && (
               <Link
                 href={`/category/${category.slug}`}
@@ -140,7 +140,7 @@ export default async function ProductPage({
               {product.name}
             </h1>
 
-            <div className="mt-4 flex flex-wrap items-center gap-4 text-xs font-medium text-slate-600">
+            <div className="mt-4 flex flex-wrap items-center gap-4 text-[13px] font-medium text-slate-700">
               <span className="inline-flex items-center gap-1.5 text-emerald-600 font-bold">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 Available in Stock
@@ -162,20 +162,20 @@ export default async function ProductPage({
                 <p className="text-3xl sm:text-4xl font-extrabold text-brand-800 tracking-tight">
                   {formatPrice(product.price)}
                 </p>
-                <span className="text-xs font-semibold text-slate-500">
+                <span className="text-[13px] font-semibold text-slate-600">
                   (Ex. Tax / GST extra as applicable)
                 </span>
               </div>
-              <p className="mt-2 text-xs text-slate-600">
+              <p className="mt-2 text-sm text-slate-700">
                 Includes manufacturer standard calibration and inspection report.
               </p>
             </div>
 
             <div className="mt-6">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+              <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
                 Product Overview
               </h2>
-              <p className="mt-2 leading-relaxed text-slate-600 text-sm">
+              <p className="mt-2 leading-relaxed text-slate-700 text-[15px]">
                 {product.description}
               </p>
             </div>
@@ -208,14 +208,60 @@ export default async function ProductPage({
                 <span>Email Enquiry</span>
               </a>
             </div>
+
+            {/* What It Does */}
+            {product.whatItDoes && product.whatItDoes.length > 0 && (
+              <div className="mt-8 border-t border-slate-200/80 pt-6">
+                <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
+                  What It Does
+                </h2>
+                <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+                  {product.whatItDoes.map((item) => (
+                    <li
+                      key={item.title}
+                      className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs"
+                    >
+                      <p className="text-sm font-bold text-slate-800">
+                        {item.title}
+                      </p>
+                      <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                        {item.text}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
 
+        {/* Key Features */}
+        {product.keyFeatures && product.keyFeatures.length > 0 && (
+          <section className="mt-12">
+            <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
+              Key Features
+            </h2>
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {product.keyFeatures.map((item) => (
+                <li
+                  key={item.title}
+                  className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs"
+                >
+                  <p className="text-sm font-bold text-slate-800">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-slate-700">
+                    {item.text}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
         {/* Technical Specifications & Enquiry Form */}
-        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:items-start">
+        <div className="mt-12 grid gap-8 lg:grid-cols-2 lg:items-start">
           {product.specs && product.specs.length > 0 ? (
             <div>
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+              <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
                 Technical Specifications
               </h2>
               <dl className="mt-3 overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs">
@@ -226,7 +272,7 @@ export default async function ProductPage({
                       i % 2 === 1 ? "bg-slate-50/70" : "bg-white"
                     }`}
                   >
-                    <dt className="font-semibold text-slate-600">
+                    <dt className="font-semibold text-slate-700">
                       {spec.label}
                     </dt>
                     <dd className="font-medium text-slate-900 sm:col-span-2">
@@ -238,10 +284,10 @@ export default async function ProductPage({
             </div>
           ) : (
             <div className="rounded-3xl border border-dashed border-slate-300 bg-white p-8 shadow-xs">
-              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+              <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
                 Technical Specifications
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-3 text-sm leading-relaxed text-slate-700">
                 Detailed specifications for {product.name} are available on
                 request. Share your requirements and our engineering team will
                 provide a complete datasheet, calibration details and lead time.
@@ -254,7 +300,7 @@ export default async function ProductPage({
 
         {/* Related Products Section */}
         {related.length > 0 && (
-          <section className="mt-20 border-t border-slate-200/80 pt-12">
+          <section className="mt-16 border-t border-slate-200/80 pt-10">
             <div className="flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-wider text-brand-700">
