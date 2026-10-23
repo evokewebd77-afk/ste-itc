@@ -84,7 +84,7 @@ export function Header() {
       {/* Main Navigation */}
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         {/* Brand Logo */}
-        <Link href="/" className="group flex items-center gap-3">
+        <Link href="/" className="group flex min-w-0 items-center gap-3 lg:flex-1">
           <div className="relative overflow-hidden rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-200/60 transition group-hover:ring-brand-500/40">
             <Image
               src={siteInfo.logo}
@@ -95,12 +95,12 @@ export function Header() {
               priority
             />
           </div>
-          <div className="hidden sm:block">
-            <span className="block text-[11px] font-bold uppercase tracking-wider text-brand-700">
-              Standard Testing Equipments
+          <div className="min-w-0 flex-1">
+            <span className="block text-base font-extrabold leading-tight tracking-tight text-brand-800 sm:text-lg lg:text-xl">
+              Standard Test Equipment
             </span>
-            <span className="block text-[11px] text-slate-600 font-medium">
-              Precision Instruments
+            <span className="mt-1 block text-xs font-medium leading-snug text-slate-600 sm:text-sm lg:whitespace-nowrap lg:text-xs">
+              Precision in Every Test. Confidence in Every Result.
             </span>
           </div>
         </Link>

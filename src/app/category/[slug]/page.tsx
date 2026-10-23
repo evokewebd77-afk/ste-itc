@@ -39,7 +39,7 @@ export async function generateMetadata({
 
 function Sidebar({ activeSlug }: { activeSlug: string }) {
   return (
-    <aside className="lg:w-72 lg:shrink-0">
+    <aside className="lg:sticky lg:top-32 lg:w-72 lg:shrink-0 lg:self-start">
       <div className="rounded-2xl border border-slate-200/90 bg-white p-5 shadow-xs">
           <h2 className="text-[13px] font-bold uppercase tracking-wider text-slate-700">
             Categories Directory
@@ -166,7 +166,7 @@ export default async function CategoryPage({
           <div className="min-w-0 flex-1">
             {/* Category Hero Banner */}
             <div className="rounded-2xl border border-slate-200/90 bg-white p-6 sm:p-8 shadow-xs">
-              <div className="flex items-start gap-5">
+              <div className="flex items-center gap-5">
                 {heroImage ? (
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-2xl shadow-md">
                     <Image
@@ -178,10 +178,10 @@ export default async function CategoryPage({
                     />
                   </div>
                 ) : (
-                  <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white shadow-md">
+                  <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-600 to-cyan-600 text-white shadow-md">
                     <CategoryIcon
                       slug={subcategory?.parentId ?? slug}
-                      className="h-8 w-8"
+                      className="h-9 w-9"
                     />
                   </div>
                 )}

@@ -38,45 +38,45 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
+        <label className="grid min-w-0 gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
           Your Full Name *
           <input
             required
             name="name"
             type="text"
             placeholder="e.g. Rajesh Kumar"
-            className="rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+            className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
           />
         </label>
 
-        <label className="grid gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
+        <label className="grid min-w-0 gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
           Work Email Address *
           <input
             required
             name="email"
             type="email"
             placeholder="e.g. rajesh@company.com"
-            className="rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+            className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
           />
         </label>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="grid gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
+        <label className="grid min-w-0 gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
           Phone Number / Mobile
           <input
             name="phone"
             type="tel"
             placeholder="e.g. +91 98765 43210"
-            className="rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+            className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
           />
         </label>
 
-        <label className="grid gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
+        <label className="grid min-w-0 gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
           Apparatus of Interest
           <select
             name="category"
-            className="rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+            className="w-full min-w-0 rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-800 outline-none transition focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
           >
             <option value="General Testing Inquiry">General Testing Inquiry</option>
             {categories.map((c) => (
@@ -88,14 +88,14 @@ export function ContactForm() {
         </label>
       </div>
 
-      <label className="grid gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
+      <label className="grid min-w-0 gap-1.5 text-[13px] font-bold uppercase tracking-wider text-slate-700">
         Testing Requirements &amp; Standards Needed *
         <textarea
           required
           name="message"
           rows={5}
           placeholder="Please describe your test specification, IEC standard requirements, or quantity..."
-          className="resize-y rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
+          className="w-full min-w-0 resize-y rounded-xl border border-slate-200 bg-slate-50/70 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-brand-500 focus:bg-white focus:ring-2 focus:ring-brand-100"
         />
       </label>
 

@@ -51,6 +51,7 @@ export const siteInfo = {
     "/aluminum-hero.webp",
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791788832/494X455_op3wtc.png",
   ],
+  heroBg: "",
   intro:
     "Welcome to Standard Test Equipment. Please read these terms and conditions carefully before using our website, or services.",
 };

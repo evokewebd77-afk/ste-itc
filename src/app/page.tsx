@@ -183,6 +183,22 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-ink-950 via-[#0a1e3f] to-[#073259] text-white">
+        {/* Background photo (optional) */}
+        {siteInfo.heroBg ? (
+          <>
+            <Image
+              src={siteInfo.heroBg}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center opacity-55"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/25" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-ink-950/50" />
+          </>
+        ) : null}
+
         {/* Grid + soft glow */}
         <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-20" />
         <div
