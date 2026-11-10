@@ -85,7 +85,7 @@ export function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3">
         {/* Brand Logo */}
         <Link href="/" className="group flex min-w-0 items-center gap-3 lg:flex-1">
-          <div className="relative overflow-hidden rounded-xl bg-slate-50 p-1.5 ring-1 ring-slate-200/60 transition group-hover:ring-brand-500/40">
+          <div className="relative transition">
             <Image
               src={siteInfo.logo}
               alt="Standard Test Equipment"
