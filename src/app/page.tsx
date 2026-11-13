@@ -2,23 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
 import {
   categories,
   getFeaturedProducts,
-  getLatestProducts,
   siteInfo,
 } from "@/lib/data";
 import { CategoryIcon } from "@/components/icons";
 import { HeroSlider } from "@/components/HeroSlider";
 import { ProductCard } from "@/components/ProductCard";
 import { HomeProductFilter } from "@/components/HomeProductFilter";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 const whyUs = [
   {
-    title: "Decades of Experience",
-    body: "With over a decade and a half in specialized testing equipment manufacturing, our engineering team brings unparalleled domain depth across complex international test procedures.",
+  title: "15+ Years of Experience",
+  body: "Since 2009, Standard Test Equipment has manufactured specialized IEC test apparatus from Mohali, Punjab, with engineering depth across international test procedures.",
+
     icon: (
       <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" />
@@ -74,44 +72,6 @@ const cardAccents = [
   { strip: "from-cyan-500 via-sky-400 to-brand-300", visual: "from-cyan-50 via-sky-50 to-slate-100", glow: "bg-cyan-400/40" },
 ];
 
-const testimonials = [
-  {
-    initials: "JD",
-    name: "John Davis",
-    role: "Quality Manager, TechCorp",
-    content:
-      "Their testing equipment has been instrumental in maintaining our quality standards. Their EMI shielding solutions are top-notch and their support team is exceptional.",
-  },
-  {
-    initials: "SM",
-    name: "Sarah Miller",
-    role: "Test Engineer, AutoTech",
-    content:
-      "The precision and reliability of their test probes have significantly improved our testing accuracy. Fast delivery and excellent customer service.",
-  },
-  {
-    initials: "RJ",
-    name: "Robert Johnson",
-    role: "R&D Director, AeroSystems",
-    content:
-      "Outstanding quality and performance. Their impact testing equipment meets all our aerospace requirements. Highly recommended for critical applications.",
-  },
-  {
-    initials: "AP",
-    name: "Anil Patel",
-    role: "Lab Incharge, Indus Labs",
-    content:
-      "Consistent quality, prompt calibration support and competitive pricing. STE has been our go-to vendor for IEC-compliant test probes for years.",
-  },
-  {
-    initials: "NK",
-    name: "Neha Khanna",
-    role: "QA Head, Lumina Lighting",
-    content:
-      "Their LM-79 apparatus and technical guidance helped us streamline compliance. The team is knowledgeable, responsive and easy to work with.",
-  },
-];
-
 const standards = [
   { code: "IEC 60529", label: "IP Testing (IPX1 - IPX8 & Dust)" },
   { code: "IEC 61032", label: "Protection of Persons & Test Probes" },
@@ -121,9 +81,9 @@ const standards = [
 
 const stats = [
   { value: "2009", label: "Established & Serving Industry", sub: "15+ Years Track Record" },
-  { value: "50+", label: "Precision Testing Instruments", sub: "Catalog & Custom Solutions" },
-  { value: "7", label: "Specialized Test Categories", sub: "Probes, Chambers, EMI & More" },
-  { value: "100%", label: "IEC & ISO Standards Compliance", sub: "Factory Calibrated & Verified" },
+  { value: "70+", label: "Precision Testing Instruments", sub: "Catalog & Custom Solutions" },
+  { value: "6", label: "Specialized Test Categories", sub: "Probes, Chambers, EMI & More" },
+  { value: "IEC", label: "Standards-Based Design", sub: "Built to Applicable IEC Standards" },
 ];
 
 const popularLinks = [
@@ -134,50 +94,10 @@ const popularLinks = [
 ];
 
 export default function Home() {
-  const testimonialsTrack = useRef<HTMLDivElement>(null);
-  const [testimonialsPaused, setTestimonialsPaused] = useState(false);
-  const [testimonialsHovered, setTestimonialsHovered] = useState(false);
-  const [testimonialsFocused, setTestimonialsFocused] = useState(false);
-  const latest = getLatestProducts();
   const featured = getFeaturedProducts().filter(
     (p) => p.slug !== "test-probe-12-as-per-iec-61032",
   );
   const catalogueCategories = categories.filter((c) => (c.count ?? 0) > 0);
-
-  useEffect(() => {
-    if (testimonialsPaused || testimonialsHovered || testimonialsFocused) return;
-
-    const intervalId = window.setInterval(() => {
-      const track = testimonialsTrack.current;
-      const firstCard = track?.firstElementChild;
-
-      if (!track || !firstCard) return;
-
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      if (track.scrollLeft >= maxScroll - 8) {
-        track.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        track.scrollBy({
-          left: firstCard.getBoundingClientRect().width + 24,
-          behavior: "smooth",
-        });
-      }
-    }, 5000);
-
-    return () => window.clearInterval(intervalId);
-  }, [testimonialsFocused, testimonialsHovered, testimonialsPaused]);
-
-  function moveTestimonials(direction: number) {
-    const track = testimonialsTrack.current;
-    const firstCard = track?.firstElementChild;
-
-    if (track && firstCard) {
-      track.scrollBy({
-        left: direction * (firstCard.getBoundingClientRect().width + 24),
-        behavior: "smooth",
-      });
-    }
-  }
 
   return (
     <>
@@ -290,7 +210,7 @@ export default function Home() {
                 <svg className="h-4 w-4 text-cyan-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                   <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <span>Call Us Toll Free</span>
+                <span>Call Us</span>
               </a>
             </div>
 
@@ -514,7 +434,7 @@ export default function Home() {
                 Filter &amp; Explore Testing Equipment
               </h2>
               <p className="mt-2 text-sm text-slate-600 max-w-2xl">
-                Quickly search across our complete inventory of 50+ instruments, filter by test categories, or sort by specifications.
+                Quickly search across our complete catalog of precision test instruments, filter by test categories, or sort by specifications.
               </p>
             </div>
             <Link
@@ -602,120 +522,6 @@ export default function Home() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="relative overflow-hidden border-y border-slate-200/80 bg-gradient-to-br from-slate-50 via-white to-slate-50 py-16 sm:py-24">
-        <div className="pointer-events-none absolute inset-0 bg-grid-pattern-light opacity-40" />
-        <div className="pointer-events-none absolute -top-24 -right-32 h-80 w-80 rounded-full bg-brand-400/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-4">
-          <div className="flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60">
-              Customer Reviews
-            </div>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              What Our Customers Say
-            </h2>
-            <p className="mt-2 text-sm text-slate-500 max-w-2xl">
-              Trusted by industry leaders and testing laboratories across India for accuracy, reliability and support.
-            </p>
-          </div>
-
-          <div
-            className="mt-10"
-            onMouseEnter={() => setTestimonialsHovered(true)}
-            onMouseLeave={() => setTestimonialsHovered(false)}
-            onFocusCapture={() => setTestimonialsFocused(true)}
-            onBlurCapture={(event) => {
-              if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
-                setTestimonialsFocused(false);
-              }
-            }}
-          >
-            <div className="flex justify-end gap-2">
-              <button
-                type="button"
-                aria-label="Previous testimonials"
-                onClick={() => moveTestimonials(-1)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-brand-400 hover:text-brand-700"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="m15 18-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                aria-label={testimonialsPaused ? "Resume testimonial autoplay" : "Pause testimonial autoplay"}
-                aria-pressed={testimonialsPaused}
-                onClick={() => setTestimonialsPaused((paused) => !paused)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-brand-400 hover:text-brand-700"
-              >
-                {testimonialsPaused ? (
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                ) : (
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M7 5h4v14H7zm6 0h4v14h-4z" />
-                  </svg>
-                )}
-              </button>
-              <button
-                type="button"
-                aria-label="Next testimonials"
-                onClick={() => moveTestimonials(1)}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white text-slate-700 shadow-sm transition hover:border-brand-400 hover:text-brand-700"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="m9 18 6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <div
-              ref={testimonialsTrack}
-              className="mt-4 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            >
-              {testimonials.map((t) => (
-              <figure
-                key={t.name}
-                className="group relative flex min-h-56 w-full shrink-0 snap-start flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand-400/70 hover:shadow-xl hover:shadow-brand-500/10 sm:w-[calc(50%-12px)] xl:w-[calc(33.333%-16px)]"
-              >
-                <span className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-brand-500 via-cyan-400 to-amber-400" />
-                <div className="flex items-center gap-3">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-brand-600 to-cyan-600 text-sm font-bold text-white shadow-md">
-                    {t.initials}
-                  </div>
-                  <div>
-                    <figcaption className="text-sm font-bold text-slate-900">
-                      {t.name}
-                    </figcaption>
-                    <p className="text-[13px] text-slate-600">{t.role}</p>
-                  </div>
-                </div>
-
-                <blockquote className="mt-4 text-sm leading-relaxed text-slate-700">
-                  “{t.content}”
-                </blockquote>
-
-                <div className="mt-5 flex items-center gap-0.5 text-amber-400">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg
-                      key={i}
-                      className="h-4 w-4"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 .587l3.668 7.431 8.332 1.212-6.001 5.851 1.416 8.262L12 18.896l-7.415 3.897 1.416-8.262-6.001-5.851 8.332-1.212z" />
-                    </svg>
-                  ))}
-                </div>
-              </figure>
-              ))}
-            </div>
           </div>
         </div>
       </section>

@@ -35,7 +35,8 @@ export async function Footer() {
             />
           </div>
           <p className="mt-3 text-[13px] leading-relaxed text-slate-300 sm:mt-4">
-            {siteInfo.name} — Premier manufacturer of IEC 60529, IEC 61032, LM-79, and spring hammer test apparatus since 2009.
+             {siteInfo.name} — Manufacturer of IEC 60529, IEC 61032, LM-79 and spring hammer test apparatus since 2009.
+
           </p>
 
           <div className="mt-4 flex items-center gap-2 text-xs text-cyan-400 font-semibold sm:mt-5">

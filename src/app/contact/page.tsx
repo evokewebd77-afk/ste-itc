@@ -71,7 +71,7 @@ export default function ContactPage() {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[11px] font-bold uppercase tracking-wider text-slate-600">
-                    Direct Phone / Toll Free
+                    Direct Phone
                   </p>
                   <a
                     href={`tel:${siteInfo.phoneHref}`}

@@ -6,6 +6,7 @@ import {
   formatPrice,
   getCategory,
   getProduct,
+  getProductCode,
   getRelatedProducts,
   productImages,
   products,
@@ -118,11 +119,11 @@ export default async function ProductPage({
 
             {/* Trust Badges */}
             <div className="mt-3 grid grid-cols-3 gap-2">
-              {[
-                { label: "IEC Compliant", sub: "Tested to Standard", color: "text-brand-700" },
-                { label: "In Stock", sub: "Ready to Ship", color: "text-emerald-600" },
-                { label: "Made in India", sub: "Mohali, Punjab", color: "text-slate-800" },
-              ].map((badge) => (
+               {[
+                 { label: "IEC Compliant", sub: "Built to Standard", color: "text-brand-700" },
+                 { label: "Made in India", sub: "Mohali, Punjab", color: "text-slate-800" },
+                 { label: "Manufacturer", sub: "Direct Supply", color: "text-cyan-700" },
+               ].map((badge) => (
                 <div
                   key={badge.label}
                   className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-center shadow-xs"
@@ -152,15 +153,10 @@ export default async function ProductPage({
               </h1>
 
               <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-medium text-slate-600">
-                <span className="inline-flex items-center gap-1 font-semibold text-emerald-600">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  In Stock
-                </span>
-                <span className="text-slate-300">•</span>
                 <span>
                   Code:&nbsp;
                   <span className="font-mono font-bold text-slate-800">
-                    STE-{product.slug.slice(0, 8).toUpperCase()}
+                    {getProductCode(product)}
                   </span>
                 </span>
                 <span className="text-slate-300">•</span>

@@ -59,7 +59,7 @@ export function HeroSlider() {
             <div className="relative h-full w-full">
               <Image
                 src={src}
-                alt={`Testing Instrument ${i + 1}`}
+                 alt={slideTitles[i] || `Testing Instrument ${i + 1}`}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className={`object-contain drop-shadow-xl ${

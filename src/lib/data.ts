@@ -37,7 +37,7 @@ export const siteInfo = {
   phone: "+91 95017-95146",
   phoneHref: "+919501795146",
   whatsappHref: "919501795146",
-  email: "steindiamkt@gmail.com",
+  email: "sales@standardtestequipment.net",
   address: {
     line1: "Plot No. 146, Ground Floor, Sector 82,",
     line2: "JLPL Industrial Area, Sahibzada Ajit Singh Nagar (Mohali),",
@@ -59,42 +59,42 @@ export const siteInfo = {
 export const categories: Category[] = [
   {
     slug: "test-probes-and-test-pins",
-    name: "TEST PROBES & TEST PINS",
+    name: "Test Probes & Test Pins",
     description:
       "We manufacture the complete range of IEC 60529 and IEC 61032 test probes and test pins from Mohali, India — IP 1X Test Probe A (50 mm sphere), IP 2X Test Finger Probe B, IP 3X Test Probe C, IP 4X Test Probe D, the round-end probe as per IEC 60529, Test Probes 11, 12, 13, 14, 17, 31, 32, 41 and 43, plus 3 mm and 4 mm long test pin probes as per IEC 61010. These standardised test appliances verify protection against access to hazardous parts in household appliances, controlgear, luminaires and enclosures.",
     count: 25,
   },
   {
     slug: "emi-shielding-material",
-    name: "EMI SHIELDING MATERIAL",
+    name: "EMI Shielding Material",
     description:
-      "Pioneers in the industry, we offer CONDUCTIVE NON-WOVEN FABRIC, Contact Surface Tape, Non-Woven Semi Conductive Tape, AMUCOR FOIL AND TAPE, Electrically Conductive Foam Tape and Conductive Textile Tape from India.",
+      "Pioneers in the industry, we offer conductive non-woven fabric, contact surface tape, non-woven semi conductive tape, Amucor foil and tape, electrically conductive foam tape and conductive textile tape from India.",
     count: 13,
   },
   {
     slug: "testing-apparatus-luminary-test",
-    name: "TESTING APPARATUS LUMINARY TEST - LM 79 AND MORE",
+    name: "Luminaire Testing Apparatus (IES LM-79 and more)",
     description:
-      "Photometric and spectroradiometric testing solutions for luminary testing as per LM-79 and more, including spectroradiometers, integrating spheres and standard test lamp sources.",
+      "Photometric and spectroradiometric testing solutions for luminaire testing as per LM-79 and more, including spectroradiometers, integrating spheres and standard test lamp sources.",
     count: 11,
   },
   {
     slug: "spring-hammer-test-apparatus",
-    name: "SPRING HAMMER TEST APPARATUS",
+    name: "Spring Hammer Test Apparatus",
     description:
       "Our product range includes a wide range of Universal Spring Hammer (0.14 - 1 Joule) as per IEC 60068-2-75 and Spring Hammer Test Apparatus as per IEC 60068-2-75.",
     count: 2,
   },
   {
     slug: "ip-test-apparatus",
-    name: "IP TEST APPARATUS",
+    name: "IP Test Apparatus",
     description:
-      "Manufacturer of a wide range of products which include IP Testing, IP X7-X8 Immersion Water Tank as per 60529, Rain Test Chamber (IP X1/X2) as per IEC 60529, Sand and Dust Chamber as per IEC 60529 and Turn Table for IP Testing.",
-    count: 13,
+      "Manufacturer of a wide range of products which include the IPX7/IPX8 Immersion Water Tank as per IEC 60529, Rain Test Chamber (IP X1/X2) as per IEC 60529, Sand and Dust Chamber as per IEC 60529 and Turn Table for IP Testing.",
+    count: 12,
   },
   {
     slug: "laboratory-test-apparatus",
-    name: "LABORATORY TEST APPARATUS",
+    name: "Laboratory Test Apparatus",
     description:
       "Laboratory test apparatus for ball pressure, dielectric strength and salt spray corrosion testing as per applicable IEC standards.",
     count: 8,
@@ -104,17 +104,17 @@ export const categories: Category[] = [
 export const subcategories: Subcategory[] = [
   {
     slug: "gl-spectis-spectroradiometers",
-    name: "GL SPECTIS ( SPECTRORADIOMETERS )",
+    name: "GL Spectis (Spectroradiometers)",
     parentId: "testing-apparatus-luminary-test",
   },
   {
     slug: "gl-optic-sphere-integrating-sphere",
-    name: "GL OPTIC SPHERE (INTEGRATING SPHERE)",
+    name: "GL OPTI SPHERE (Integrating Sphere)",
     parentId: "testing-apparatus-luminary-test",
   },
   {
     slug: "standard-test-lamp-sources",
-    name: "STANDARD TEST LAMP SOURCES",
+    name: "Standard Test Lamp Sources",
     parentId: "testing-apparatus-luminary-test",
   },
 ];
@@ -201,15 +201,15 @@ export const products: Product[] = [
   },
   {
     slug: "black-test-probe-13-short-test-pin-as-per-iec-61032",
-    name: "Black Test Probe 13 (Short Test Pin) as per IEC 61032",
+    name: "Brown Test Probe 13 (Short Test Pin) as per IEC 61032",
     price: 7000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 13 is the short test pin of Figure 9 of IEC 61032, manufactured in hardened steel with an insulated handle and a circular stop baffle that limits insertion depth. It is the specified appliance for verifying protection against access to hazardous parts — live conductors and hazardous moving mechanisms — through the openings of household appliances, controlgear and IT equipment, and is finished in black for clear identification on the test bench.",
+      "Test Probe 13 is the short test pin of Figure 9 of IEC 61032, manufactured in hardened steel with an insulated handle and a circular stop baffle that limits insertion depth. It is the specified appliance for verifying protection against access to hazardous parts — live conductors and hazardous moving mechanisms — through the openings of household appliances, controlgear and IT equipment, and is finished in brown for clear identification on the test bench.",
     specs: [
       { label: "Standard", value: "IEC 61032 (Fig. 9)" },
       { label: "Type", value: "Short Test Pin" },
-      { label: "Color", value: "Black" },
+      { label: "Color", value: "Brown" },
     ],
     featured: true,
     keyFeatures: [
@@ -219,7 +219,8 @@ export const products: Product[] = [
       },
       {
         title: "Construction",
-        text: "Hardened steel pin with an insulated handle and circular stop baffle that controls insertion depth, finished in black for easy identification in the test lab.",
+        text: "Hardened steel pin with an insulated handle and circular stop baffle that controls insertion depth, finished in brown for easy identification in the test lab.",
+
       },
       {
         title: "Application Range",
@@ -238,15 +239,15 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ip-1x-test-probe-as-per-a-as-iec-60529-and-61032",
-    name: "IP 1X-Test Probe as per A as IEC 60529 And 61032 for Laboratory",
+    slug: "ip1x-test-probe-a-50-mm-sphere-as-per-iec-60529-and-61032",
+    name: "IP1X Test Probe A (50 mm Sphere) as per IEC 60529 & IEC 61032",
     price: 12000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "The IP 1X-Test Probe (Test Probe A) is the 50 mm diameter rigid sphere specified for the first digit of the IP code in IEC 60529 and IEC 61032, built from precision-machined stainless steel on an insulated handle and supplied boxed for laboratory use. It is pressed against enclosure openings to confirm that the back of a hand cannot reach live or moving parts, making it an essential instrument for ingress-protection and access-safety testing laboratories.",
+      "The IP1X Test Probe A is the 50 mm diameter rigid sphere specified for the first digit of the IP code in IEC 60529 and IEC 61032, built from precision-machined stainless steel on an insulated handle and supplied boxed for laboratory use. It is pressed against enclosure openings to confirm that the back of a hand cannot reach live or moving parts, making it an essential instrument for ingress-protection and access-safety testing laboratories.",
     specs: [
       { label: "Standard", value: "IEC 60529 & IEC 61032" },
-      { label: "Probe", value: "Test Probe A (IP1X)" },
+      { label: "Probe Number", value: "Test Probe A (IP1X)" },
       { label: "Packaging Type", value: "Box" },
     ],
     featured: true,
@@ -276,15 +277,15 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ip4x-test-probe-d-as-per-iec-60259-and-61032",
-    name: "IP4X Test Probe D As Per IEC 60259 and 61032",
+    slug: "ip4x-test-probe-d-as-per-iec-60529-and-61032",
+    name: "IP4X Test Probe D as per IEC 60529 & IEC 61032",
     price: 15000,
     categorySlug: "test-probes-and-test-pins",
     description:
       "The IP4X Test Probe D is manufactured to IEC 60529 and IEC 61032 as a rigid 1.0 mm diameter, 100 mm long stainless steel wire with handle and depth stop, built to the tolerances required for consistent pass/fail results. It is applied to control panels, luminaires, enclosures and household electronics to verify protection against access with small tools and wires, and every unit is checked and packed at our Mohali facility.",
     specs: [
-      { label: "Standard", value: "IEC 60259 & IEC 61032" },
-      { label: "Probe", value: "Test Probe D (IP4X)" },
+      { label: "Standard", value: "IEC 60529 & IEC 61032" },
+      { label: "Probe Number", value: "Test Probe D (IP4X)" },
     ],
     featured: true,
     keyFeatures: [
@@ -318,34 +319,38 @@ export const products: Product[] = [
     price: 7000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 11 is a rigid needle-type test probe manufactured to IEC 61032 for household and similar electrical equipment testing, where it is applied to slots, seams and ventilation openings to check that hazardous live parts and moving mechanisms cannot be touched. The hardened steel needle with an insulated handle and stop is supplied by Standard Test Equipment, Mohali, and is referenced by product safety standards such as IEC 60335 and IEC 61010.",
+      "Test Probe 11 is the rigid unjointed test finger of IEC 61032 Figure 7, 12 mm in diameter and 80 mm long with a 50 mm baffle, applied with a 50 N test force. It verifies protection of persons against access to hazardous live or mechanical parts, and is also used to check the mechanical strength of openings in enclosures and internal barriers. Supplied by Standard Test Equipment, Mohali, and referenced by product safety standards such as IEC 60335 and IEC 61010.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 7)" },
       { label: "Probe Number", value: "11" },
+      { label: "Type", value: "Unjointed test finger" },
+      { label: "Finger Diameter", value: "12 mm" },
+      { label: "Finger Length", value: "80 mm" },
+      { label: "Test Force", value: "50 N" },
     ],
     featured: true,
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 11 per IEC 61032 — a rigid test needle used to verify protection against access through openings, referenced by numerous product safety standards.",
+        title: "IEC 61032 Figure 7 Design",
+        text: "Rigid unjointed test finger 12 mm in diameter and 80 mm long, with a 50 mm diameter stop baffle, made to the dimensions in IEC 61032 Figure 7.",
       },
       {
-        title: "Construction",
-        text: "Hardened steel needle with insulated handle and stop, finished for durability and consistent geometry across repeated laboratory use.",
+        title: "50 N Test Force",
+        text: "Applied with the 50 N force specified in the standard so the finger cannot be forced past openings or barriers in a way that would give a false pass.",
       },
       {
-        title: "Compliance Role",
-        text: "Recognised test appliance for IEC 60335, IEC 61010 and similar standards that call out IEC 61032 probe figures by number.",
+        title: "Access and Strength Checks",
+        text: "Used to verify protection against access to hazardous parts and to check the mechanical strength of enclosure openings and internal barriers.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The needle probe is inserted into slots, seams and ventilation openings of household and similar electrical equipment to check that hazardous parts cannot be touched.",
+        text: "The unjointed finger is pressed into slots, seams and ventilation openings of household and similar electrical equipment to check that hazardous live or moving parts cannot be touched.",
       },
       {
         title: "Pass / Fail",
-        text: "If the probe reaches a live part or hazardous moving mechanism, the product fails its access-protection requirement and the enclosure must be redesigned.",
+        text: "If the finger reaches a live part or hazardous moving mechanism, the product fails its access-protection requirement and the enclosure must be redesigned.",
       },
     ],
   },
@@ -355,30 +360,33 @@ export const products: Product[] = [
     price: 8000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 12 is the rigid 4 mm diameter rod test appliance specified in IEC 61032 for verifying protection against access with tools and similar objects. The precision steel rod with an insulated handle is manufactured to the dimensions given in the standard so that results match those of accredited test houses, making it a required accessory for appliance, controlgear and enclosure safety testing.",
+      "Test Probe 12 is the long test pin of IEC 61032 Figure 8 — a 4 mm diameter cylindrical pin, 50 mm long, with a 25 mm stop baffle. It is intended for appliances, verifying that hazardous live or mechanical parts cannot be touched accidentally by a tool such as a screwdriver or similar pointed object in normal use. The precision steel pin with an insulated handle is manufactured to the standard dimensions so results match those of accredited test houses.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 8)" },
       { label: "Probe Number", value: "12" },
+      { label: "Type", value: "Long test pin" },
+      { label: "Pin Diameter", value: "4 mm" },
+      { label: "Pin Length", value: "50 mm" },
     ],
     featured: true,
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 12 per IEC 61032 — a rigid 4 mm diameter rod used as the test appliance for verifying protection against access with tools and similar objects.",
+        title: "IEC 61032 Figure 8 Design",
+        text: "Long test pin with a 4 mm diameter cylindrical pin, 50 mm long, and a 25 mm stop baffle, made to IEC 61032 Figure 8.",
       },
       {
-        title: "Construction",
-        text: "Precision steel rod with insulated handle, manufactured to IEC 61032 dimensions so results match those of accredited test houses.",
+        title: "Tool-Access Simulation",
+        text: "Represents a screwdriver or similar pointed tool that could accidentally touch hazardous live or mechanical parts in normal use.",
       },
       {
-        title: "Application Range",
-        text: "Required by product safety standards for appliances, controlgear and enclosures where access with a rod-like tool must be assessed.",
+        title: "Precision Construction",
+        text: "Precision steel pin with an insulated handle, manufactured to IEC 61032 dimensions so results match those of accredited test houses.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The 4 mm rod is pushed into openings of equipment to verify that a tool of that size cannot reach hazardous live parts or moving mechanisms inside the enclosure.",
+        text: "The 4 mm long pin is pushed into openings of appliances to verify that a tool of that size cannot reach hazardous live parts or moving mechanisms inside the enclosure.",
       },
       {
         title: "Pass / Fail",
@@ -392,33 +400,36 @@ export const products: Product[] = [
     price: 6000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 14 is the supplemental 1 mm diameter needle specified in IEC 61032, supplied with a hardened steel pin, insulated handle and depth-stop baffle for controlled insertion into the finest permitted openings. It is used for small-opening access checks required by IEC 60335, IEC 61010 and related product safety standards, verifying that no path leads to a hazardous live or moving part.",
+      "Test Probe 14 is the test bar of IEC 61032 Figure 10, 3 mm wide, 1 mm thick and 80 mm long, applied with a 20 N force. It is intended to verify protection against access to hazardous live parts of socket-outlets through shutters, and is manufactured from hardened steel with an insulated handle and depth stop.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 10)" },
       { label: "Probe Number", value: "14" },
+      { label: "Type", value: "Test bar" },
+      { label: "Dimensions", value: "3 mm × 1 mm × 80 mm" },
+      { label: "Test Force", value: "20 N" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 14 per IEC 61032 — a rigid 1 mm diameter pin with a limiting stop, used as the supplemental test needle for small-opening access checks.",
+        title: "IEC 61032 Figure 10 Design",
+        text: "Test bar 3 mm wide, 1 mm thick and 80 mm long, made to the dimensions in IEC 61032 Figure 10.",
+      },
+      {
+        title: "Socket-Outlet Shutter Testing",
+        text: "Intended to verify protection against access to hazardous live parts of socket-outlets through shutters, using the 20 N force specified in the standard.",
       },
       {
         title: "Construction",
-        text: "Hardened steel pin with insulated handle and depth-stop baffle for controlled, repeatable insertion into the finest permitted openings.",
-      },
-      {
-        title: "Compliance Role",
-        text: "Specified by IEC 60335, IEC 61010 and related standards wherever the 1 mm supplemental needle test is required.",
+        text: "Hardened steel bar with an insulated handle and depth stop for controlled, repeatable insertion.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The 1 mm pin is inserted into the smallest enclosure openings — slots, seams and grilles — to verify that no path leads to a hazardous live or moving part.",
+        text: "The 3 mm × 1 mm bar is presented to socket-outlet shutters to verify that the shutter cannot be defeated and no path leads to a hazardous live part.",
       },
       {
         title: "Pass / Fail",
-        text: "If the pin passes the stop and touches a hazardous part, the product fails the needle-access test and the enclosure geometry must be corrected.",
+        text: "If the bar passes the shutter and touches a hazardous part, the product fails the access test and the shutter geometry must be corrected.",
       },
     ],
   },
@@ -428,35 +439,35 @@ export const products: Product[] = [
     price: 15000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 17 is the wire-brush test appliance of IEC 61032, built from fine 0.5 mm diameter steel wires bundled into an insulated handle to the geometry and wire diameter required by the standard. It is used alongside first-digit IP tests and by appliance standards where flexible wires slipping through grilles and seams are the access hazard to be assessed, and is supplied brand new from our Mohali manufacturing unit.",
+      "Test Probe 17 is the single 0.5 mm diameter test wire of IEC 61032 Figure 11, mounted in an insulated handle. It is intended to verify protection against access to hazardous live parts of electrical toys, where a fine wire rather than a rigid finger is the access hazard. Supplied by Standard Test Equipment, Mohali.",
     specs: [
-      { label: "Color", value: "White" },
-      { label: "Model Name/Number", value: "Standard Test Equipment" },
-      { label: "Wire Size", value: "0.5mm dia" },
-      { label: "I Deal In", value: "New Only" },
+      { label: "Standard", value: "IEC 61032 (Fig. 11)" },
+      { label: "Probe Number", value: "17" },
+      { label: "Type", value: "Test wire" },
+      { label: "Wire Diameter", value: "0.5 mm" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 17 per IEC 61032 — the test brush made of fine 0.5 mm diameter wires, specified as the supplemental probe for verifying protection against access with wires.",
+        title: "IEC 61032 Figure 11 Design",
+        text: "Single 0.5 mm diameter test wire, made to the wire diameter and geometry specified in IEC 61032 Figure 11.",
       },
       {
-        title: "Construction",
-        text: "Bundled fine steel wires set in an insulated handle, manufactured to the wire diameter and bundle geometry required by the standard for consistent results.",
+        title: "Electrical Toy Testing",
+        text: "Intended to verify protection against access to hazardous live parts of electrical toys, where a fine wire is the specified access hazard.",
       },
       {
-        title: "Application Range",
-        text: "Used alongside the first IP digit tests and by appliance standards where flexible wires, rather than rigid objects, are the access hazard to be assessed.",
+        title: "Insulated Handle",
+        text: "The test wire is mounted in an insulated handle for safe, controlled application during access testing.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The wire brush is pressed into enclosure openings to simulate fine wires slipping through grilles and seams, checking that they cannot reach live or hazardous internal parts.",
+        text: "The 0.5 mm test wire is inserted into openings of electrical toys to check that a fine wire cannot reach hazardous live internal parts.",
       },
       {
         title: "Pass / Fail",
-        text: "If any wire in the brush touches a hazardous part, the enclosure fails the access test and the design must block fine-wire entry — for example with baffles or finer mesh.",
+        text: "If the test wire touches a hazardous part, the toy fails the access test and the design must block fine-wire entry — for example with baffles or finer mesh.",
       },
     ],
   },
@@ -466,33 +477,38 @@ export const products: Product[] = [
     price: 13000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 31 is manufactured to the figure dimensions given in IEC 61032, with a machined steel probe body, insulated handle and insertion stop, so that access-protection results are directly comparable with those of accredited laboratories. It is applied to openings and moving-part access points of appliances and equipment to verify that the specified hazard — live parts or hazardous mechanisms — cannot be reached, and is packed ready for professional laboratory use.",
+      "Test Probe 31 is the test cone of IEC 61032 Figure 14, with a 25 mm diameter probe rod 80 mm long, a 60 mm front baffle and a 110 mm rear baffle, applied with a 50 N force. It is intended to verify protection against access to hazardous mechanical parts of the grinding system of food waste disposal units.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 14)" },
       { label: "Probe Number", value: "31" },
+      { label: "Type", value: "Test cone" },
+      { label: "Rod Diameter", value: "25 mm" },
+      { label: "Rod Length", value: "80 mm" },
+      { label: "Baffle Diameters", value: "60 mm / 110 mm" },
+      { label: "Test Force", value: "50 N" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 31 per IEC 61032 — a rigid probe built to the figure dimensions specified in the standard, ensuring results are comparable with any accredited laboratory.",
+        title: "IEC 61032 Figure 14 Test Cone",
+        text: "Cone with a 25 mm diameter rod, 60 mm front baffle and 110 mm rear baffle, made to the dimensions in IEC 61032 Figure 14.",
       },
       {
-        title: "Construction",
-        text: "Machined steel probe body with insulated handle and stop, finished and packed for professional laboratory use.",
+        title: "50 N Test Force",
+        text: "Applied with the 50 N force specified in the standard for repeatable access checks.",
       },
       {
-        title: "Compliance Role",
-        text: "Referenced by product safety standards that require the IEC 61032 Probe 31 figure for access-protection verification.",
+        title: "Food Waste Disposal Grinders",
+        text: "Intended to verify protection against access to hazardous mechanical parts of the grinding system of food waste disposal units.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "Applied to the openings and moving-part access points of appliances and equipment, the probe verifies that the specified hazard (live parts or hazardous mechanisms) cannot be reached.",
+        text: "The cone is applied to the grinding-system openings of food waste disposal units to verify that hazardous mechanical parts cannot be reached.",
       },
       {
         title: "Pass / Fail",
-        text: "Contact with the hazardous part means a fail — the enclosure opening, guard or interlock must be redesigned so the specified probe cannot gain access.",
+        text: "Contact with the hazardous part means a fail — the opening or guard must be redesigned so the test cone cannot gain access.",
       },
     ],
   },
@@ -502,33 +518,37 @@ export const products: Product[] = [
     price: 11000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 32 is a precision-machined steel probe manufactured to the figure geometry defined in IEC 61032 for its specific access-protection verification role, with an insulated handle and insertion stop for safe testing of energised equipment enclosures. It is presented to enclosure openings to confirm that fingers, tools or other specified test objects of this class cannot reach a hazardous part inside, and is required by appliance and equipment standards that cite Probe 32 by figure number.",
+      "Test Probe 32 is the test thorn (rod) of IEC 61032 Figure 15 — a 25 mm diameter rod with a 50 mm stop baffle, applied with a 30 N force. It is intended to verify the protection provided by fan guards against access to hazardous mechanical parts. The precision-machined rod with an insulated handle is manufactured to the figure dimensions so results are comparable with accredited laboratories.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 15)" },
       { label: "Probe Number", value: "32" },
+      { label: "Type", value: "Test thorn (rod)" },
+      { label: "Rod Diameter", value: "25 mm" },
+      { label: "Baffle Diameter", value: "50 mm" },
+      { label: "Test Force", value: "30 N" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 32 per IEC 61032 — manufactured to the figure geometry defined in the standard for its specific access-protection verification role.",
+        title: "IEC 61032 Figure 15 Test Thorn",
+        text: "25 mm diameter rod with a 50 mm stop baffle, made to the dimensions in IEC 61032 Figure 15.",
       },
       {
-        title: "Construction",
-        text: "Precision-machined steel probe with insulated handle and insertion stop for safe, repeatable testing of energised equipment enclosures.",
+        title: "30 N Test Force",
+        text: "Applied with the 30 N force specified in the standard for consistent access checks.",
       },
       {
-        title: "Application Range",
-        text: "Required by appliance and equipment safety standards that cite IEC 61032 Probe 32 for access checks at openings and guards.",
+        title: "Fan Guard Protection",
+        text: "Intended to verify the protection provided by fan guards against access to hazardous mechanical parts.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The probe is presented to enclosure openings to confirm that neither fingers, tools nor other specified test objects of this class can reach a hazardous part inside.",
+        text: "The test thorn is presented to fan guards to confirm that hazardous mechanical parts cannot be reached through the guard.",
       },
       {
         title: "Pass / Fail",
-        text: "If the probe reaches a live terminal or hazardous moving part, the product fails the access-protection test and the enclosure must be redesigned.",
+        text: "If the rod reaches a hazardous moving part, the product fails the access-protection test and the guard must be redesigned.",
       },
     ],
   },
@@ -538,33 +558,35 @@ export const products: Product[] = [
     price: 13000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 41 is manufactured to IEC 61032 Figure 16 in durable steel with an insulated handle, built to the dimensions and tolerances of the standard for laboratory-grade repeatability. It is inserted into equipment openings to verify that the specified access hazard — live parts or hazardous mechanisms — cannot be reached through the enclosure, and is cited by the IEC 60335-series and related product safety standards that reference Probe 41 by figure number.",
+      "Test Probe 41 is the test cone of IEC 61032 Figure 16, a 30 mm diameter probe with an insulated handle, used without appreciable force. It is intended to verify protection against access to hot or glowing heating elements, and is manufactured to the dimensions and tolerances of the standard for laboratory-grade repeatability.",
     specs: [
-      { label: "Standard", value: "IEC 61032" },
+      { label: "Standard", value: "IEC 61032 (Fig. 16)" },
       { label: "Probe Number", value: "41" },
+      { label: "Type", value: "Test cone" },
+      { label: "Diameter", value: "30 mm" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 41 per IEC 61032 (Figure 16) — the specified probe for verifying protection against access at openings of equipment under test.",
+        title: "IEC 61032 Figure 16 Test Cone",
+        text: "30 mm diameter test cone, made to the dimensions in IEC 61032 Figure 16.",
       },
       {
-        title: "Construction",
-        text: "Durable steel construction with insulated handle, built to the dimensions and tolerances of the standard for laboratory-grade repeatability.",
+        title: "Hot and Glowing Parts",
+        text: "Intended to verify protection against access to hot or glowing heating elements, applied without appreciable force.",
       },
       {
-        title: "Compliance Role",
-        text: "Cited by IEC 60335-series and related product safety standards that reference Probe 41 of IEC 61032 by figure number.",
+        title: "Insulated Handle",
+        text: "Durable steel construction with an insulated handle for safe, repeatable testing.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The probe is inserted into equipment openings to verify that the specified access hazard — live parts or hazardous mechanisms — cannot be reached through the enclosure.",
+        text: "The test cone is presented to openings around hot or glowing heating elements to verify that they cannot be reached.",
       },
       {
         title: "Pass / Fail",
-        text: "Touching a hazardous part with the probe is a failure; the opening, guard or interlock must be redesigned until the probe no longer gains access.",
+        text: "Touching a hot or glowing part with the probe is a failure; the opening, guard or interlock must be redesigned until the probe no longer gains access.",
       },
     ],
   },
@@ -574,36 +596,36 @@ export const products: Product[] = [
     price: 13000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Test Probe 43 is the simplified jointed test finger of IEC 61032 Figure 17, made from polished stainless steel with an articulated joint and insulated handle, supplied boxed for safe storage and transport between test stations. It is manoeuvred into openings the way a human finger would be, confirming that no opening allows a finger to touch live parts or hazardous mechanisms — a recognised test appliance for IEC 60335 and comparable standards.",
+      "Test Probe 43 is the test bar of IEC 61032 Figure 17, 50 mm wide, 5 mm thick and 80 mm long, used without appreciable force. It is intended to verify the protection of fixed and portable visibly glowing radiant heaters against access to hot surfaces, and is supplied boxed for safe storage and transport between test stations.",
     specs: [
-      { label: "Color", value: "White" },
-      { label: "Material", value: "Stainless Steel" },
-      { label: "Finish", value: "Polished" },
-      { label: "Pack Type", value: "Box" },
+      { label: "Standard", value: "IEC 61032 (Fig. 17)" },
       { label: "Probe Number", value: "43" },
+      { label: "Type", value: "Test bar" },
+      { label: "Dimensions", value: "50 mm × 5 mm × 80 mm" },
+      { label: "Material", value: "Stainless Steel" },
     ],
     keyFeatures: [
       {
-        title: "Standardised Design",
-        text: "Test Probe 43 per IEC 61032 (Figure 17) — the simplified jointed test finger used to verify protection against access to hazardous parts.",
+        title: "IEC 61032 Figure 17 Test Bar",
+        text: "Test bar 50 mm wide, 5 mm thick and 80 mm long, made to the dimensions in IEC 61032 Figure 17.",
+      },
+      {
+        title: "Radiant Heater Protection",
+        text: "Intended to verify the protection of fixed and portable visibly glowing radiant heaters against access to hot surfaces.",
       },
       {
         title: "Construction",
-        text: "Polished stainless steel with articulated joint and insulated handle, supplied boxed for safe storage and transport between test stations.",
-      },
-      {
-        title: "Application Range",
-        text: "Recognised test appliance for IEC 60335 and comparable standards that specify Probe 43 for finger-access verification on appliances and enclosures.",
+        text: "Polished stainless steel bar with an insulated handle, supplied boxed for safe storage and transport.",
       },
     ],
     whatItDoes: [
       {
         title: "Safety Check",
-        text: "The jointed probe is manoeuvred into openings the way a human finger would be, verifying that no opening allows a finger to touch live parts or hazardous mechanisms.",
+        text: "The test bar is presented to the openings and guards of visibly glowing radiant heaters to verify that hot surfaces cannot be reached.",
       },
       {
         title: "Pass / Fail",
-        text: "If the finger probe reaches a hazardous part, the product fails and the opening, guard or clearance must be redesigned to block finger access.",
+        text: "If the bar reaches a hot surface, the product fails and the opening, guard or clearance must be redesigned to block access.",
       },
     ],
   },
@@ -656,7 +678,7 @@ export const products: Product[] = [
       "The IP 2X-Test Finger Test Probe B is the articulated test finger specified in IEC 60529 and IEC 61032 for the second IP digit, built from stainless steel with two joints that mirror a human finger, an insulated handle and a contact indicator, finished in white as per catalogue specification. Applied with the contact force specified by the standard, it is worked into openings, gaps and around guards to prove that no finger can reach live parts, making it a key instrument for IP and access-safety certification.",
     specs: [
       { label: "Standard", value: "IEC 60529 & IEC 61032" },
-      { label: "Probe", value: "Test Finger Probe B (IP2X)" },
+      { label: "Probe Number", value: "Test Finger Probe B (IP2X)" },
     ],
     keyFeatures: [
       {
@@ -692,7 +714,7 @@ export const products: Product[] = [
       "The IP3X-Test Probe C is the rigid 2.5 mm diameter, 100 mm long stainless steel rod specified in IEC 60529 and IEC 61032 for the third IP digit, machined to standard tolerances with a handle and depth stop for repeatable laboratory and factory testing. It is inserted into control panels, luminaires, enclosures and electronics to confirm that tools and similar objects cannot reach hazardous live or moving parts, and is supplied in white finish as per catalogue specification.",
     specs: [
       { label: "Standard", value: "IEC 60529 & IEC 61032" },
-      { label: "Probe", value: "Test Probe C (IP3X)" },
+      { label: "Probe Number", value: "Test Probe C (IP3X)" },
       { label: "Material", value: "Stainless Steel" },
     ],
     keyFeatures: [
@@ -762,7 +784,7 @@ export const products: Product[] = [
   },
   {
     slug: "amucor-foil-and-tape",
-    name: "AMUCOR FOIL AND TAPE",
+    name: "Amucor Foil and Tape",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
@@ -800,14 +822,14 @@ export const products: Product[] = [
   },
   {
     slug: "black-amucor-foil-with-a-reinforcement-net",
-    name: "Black Amucor Foil With A Reinforcement Net",
+    name: "Amucor Foil With a Reinforcement Net",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
-      "Black Amucor foil with a reinforcement net for applications in EMI shielding, self adhesive and designed for industrial purpose.",
+      "Amucor foil with a reinforcement net for applications in EMI shielding, self adhesive and designed for industrial purpose.",
     specs: [
       { label: "Adhesive Type", value: "Self Adhesive" },
-      { label: "Color", value: "Black" },
+      { label: "Color", value: "Beige / Silver" },
       { label: "Usage/Application", value: "Industrial Purpose" },
       { label: "Features", value: "Applications EMI shielding" },
     ],
@@ -821,8 +843,8 @@ export const products: Product[] = [
         text: "Conductive self-adhesive backing bonds on contact and maintains electrical continuity between the foil and the substrate.",
       },
       {
-        title: "Black Finish",
-        text: "Discreet black appearance for visible surfaces where a silver foil would be cosmetically unacceptable.",
+        title: "Surface Finish",
+        text: "Beige/silver finish suited to visible surfaces where a bright metallic foil would be cosmetically unacceptable.",
       },
     ],
     whatItDoes: [
@@ -838,14 +860,14 @@ export const products: Product[] = [
   },
   {
     slug: "black-mounting-tape",
-    name: "Black MOUNTING TAPE",
+    name: "Mounting Tape",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
-      "A double-sided self adhesive black mounting tape for industrial EMI shielding and general purpose bonding applications.",
+      "A double-sided self adhesive mounting tape for industrial EMI shielding and general purpose bonding applications.",
     specs: [
       { label: "Adhesive Type", value: "Self Adhesive" },
-      { label: "Color", value: "Black" },
+      { label: "Color", value: "Beige / Silver" },
       { label: "Usage/Application", value: "Industrial Purpose" },
       { label: "Type", value: "Double Sided" },
     ],
@@ -876,14 +898,14 @@ export const products: Product[] = [
   },
   {
     slug: "black-mu-ferro-sd-shielding-foil",
-    name: "Black MU-Ferro-SD Shielding Foil",
+    name: "MU-Ferro-SD Shielding Foil",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
-      "MU-Ferro-SD shielding foil for magnetic shielding applications, self adhesive and black in colour for industrial purpose.",
+      "MU-Ferro-SD shielding foil for magnetic shielding applications, self adhesive for industrial purpose.",
     specs: [
       { label: "Adhesive Type", value: "Self Adhesive" },
-      { label: "Color", value: "Black" },
+      { label: "Color", value: "Silver" },
       { label: "Usage/Application", value: "Industrial Purpose" },
       { label: "Features", value: "Magnetic shielding" },
     ],
@@ -897,8 +919,8 @@ export const products: Product[] = [
         text: "Adhesive backing allows the foil to be applied directly to transformer walls, sensor housings and enclosure interiors without mechanical fixings.",
       },
       {
-        title: "Black Finish",
-        text: "Black colouring for discreet installation on visible or semi-visible surfaces.",
+        title: "Surface Finish",
+        text: "Silver metallic finish for discreet installation on visible or semi-visible surfaces.",
       },
     ],
     whatItDoes: [
@@ -914,7 +936,7 @@ export const products: Product[] = [
   },
   {
     slug: "conductive-non-woven-fabric",
-    name: "CONDUCTIVE NON-WOVEN FABRIC",
+    name: "Conductive Non-Woven Fabric",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
@@ -957,12 +979,11 @@ export const products: Product[] = [
     price: 13000,
     categorySlug: "emi-shielding-material",
     description:
-      "Conductive textile tape from 3M, made in India, for EMI shielding and grounding applications in electronics assemblies.",
+      "Conductive textile tape, made in India, for EMI shielding and grounding applications in electronics assemblies.",
     specs: [
       { label: "Tape Width", value: "0-20 mm" },
       { label: "Tape Length", value: "10-20 m" },
       { label: "Color", value: "Black" },
-      { label: "Brand", value: "3M" },
       { label: "Country of Origin", value: "Made in India" },
     ],
     keyFeatures: [
@@ -975,8 +996,8 @@ export const products: Product[] = [
         text: "Available in widths up to 20 mm and roll lengths of 10–20 m, suited to taping cable shields, small seams and connector boots.",
       },
       {
-        title: "3M Quality, Made in India",
-        text: "3M material converted and supplied from India for consistent quality and short lead times.",
+        title: "Consistent Quality, Made in India",
+        text: "Conductive textile material converted and supplied from India for consistent quality and short lead times.",
       },
     ],
     whatItDoes: [
@@ -1068,7 +1089,7 @@ export const products: Product[] = [
   },
   {
     slug: "mu-copper-tape",
-    name: "MU-COPPER TAPE",
+    name: "MU-Copper Tape",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
@@ -1145,7 +1166,7 @@ export const products: Product[] = [
   },
   {
     slug: "semiconductive-conductor-separation-tape",
-    name: "SEMICONDUCTIVE CONDUCTOR SEPARATION TAPE",
+    name: "Semiconductive Conductor Separation Tape",
     price: 12000,
     categorySlug: "emi-shielding-material",
     description:
@@ -1423,7 +1444,7 @@ export const products: Product[] = [
   // LUMINARY - GL OPTIC SPHERE
   {
     slug: "aluminum-baso4-gl-optic-sphere-205",
-    name: "Aluminum / BaSO4 GL Optic Sphere 205",
+    name: "GL OPTI SPHERE 205 (Aluminum / BaSO4)",
     price: 92000,
     categorySlug: "testing-apparatus-luminary-test",
     subcategorySlug: "gl-optic-sphere-integrating-sphere",
@@ -1462,7 +1483,7 @@ export const products: Product[] = [
   },
   {
     slug: "baso4-gl-optic-sphere-1100",
-    name: "BaSO4 GL Optic Sphere 1100",
+    name: "BaSO₄ GL OPTI SPHERE 1100",
     price: 92000,
     categorySlug: "testing-apparatus-luminary-test",
     subcategorySlug: "gl-optic-sphere-integrating-sphere",
@@ -1501,7 +1522,7 @@ export const products: Product[] = [
   },
   {
     slug: "baso4-gl-optic-sphere-500",
-    name: "BaSO4 GL Optic Sphere 500",
+    name: "BaSO₄ GL OPTI SPHERE 500",
     price: 92000,
     categorySlug: "testing-apparatus-luminary-test",
     subcategorySlug: "gl-optic-sphere-integrating-sphere",
@@ -1540,7 +1561,7 @@ export const products: Product[] = [
   },
   {
     slug: "gl-opti-sphere-48",
-    name: "GL Opti Sphere 48",
+    name: "GL OPTI SPHERE 48",
     price: 92000,
     categorySlug: "testing-apparatus-luminary-test",
     subcategorySlug: "gl-optic-sphere-integrating-sphere",
@@ -1579,7 +1600,7 @@ export const products: Product[] = [
   },
   {
     slug: "gl-optic-sphere-2000",
-    name: "GL Optic Sphere 2000",
+    name: "GL OPTI SPHERE 2000",
     price: 720000,
     categorySlug: "testing-apparatus-luminary-test",
     subcategorySlug: "gl-optic-sphere-integrating-sphere",
@@ -1695,42 +1716,6 @@ export const products: Product[] = [
 
   // IP TEST APPARATUS
   {
-    slug: "ip-testing",
-    name: "IP Testing",
-    price: 30000,
-    categorySlug: "ip-test-apparatus",
-    description:
-      "Complete IP testing solutions for ingress protection verification of enclosures, covering solid particle and water ingress testing.",
-    specs: [
-      { label: "Type of Product", value: "Business Products" },
-      { label: "Chain of Activities", value: "Innovation" },
-    ],
-    keyFeatures: [
-      {
-        title: "Full IP Coverage",
-        text: "End-to-end ingress-protection solutions spanning both solid-object (dust) and water-ingress (rain, jets, immersion) test families of IEC 60529.",
-      },
-      {
-        title: "Compliance to IEC 60529",
-        text: "Test setups and procedures built to the degrees defined in IEC 60529, so assigned IP ratings are defensible and recognised worldwide.",
-      },
-      {
-        title: "Turnkey Service",
-        text: "From chamber selection to test execution, supports manufacturers seeking IP certification for their enclosures and equipment.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "Ingress Protection Verification",
-        text: "Determines the IP rating of an enclosure — how well it keeps out dust and water — by subjecting it to the standardised ingress tests for each degree.",
-      },
-      {
-        title: "Pass / Fail",
-        text: "The enclosure passes a degree if, after the specified exposure, no harmful dust or water has entered and full operation is maintained; entry beyond the degree's limit is a fail.",
-      },
-    ],
-  },
-  {
     slug: "rain-test-chamber-ip-x1-x2-as-per-iec-60529",
     name: "Rain Test Chamber (IP X1/X2) as per IEC 60529",
     price: 30000,
@@ -1806,12 +1791,12 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "ss-ip-x7-x8-immersion-water-tank-as-per-60529",
-    name: "SS Standard Test Equipment IP X7-X8 Immersion Water Tank as per 60529",
+    slug: "stainless-steel-ipx7-ipx8-immersion-water-tank-as-per-iec-60529",
+    name: "Stainless Steel IPX7/IPX8 Immersion Water Tank as per IEC 60529",
     price: 275000,
     categorySlug: "ip-test-apparatus",
     description:
-      "Stainless steel immersion water tank for IP X7 and IP X8 water ingress testing as per IEC 60529.",
+      "Stainless steel immersion water tank for IPX7 and IPX8 water ingress testing as per IEC 60529.",
     specs: [
       { label: "Material", value: "SS" },
       { label: "Brand", value: "Standard Test Equipment" },
@@ -1889,13 +1874,13 @@ export const products: Product[] = [
     price: 22000,
     categorySlug: "laboratory-test-apparatus",
     description:
-      "Ball pressure test apparatus made of stainless steel for verification of heat resistance of materials as per IEC 60695.",
+      "Ball pressure test apparatus made of stainless steel for verification of heat resistance of materials as per IEC 60695-10-2.",
     specs: [
       { label: "Material", value: "Stainless Steel" },
       { label: "Packaging Type", value: "Box" },
       { label: "Display Type", value: "Analog" },
       { label: "I Deal In", value: "New Only" },
-      { label: "Referred Standards", value: "IEC 60695" },
+      { label: "Referred Standards", value: "IEC 60695-10-2" },
     ],
     latest: true,
     keyFeatures: [
@@ -1938,7 +1923,7 @@ export const products: Product[] = [
       { label: "Max Measure Range", value: "20 mm" },
       { label: "Max Strength", value: "< 12 KV (altitude below 2000 m)" },
       { label: "Creepage Distances", value: "> 35 mm" },
-      { label: "Standard", value: "IEC 60065" },
+      { label: "Standard", value: "IEC 62368-1" },
     ],
     latest: true,
     keyFeatures: [
@@ -1948,7 +1933,7 @@ export const products: Product[] = [
       },
       {
         title: "Standard-Defined Geometry",
-        text: "5 mm test electrode and 100 g club weight, with creepage distances over 35 mm, built to the electrode and clearance requirements referenced by IEC 62368 and IEC 60065.",
+        text: "5 mm test electrode and 100 g club weight, with creepage distances over 35 mm, built to the electrode and clearance requirements referenced by IEC 62368-1.",
       },
       {
         title: "Industrial Build",
@@ -2058,17 +2043,17 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "water-jet-nozzle-tip-for-ipx5-dia-12-5-mm",
-    name: "Water Jet Nozzle Tip for IPX5 (Dia-12.5 mm)",
+    slug: "water-jet-nozzle-tip-for-ipx6-dia-12-5-mm",
+    name: "Water Jet Nozzle Tip for IPX6 (Dia-12.5 mm)",
     price: 8000,
     categorySlug: "ip-test-apparatus",
     description:
-      "Replacement nozzle tip with a 12.5 mm bore for the IEC 60529 water jet test. Fits the standard water jet nozzle to deliver the specified jet stream.",
+      "Replacement nozzle tip with a 12.5 mm bore for the IEC 60529 IPX6 water jet test. Fits the standard water jet nozzle to deliver the specified jet stream.",
     specs: [
       { label: "HSN", value: "8424" },
       { label: "Standard", value: "IEC 60529" },
       { label: "Bore Diameter", value: "12.5 mm" },
-      { label: "Test", value: "IPX5" },
+      { label: "Test", value: "IPX6" },
     ],
   },
   {
@@ -2090,12 +2075,11 @@ export const products: Product[] = [
     price: 2200,
     categorySlug: "ip-test-apparatus",
     description:
-      "Standard dust powder for sand and dust testing as per IEC 60068-2-68, supplied per kilogram. Used to charge dust test chambers for IP5X/IP6X and related ingress tests. Alternate grade/pack pricing is Rs 4,000.",
+      "Standard dust powder for sand and dust testing as per IEC 60068-2-68, supplied per kilogram. Used to charge dust test chambers for IP5X/IP6X and related ingress tests.",
     specs: [
       { label: "HSN", value: "2526 2000" },
       { label: "Standard", value: "IEC 60068-2-68" },
       { label: "Quantity", value: "Per Kg" },
-      { label: "Alternate Price", value: "Rs 4,000" },
     ],
   },
   {
@@ -2133,7 +2117,7 @@ export const products: Product[] = [
     specs: [
       { label: "HSN", value: "8543" },
       { label: "Standard", value: "IEC 61032 (Fig-2)" },
-      { label: "Probe", value: "Test Probe B" },
+      { label: "Probe Number", value: "Test Probe B" },
       { label: "Accessory", value: "Measuring unit" },
     ],
   },
@@ -2147,7 +2131,7 @@ export const products: Product[] = [
     specs: [
       { label: "HSN", value: "9030" },
       { label: "Standard", value: "IEC 61032 (Fig-5)" },
-      { label: "Probe", value: "Test Probe 1" },
+      { label: "Probe Number", value: "Test Probe 1" },
       { label: "Sphere Diameter", value: "50 mm" },
     ],
   },
@@ -2165,15 +2149,14 @@ export const products: Product[] = [
     ],
   },
   {
-    slug: "wedge-probe-fig-ee-1-as-per-iec-60950",
-    name: "Wedge Probe (Fig EE.1) as per IEC 60950 / IS 13252 Pt-1",
-    price: 26000,
+    slug: "wedge-probe-fig-ee-1-as-per-iec-62368-1",
+    name: "Wedge Probe (Fig EE.1) as per IEC 62368-1 / IS 13252 Pt-1",
+    price: 15000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "Wedge probe built to Figure EE.1 of IEC 60950 / IS 13252 Pt-1 for verifying that openings in IT equipment enclosures do not permit access to hazardous parts.",
+      "Wedge probe built to Figure EE.1 of IEC 62368-1 / IS 13252 Pt-1 for verifying that openings in IT equipment enclosures do not permit access to hazardous parts.",
     specs: [
-      { label: "HSN", value: "9030" },
-      { label: "Standard", value: "IEC 60950 / IS 13252 Pt-1" },
+      { label: "Standard", value: "IEC 62368-1 / IS 13252 Pt-1" },
       { label: "Figure", value: "EE.1" },
     ],
   },
@@ -2186,7 +2169,7 @@ export const products: Product[] = [
       "Test Probe 18 of Figure 12 of IEC 61032, a small finger probe with an 8.6 mm diameter, used to verify protection against access to hazardous parts by a child's finger.",
     specs: [
       { label: "Standard", value: "IEC 61032 (Fig-12)" },
-      { label: "Probe", value: "Test Probe 18" },
+      { label: "Probe Number", value: "Test Probe 18" },
       { label: "Diameter", value: "8.6 mm" },
     ],
   },
@@ -2199,34 +2182,30 @@ export const products: Product[] = [
       "Test Probe 19 of Figure 13 of IEC 61032, a small finger probe with a 5.6 mm diameter, used to verify protection against access to hazardous parts by a small finger.",
     specs: [
       { label: "Standard", value: "IEC 61032 (Fig-13)" },
-      { label: "Probe", value: "Test Probe 19" },
+      { label: "Probe Number", value: "Test Probe 19" },
       { label: "Diameter", value: "5.6 mm" },
     ],
   },
   {
-    slug: "gauges-for-testing-insertion-of-caps-in-lampholders-b22-p38",
-    name: "Gauges for Testing the Insertion of Caps in Lampholders (B22) (P38)",
-    price: 10000,
+    slug: "b22-lampholder-insertion-gauge-iec-60061-3",
+    name: "B22 Lampholder Insertion Gauge as per IEC 60061-3 (Sheet 38)",
+    price: 15000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "B22 lampholder gauge for testing the insertion of lamp caps in lampholders as per IS 15518 (P38).",
+      "B22 lampholder gauge for testing the insertion of lamp caps in lampholders as per IEC 60061-3 (sheet 38).",
     specs: [
-      { label: "Standard", value: "IS 15518 (P38)" },
-      { label: "Cap Type", value: "B22" },
-      { label: "Application", value: "Lampholder insertion gauge" },
+      { label: "Standard", value: "IEC 60061-3 (Sheet 38)" },
     ],
   },
   {
-    slug: "not-go-gauges-for-caps-on-finished-lamps-b22-p41",
-    name: "Not Go Gauges for Caps on Finished Lamps (B22) (P41)",
-    price: 10000,
+    slug: "b22-not-go-gauge-finished-lamps-iec-60061-3",
+    name: "B22 Not-Go Gauge for Finished Lamps as per IEC 60061-3 (Sheet 41)",
+    price: 15000,
     categorySlug: "test-probes-and-test-pins",
     description:
-      "B22 not-go gauge for caps on finished lamps as per IS 15518 (P41), used to confirm that lamp caps do not exceed the specified limit dimensions.",
+      "B22 not-go gauge for caps on finished lamps as per IEC 60061-3 (sheet 41), used to confirm that lamp caps do not exceed the specified limit dimensions.",
     specs: [
-      { label: "Standard", value: "IS 15518 (P41)" },
-      { label: "Cap Type", value: "B22" },
-      { label: "Type", value: "Not Go Gauge" },
+      { label: "Standard", value: "IEC 60061-3 (Sheet 41)" },
     ],
   },
   {
@@ -2320,19 +2299,37 @@ export const products: Product[] = [
   },
 ];
 
+categories.forEach((c) => {
+  c.count = products.filter((p) => p.categorySlug === c.slug).length;
+});
+
+export const getProductCode = (product: Product): string => {
+  const prefixByCategory: Record<string, string> = {
+    "test-probes-and-test-pins": "TP",
+    "emi-shielding-material": "EMI",
+    "testing-apparatus-luminary-test": "LUM",
+    "spring-hammer-test-apparatus": "SH",
+    "ip-test-apparatus": "IP",
+    "laboratory-test-apparatus": "LAB",
+  };
+  const prefix = prefixByCategory[product.categorySlug] ?? "PRD";
+  const index = products.findIndex((p) => p.slug === product.slug) + 1;
+  return `${prefix}-${String(index).padStart(4, "0")}`;
+};
+
 export const productImages: Record<string, string> = {
   "black-test-probe-13-short-test-pin-as-per-iec-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791613912/7._Test_Probe_-13_Fig-9_as_per_IEC_61032_q2jxgn.jpg",
-  "ip-1x-test-probe-as-per-a-as-iec-60529-and-61032":
+  "ip1x-test-probe-a-50-mm-sphere-as-per-iec-60529-and-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791614244/iec-60529-and-61032-ip-1x-test-probe-500x500-330x409_kix3wa.jpg",
-  "ip4x-test-probe-d-as-per-iec-60259-and-61032":
+  "ip4x-test-probe-d-as-per-iec-60529-and-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791778109/unnamed_fkptu2.jpg",
   "test-probe-11-as-per-iec-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791778335/unnamed_pblpf0.jpg",
   "test-probe-12-as-per-iec-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791778404/unnamed_gi6nda.jpg",
   "ball-pressure-test-apparatus":
-    "https://res.cloudinary.com/didtfhfme/image/upload/v1791779142/d9816ece-9273-4af3-8bd4-8717add63777_ydynqd.png",
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1794547250/ball-pressure-test-apparatus-500x500-330x409_n1ikxa.png",
   "dielectric-strength-tester-as-per-iec-62368":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791779126/unnamed_nvzlsu.jpg",
   "salt-spray-test-chamber":
@@ -2379,13 +2376,12 @@ export const productImages: Record<string, string> = {
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791783474/semiconductive-non-woven-330x409_le6m8x.jpg",
   "semiconductive-conductor-separation-tape":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791783474/semiconductive-non-woven-330x409_le6m8x.jpg",
-  "ip-testing":
-    "https://res.cloudinary.com/didtfhfme/image/upload/v1791783797/ip-testing-1000x1000-330x409_pizaaa.png",
+
   "rain-test-chamber-ip-x1-x2-as-per-iec-60529":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791783863/rain-test-chamber-330x409_u2dpxq.jpg",
   "sand-and-dust-chamber-as-per-iec-60529":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791783969/dust-chamber-pic-330x409_wqpesj.jpg",
-  "ss-ip-x7-x8-immersion-water-tank-as-per-60529":
+  "stainless-steel-ipx7-ipx8-immersion-water-tank-as-per-iec-60529":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791784123/img-20190112-110525-330x409_jgw71g.jpg",
   "turn-table-for-ip-testing-for-laboratory":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791784342/unnamed_hgydhd.jpg",
@@ -2461,3 +2457,5 @@ export function getRelatedProducts(product: Product, limit = 4): Product[] {
     )
     .slice(0, limit);
 }
+
+

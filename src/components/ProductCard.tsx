@@ -48,9 +48,11 @@ export function ProductCard({ product }: { product: Product }) {
           <span className="inline-block max-w-[65%] truncate rounded bg-brand-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/50">
             {category?.name ?? "Equipment"}
           </span>
-          <span className="truncate text-[10px] font-semibold uppercase tracking-wider text-slate-400">
-            {standard ?? "IEC Standard"}
-          </span>
+          {standard ? (
+            <span className="truncate text-[10px] font-semibold uppercase tracking-wider text-slate-400">
+              {standard}
+            </span>
+          ) : null}
         </div>
 
         {/* Title */}

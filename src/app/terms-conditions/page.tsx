@@ -14,7 +14,7 @@ const sections = [
   },
   {
     heading: "Intellectual Property & Trademarks",
-    body: "All content on our website, including text, instrument photographs, graphics, logos, and technical descriptions, is the property of Standard Test Equipment and is protected by applicable copyright and intellectual property laws.",
+    body: "All content on our website, including text, graphics, logos and technical descriptions, is the property of Standard Test Equipment and is protected by applicable copyright and intellectual property laws. Product photographs of GL Optic instruments are the property of their respective manufacturers and are used with permission.",
   },
   {
     heading: "Product Descriptions & Technical Specifications",
@@ -26,7 +26,7 @@ const sections = [
   },
   {
     heading: "Calibration & Warranty",
-    body: "Standard Test Equipment provides standard manufacturer calibration and warranty coverage against manufacturing defects on all instruments supplied.",
+    body: "Standard Test Equipment provides manufacturer's own calibration and warranty coverage against manufacturing defects on all instruments supplied. Calibration is not NABL/ISO 17025 accredited unless separately agreed in writing.",
   },
   {
     heading: "Limitation of Liability",
@@ -62,8 +62,8 @@ export default function TermsPage() {
 
           <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-6 text-sm text-slate-700">
             For further legal inquiries or terms clarification, please contact{" "}
-            <a href="mailto:steindiamkt@gmail.com" className="font-bold text-brand-700 underline">
-              steindiamkt@gmail.com
+            <a href="mailto:sales@standardtestequipment.net" className="font-bold text-brand-700 underline">
+              sales@standardtestequipment.net
             </a>.
           </div>
         </article>

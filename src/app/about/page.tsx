@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 const reasons = [
   {
-    title: "Decades of Experience",
-    body: "With over a decade in the industry, our expertise in testing equipment is unparalleled. Our team is equipped with in-depth knowledge of various testing procedures and machinery.",
+    title: "15+ Years of Experience",
+    body: "Since 2009, our expertise in testing equipment has been built in Mohali, Punjab. Our team is equipped with in-depth knowledge of various testing procedures and machinery.",
   },
   {
     title: "Quality Assurance",
@@ -34,13 +34,13 @@ export default function AboutPage() {
         {/* Main Introduction Card */}
         <div className="rounded-3xl border border-slate-200/90 bg-white p-8 sm:p-10 shadow-xs">
           <div className="inline-block rounded-md bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60 mb-4">
-            Established 2009 • Delhi, India
+            Established 2009 • Mohali, Punjab, India
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Engineering Precision For Critical Industrial Testing
           </h2>
           <p className="mt-4 leading-relaxed text-slate-700 text-[15px] sm:text-base">
-            Standard Test Equipment has established itself as a premier supplier of high-quality testing instruments and measuring equipment, serving diverse industries across India. Since our inception in 2009, we have been committed to providing products that meet the highest standards of performance, durability, and accuracy. Based in Delhi, we are proud to be a trusted name in the industry, known for delivering precision-engineered instruments.
+            Standard Test Equipment has established itself as a premier supplier of high-quality testing instruments and measuring equipment, serving diverse industries across India. Since our inception in 2009, we have been committed to providing products that meet the highest standards of performance, durability, and accuracy. Based in Mohali, Punjab, we are proud to be a trusted name in the industry, known for delivering precision-engineered instruments.
           </p>
         </div>
 

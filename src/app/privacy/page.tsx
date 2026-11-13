@@ -50,10 +50,9 @@ export default function PrivacyPage() {
               In this Privacy Policy references to “Standard Test Equipment”,
               “our” and “we” mean Standard Test Equipment, a company
               incorporated and registered in India, whose registered office is
-              in Panchkula. We are part of a group of companies (the “Standard
-              Test Equipment group”) and we operate globally from our
-              registered office address. We are the controller of your
-              personal data.
+               in Mohali, Punjab, India. We are a single-site manufacturer
+               operating from our registered office address. We are the
+               controller of your personal data.
             </p>
             <p>
               References to “you” or “your” means any individual whose personal
@@ -87,8 +86,8 @@ export default function PrivacyPage() {
           <ul className="mt-3 list-disc space-y-2 pl-6 leading-relaxed">
             <li>Name and E-mail details of individuals who use our website</li>
             <li>Sales data of the clients</li>
-            <li>Product data and their initial raw material details</li>
-            <li>Product quantity data and their packaging weight data</li>
+            <li>Product and order data submitted through our enquiry forms</li>
+            <li>Shipping and contact details required to fulfil enquiries</li>
           </ul>
           <div className="mt-4 space-y-4 leading-relaxed">
             <p>
@@ -129,7 +128,7 @@ export default function PrivacyPage() {
           <p className="mt-3 leading-relaxed">
             If you have questions, comments or complaints about this Privacy
             Policy or how we handle personal data, please direct your
-            correspondence to the Data Protection Officer at: sust.future01@gmail.com
+             correspondence to the Data Protection Officer at: sales@standardtestequipment.net
           </p>
         </section>
 
@@ -379,7 +378,7 @@ export default function PrivacyPage() {
             reasonable advanced notice of any changes.
           </p>
           <p className="mt-4 font-medium text-slate-800">
-            This Privacy Policy was last updated March 2023
+            This Privacy Policy was last updated November 2026
           </p>
         </section>
       </article>
