@@ -58,6 +58,28 @@ export default async function ProductPage({
     `Hello Standard Test Equipment, I would like to enquire about: ${product.name}`,
   );
 
+  // GL Spectis / GL OPTI SPHERE items are made by GL Optic, not by STE, and
+  // products without a named standard (e.g. EMI tapes) must not claim IEC.
+  const isGlOptic = product.subcategorySlug?.startsWith("gl-") ?? false;
+  const hasStandard =
+    /IEC|IS \d/.test(product.name) ||
+    (product.specs ?? []).some(
+      (s) => /standard/i.test(s.label) && /IEC|IS \d/.test(s.value),
+    );
+  const trustBadges = isGlOptic
+    ? [
+        { label: "GL Optic", sub: "Original Brand", color: "text-brand-700" },
+        { label: "Supplied by STE", sub: "Mohali, Punjab", color: "text-slate-800" },
+        { label: "Quotation", sub: "On Request", color: "text-cyan-700" },
+      ]
+    : [
+        hasStandard
+          ? { label: "IEC Compliant", sub: "Built to Standard", color: "text-brand-700" }
+          : { label: "Quotation", sub: "On Request", color: "text-brand-700" },
+        { label: "Made in India", sub: "Mohali, Punjab", color: "text-slate-800" },
+        { label: "Manufacturer", sub: "Direct Supply", color: "text-cyan-700" },
+      ];
+
   const keyFeatures = product.keyFeatures ?? [];
   const whatItDoes = product.whatItDoes ?? [];
 
@@ -119,11 +141,7 @@ export default async function ProductPage({
 
             {/* Trust Badges */}
             <div className="mt-3 grid grid-cols-3 gap-2">
-               {[
-                 { label: "IEC Compliant", sub: "Built to Standard", color: "text-brand-700" },
-                 { label: "Made in India", sub: "Mohali, Punjab", color: "text-slate-800" },
-                 { label: "Manufacturer", sub: "Direct Supply", color: "text-cyan-700" },
-               ].map((badge) => (
+               {trustBadges.map((badge) => (
                 <div
                   key={badge.label}
                   className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-center shadow-xs"
@@ -221,9 +239,6 @@ export default async function ProductPage({
               <div className="px-5 py-4">
                 <p className="text-2xl font-extrabold tracking-tight text-brand-800">
                   {formatPrice(product.price)}
-                </p>
-                <p className="mt-1 text-[12px] text-slate-600">
-                  Includes standard calibration &amp; inspection report
                 </p>
 
                 {/* CTA Buttons */}

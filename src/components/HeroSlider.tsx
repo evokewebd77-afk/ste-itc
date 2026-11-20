@@ -1,15 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteInfo } from "@/lib/data";
-
-const slideTitles = [
-  "Photometric & Spectroradiometer Systems",
-  "Precision Test Probes & IEC Pin Probes",
-  "Ingress Protection (IPX1 - IPX8) Apparatus",
-  "EMI Shielding & Conductive Materials",
-];
 
 const SLIDE_MS = 5500;
 
@@ -47,9 +41,9 @@ export function HeroSlider() {
         </div>
 
         {/* Slide Images */}
-        {banners.map((src, i) => (
+        {banners.map((slide, i) => (
           <div
-            key={src}
+            key={slide.src}
             className={`absolute inset-0 flex items-center justify-center p-8 transition-all duration-700 ease-in-out ${
               i === index
                 ? "scale-100 opacity-100"
@@ -58,8 +52,8 @@ export function HeroSlider() {
           >
             <div className="relative h-full w-full">
               <Image
-                src={src}
-                 alt={slideTitles[i] || `Testing Instrument ${i + 1}`}
+                src={slide.src}
+                alt={slide.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className={`object-contain drop-shadow-xl ${
@@ -73,18 +67,19 @@ export function HeroSlider() {
 
         {/* Bottom Caption */}
         <div className="absolute bottom-0 inset-x-0 z-20 bg-gradient-to-t from-slate-950/90 via-slate-950/50 to-transparent p-4 pt-10 sm:p-5 sm:pt-12">
-          <p
+          <Link
             key={index}
-            className="animate-[caption-in_0.5s_ease-out] text-sm sm:text-base font-bold text-white line-clamp-1"
+            href={banners[index].href}
+            className="block animate-[caption-in_0.5s_ease-out] text-sm sm:text-base font-bold text-white line-clamp-2 hover:underline"
           >
-            {slideTitles[index] || "High-Accuracy Testing Solution"}
-          </p>
+            {banners[index].title}
+          </Link>
 
           {/* Timed progress bars */}
           <div className="mt-3 flex gap-1.5">
-            {banners.map((src, i) => (
+            {banners.map((slide, i) => (
               <button
-                key={src}
+                key={slide.src}
                 type="button"
                 aria-label={`Show slide ${i + 1}`}
                 onClick={() => setIndex(i)}
@@ -113,9 +108,9 @@ export function HeroSlider() {
 
       {/* Slider Controls */}
       <div className="mt-4 flex items-center justify-center gap-2">
-        {banners.map((src, i) => (
+        {banners.map((slide, i) => (
           <button
-            key={src}
+            key={slide.src}
             type="button"
             aria-label={`Show slide ${i + 1}`}
             onClick={() => setIndex(i)}

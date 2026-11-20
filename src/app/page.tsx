@@ -325,7 +325,6 @@ export default function Home() {
                   cat.slug === "test-probes-and-test-pins" ||
                   cat.slug === "testing-apparatus-luminary-test" ||
                   cat.slug === "spring-hammer-test-apparatus" ||
-                  cat.slug === "ip-test-apparatus" ||
                   cat.slug === "laboratory-test-apparatus" ? (
                     <Image
                       src={
@@ -337,9 +336,7 @@ export default function Home() {
                               ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643985/15fec92f-0fcb-4764-95dc-51e7b330aa49_kuh6rp.png"
                               : cat.slug === "spring-hammer-test-apparatus"
                                 ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643102/bf1bf9b4-4d05-4590-b126-972804b9f553_legkpv.png"
-                                : cat.slug === "ip-test-apparatus"
-                                  ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643434/e61681d0-20d9-4fb6-8d24-2855a591ee42_tdlyec.png"
-                                  : "https://res.cloudinary.com/didtfhfme/image/upload/v1792643578/87714f97-754a-4aa4-986a-eafd3f68a521_scjwhx.png"
+                                : "https://res.cloudinary.com/didtfhfme/image/upload/v1792643578/87714f97-754a-4aa4-986a-eafd3f68a521_scjwhx.png"
                       }
                       alt={
                         cat.slug === "emi-shielding-material"
@@ -350,9 +347,7 @@ export default function Home() {
                               ? "Testing apparatus"
                               : cat.slug === "spring-hammer-test-apparatus"
                                 ? "Spring hammer test apparatus"
-                                : cat.slug === "ip-test-apparatus"
-                                  ? "IP test apparatus"
-                                  : "Laboratory test apparatus"
+                                : "Laboratory test apparatus"
                       }
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -538,7 +533,7 @@ export default function Home() {
               Need help choosing the right test apparatus?
             </h2>
             <p className="mt-2 text-sm text-cyan-100">
-              Speak directly with our technical team in Mohali, Punjab — call us toll free at{" "}
+              Speak directly with our technical team in Mohali, Punjab — call us at{" "}
               <a href={`tel:${siteInfo.phoneHref}`} className="font-bold underline text-white hover:text-cyan-200">
                 {siteInfo.phone}
               </a>{" "}

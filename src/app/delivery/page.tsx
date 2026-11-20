@@ -31,7 +31,7 @@ export default function DeliveryPage() {
               Questions about your dispatch or shipment?
             </h2>
             <p className="mt-2 text-sm text-slate-700">
-              Call our logistics desk toll free at <a href={`tel:${siteInfo.phoneHref}`} className="font-bold underline">{siteInfo.phone}</a> or email <a href={`mailto:${siteInfo.email}`} className="font-bold underline">{siteInfo.email}</a>.
+              Call our logistics desk at <a href={`tel:${siteInfo.phoneHref}`} className="font-bold underline">{siteInfo.phone}</a> or email <a href={`mailto:${siteInfo.email}`} className="font-bold underline">{siteInfo.email}</a>.
             </p>
           </section>
         </article>
