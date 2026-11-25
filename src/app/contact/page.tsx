@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { ContactForm } from "@/components/ContactForm";
 import { siteInfo } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Contact Us",
   description:
-    "Get in touch with Standard Test Equipment - Plot No. 146, JLPL Industrial Area, Sector 82, Mohali, Punjab 160062. Call +91 95017-95146.",
-};
+    "Contact Standard Test Equipment in Mohali, Punjab for test probes, IP apparatus and laboratory equipment quotations. Call +91 95017-95146.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   const whatsappMsg = encodeURIComponent(

@@ -11,6 +11,7 @@ import { CategoryIcon } from "@/components/icons";
 import { HeroSlider } from "@/components/HeroSlider";
 import { ProductCard } from "@/components/ProductCard";
 import { HomeProductFilter } from "@/components/HomeProductFilter";
+import { categoryImages, optimizedBannerUrl } from "@/lib/images";
 
 const whyUs = [
   {
@@ -25,7 +26,7 @@ const whyUs = [
   },
   {
     title: "Rigorous Quality Assurance",
-    body: "Every instrument conforms to stringent quality checks and comes verified to meet applicable IEC, ISO and national standards, ensuring absolute repeatability in your lab.",
+    body: "Each instrument is built to the standard named on its product page and checked in-house before dispatch. Accredited calibration is quoted separately when required.",
     icon: (
       <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" />
@@ -52,7 +53,7 @@ const whyUs = [
   },
   {
     title: "IEC & ISO Compliant",
-    body: "All instruments are built to meet IEC, ISO and relevant national test standards, with documented traceability for audit readiness.",
+    body: "Products are built to the standard named on each product page. Contact our engineers for applicable clauses, material details and verification documents.",
     icon: (
       <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 12l2 2 4-4" />
@@ -159,7 +160,7 @@ export default function Home() {
 
             {/* Slim feature list */}
             <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-[13px] font-semibold text-slate-200">
-              {["IEC 61032 & IEC 60529", "Factory Calibrated", "Fast Pan-India Dispatch"].map(
+              {["IEC 61032 & IEC 60529", "Dimensional Inspection Reports", "Fast Pan-India Dispatch"].map(
                 (label) => (
                   <span key={label} className="inline-flex items-center gap-1.5">
                     <svg className="h-3.5 w-3.5 text-cyan-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -306,6 +307,7 @@ export default function Home() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {catalogueCategories.map((cat, i) => {
             const accent = cardAccents[i % cardAccents.length];
+            const banner = categoryImages[cat.slug];
             return (
               <Link
                 key={cat.slug}
@@ -321,34 +323,10 @@ export default function Home() {
                 <div
                   className={`relative flex h-40 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${accent.visual} m-3 border border-slate-100`}
                 >
-                  {cat.slug === "emi-shielding-material" ||
-                  cat.slug === "test-probes-and-test-pins" ||
-                  cat.slug === "testing-apparatus-luminary-test" ||
-                  cat.slug === "spring-hammer-test-apparatus" ||
-                  cat.slug === "laboratory-test-apparatus" ? (
+                  {banner ? (
                     <Image
-                      src={
-                        cat.slug === "emi-shielding-material"
-                          ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612418/9d2b8d6b-81d8-43b6-9d56-57d2fee2b015_guvz9h.png"
-                          : cat.slug === "test-probes-and-test-pins"
-                            ? "https://res.cloudinary.com/didtfhfme/image/upload/v1791612291/d79993d3-3742-412b-88d4-9d24a40da898_bwuusb.png"
-                            : cat.slug === "testing-apparatus-luminary-test"
-                              ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643985/15fec92f-0fcb-4764-95dc-51e7b330aa49_kuh6rp.png"
-                              : cat.slug === "spring-hammer-test-apparatus"
-                                ? "https://res.cloudinary.com/didtfhfme/image/upload/v1792643102/bf1bf9b4-4d05-4590-b126-972804b9f553_legkpv.png"
-                                : "https://res.cloudinary.com/didtfhfme/image/upload/v1792643578/87714f97-754a-4aa4-986a-eafd3f68a521_scjwhx.png"
-                      }
-                      alt={
-                        cat.slug === "emi-shielding-material"
-                          ? "EMI shielding material"
-                          : cat.slug === "test-probes-and-test-pins"
-                            ? "Test probes and test pins"
-                            : cat.slug === "testing-apparatus-luminary-test"
-                              ? "Testing apparatus"
-                              : cat.slug === "spring-hammer-test-apparatus"
-                                ? "Spring hammer test apparatus"
-                                : "Laboratory test apparatus"
-                      }
+                      src={optimizedBannerUrl(banner.src)}
+                      alt={banner.alt}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition duration-500 group-hover:scale-105"
@@ -378,7 +356,7 @@ export default function Home() {
                         clipRule="evenodd"
                       />
                     </svg>
-                    IEC Verified
+                    Standards-Based
                   </span>
 
                   <span className="absolute right-3 top-3 font-mono text-xs font-extrabold tracking-wider text-slate-400/80">
@@ -456,7 +434,7 @@ export default function Home() {
               Featured Testing Apparatus
             </h2>
             <p className="mt-1 text-sm text-slate-600">
-              Top choice apparatus trusted by testing laboratories and certification agencies across India.
+              Frequently requested apparatus for quality control, R&D and test laboratories across India.
             </p>
           </div>
           <Link

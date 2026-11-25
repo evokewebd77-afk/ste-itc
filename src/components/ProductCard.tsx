@@ -6,12 +6,15 @@ import {
   productImages,
   type Product,
 } from "@/lib/data";
-import { CategoryIcon } from "@/components/icons";
+import { PhotoPending } from "@/components/PhotoPending";
+import { optimizedImageUrl, productImageAlt } from "@/lib/images";
 
 export function ProductCard({ product }: { product: Product }) {
   const category = getCategory(product.categorySlug);
   const image = productImages[product.slug];
-  const standard = product.specs?.find((s) => s.label === "Standard")?.value;
+  const standard =
+    product.standard ??
+    product.specs?.find((s) => s.label === "Standard")?.value;
 
   return (
     <Link
@@ -19,25 +22,17 @@ export function ProductCard({ product }: { product: Product }) {
       className="group relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-500/8"
     >
       {/* Visual Product Box */}
-      <div
-        className={`relative flex h-40 items-center justify-center overflow-hidden border border-slate-300 ${
-          image
-            ? "bg-slate-50"
-            : "bg-gradient-to-br from-slate-50 via-brand-50/30 to-slate-100 text-brand-600 transition duration-300 group-hover:from-brand-600 group-hover:to-cyan-600 group-hover:text-white"
-        }`}
-      >
+      <div className="relative flex h-40 items-center justify-center overflow-hidden border border-slate-300 bg-slate-50">
         {image ? (
           <Image
-            src={image}
-            alt={product.name}
+            src={optimizedImageUrl(image)}
+            alt={productImageAlt(product.slug, product.name, product.categorySlug)}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover transition-transform duration-300 group-hover:scale-105"
           />
         ) : (
-          <div className="transition duration-300 group-hover:scale-110">
-            <CategoryIcon slug={product.categorySlug} className="h-14 w-14" />
-          </div>
+          <PhotoPending compact />
         )}
       </div>
 
@@ -72,7 +67,7 @@ export function ProductCard({ product }: { product: Product }) {
               Ex Tax
             </p>
             <p className="text-base font-extrabold text-brand-700 group-hover:text-brand-600">
-              {formatPrice(product.price)}
+              {product.priceOnRequest ? "Price on request" : formatPrice(product.price)}
             </p>
           </div>
 

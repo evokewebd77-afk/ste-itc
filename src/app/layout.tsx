@@ -4,6 +4,9 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
+import { JsonLd } from "@/components/JsonLd";
+import { DEFAULT_DESCRIPTION, SITE_URL } from "@/lib/seo";
+import { siteInfo } from "@/lib/data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,28 +24,34 @@ export const metadata: Metadata = {
     default: "Standard Test Equipment | Testing Instruments & Measuring Equipment",
     template: "%s | Standard Test Equipment",
   },
-  description:
-    "Premier supplier of high-quality testing instruments and measuring equipment since 2009 - test probes & pins, EMI shielding material, IP test apparatus, spring hammer, luminary test apparatus and laboratory test apparatus from Mohali, India.",
-  keywords: [
-    "test probes",
-    "test pins",
-    "IEC 61032",
-    "IEC 60529",
-    "IP test apparatus",
-    "EMI shielding material",
-    "spring hammer test",
-    "testing instruments",
-    "measuring equipment",
-    "Standard Test Equipment",
-  ],
+  description: DEFAULT_DESCRIPTION,
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Standard Test Equipment | Testing Instruments & Measuring Equipment",
-    description:
-      "High-quality testing instruments and measuring equipment serving diverse industries across India since 2009.",
-    url: "https://www.standardtestequipment.net",
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
     siteName: "Standard Test Equipment",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/Logo_y5mqli-removebg-preview.png",
+        width: 1200,
+        height: 1200,
+        alt: "Standard Test Equipment logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Standard Test Equipment | Testing Instruments & Measuring Equipment",
+    description: DEFAULT_DESCRIPTION,
+    images: ["/Logo_y5mqli-removebg-preview.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
@@ -53,6 +62,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: siteInfo.name,
+            url: SITE_URL,
+            email: siteInfo.email,
+            telephone: siteInfo.phone,
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: `${siteInfo.address.line1} ${siteInfo.address.line2}`,
+              addressLocality: "Mohali",
+              addressRegion: "Punjab",
+              postalCode: "160062",
+              addressCountry: "IN",
+            },
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

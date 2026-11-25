@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { PageShell } from "@/components/PageShell";
 import { siteInfo } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
   description:
     "Privacy policy of Standard Test Equipment, Mohali - what personal data our enquiry forms collect, why we use it and how to contact us about it.",
-};
+  path: "/privacy",
+});
 
 const sections: { heading: string; body: ReactNode }[] = [
   {

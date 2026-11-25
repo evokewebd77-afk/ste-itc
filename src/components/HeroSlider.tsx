@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { siteInfo } from "@/lib/data";
+import { optimizedBannerUrl } from "@/lib/images";
 
 const SLIDE_MS = 5500;
 
@@ -52,7 +53,7 @@ export function HeroSlider() {
           >
             <div className="relative h-full w-full">
               <Image
-                src={slide.src}
+                src={optimizedBannerUrl(slide.src)}
                 alt={slide.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

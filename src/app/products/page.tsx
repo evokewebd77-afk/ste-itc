@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 import { ProductsExplorer } from "@/components/ProductsExplorer";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "All Products Catalogue",
   description:
-    "Browse the complete catalogue of testing instruments and measuring equipment from Standard Test Equipment - test probes, EMI shielding material, IP test apparatus, spring hammer, luminary and laboratory test apparatus.",
-};
+    "Browse all Standard Test Equipment products: IEC test probes and pins, IP test apparatus, EMI shielding materials, spring hammers and laboratory test equipment.",
+  path: "/products",
+});
 
 export default function ProductsPage() {
   return (
@@ -36,22 +36,13 @@ export default function ProductsPage() {
             Testing Instruments &amp; Measuring Equipment
           </h1>
           <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-200 leading-relaxed">
-            Engineered and calibrated in Mohali, Punjab to rigorous IEC, ISO, and ASTM test standards. Filter by category, keywords, or sorting preferences below.
+            Manufactured in Mohali, Punjab to applicable IEC, ISO and ASTM test standards. Filter by category, keywords, or sorting preferences below.
           </p>
         </div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-10 sm:py-14">
-        <Suspense
-          fallback={
-            <div className="py-20 text-center">
-              <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-brand-600 border-r-transparent" />
-              <p className="mt-3 text-sm text-slate-600 font-medium">Loading instrument catalogue...</p>
-            </div>
-          }
-        >
-          <ProductsExplorer />
-        </Suspense>
+        <ProductsExplorer />
       </div>
     </div>
   );

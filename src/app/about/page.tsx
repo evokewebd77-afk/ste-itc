@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { PageShell } from "@/components/PageShell";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "About Us",
   description:
-    "Standard Test Equipment has been a premier supplier of high-quality testing instruments and measuring equipment since 2009, serving diverse industries across India.",
-};
+    "Standard Test Equipment has manufactured testing instruments and measuring equipment in Mohali, Punjab since 2009.",
+  path: "/about",
+});
 
 const reasons = [
   {

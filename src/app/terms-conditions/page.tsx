@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Terms & Conditions",
   description:
-    "Terms and conditions for the use of the Standard Test Equipment website and services.",
-};
+    "Terms and conditions for using the Standard Test Equipment website and supplied testing equipment.",
+  path: "/terms-conditions",
+});
 
 const sections = [
   {
@@ -26,7 +27,7 @@ const sections = [
   },
   {
     heading: "Calibration & Warranty",
-    body: "Standard Test Equipment provides manufacturer's own calibration and warranty coverage against manufacturing defects on all instruments supplied. Calibration is not NABL/ISO 17025 accredited unless separately agreed in writing.",
+    body: "Manufacturer inspection reports and warranty coverage against manufacturing defects are supplied where stated on the product page or quotation. Accredited calibration is provided only when separately agreed in writing.",
   },
   {
     heading: "Limitation of Liability",

@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { siteInfo } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Cancellation and Refund Policy",
   description:
-    "Cancellation and refund policy of Standard Test Equipment - terms and procedures for equipment orders and services.",
-};
+    "Cancellation and refund terms for equipment orders placed with Standard Test Equipment.",
+  path: "/cancellation-and-refund",
+});
 
 const sections = [
   {

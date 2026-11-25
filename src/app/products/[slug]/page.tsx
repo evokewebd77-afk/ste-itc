@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -11,13 +12,35 @@ import {
   productImages,
   products,
   siteInfo,
+  type Product,
 } from "@/lib/data";
-import { CategoryIcon } from "@/components/icons";
 import { ProductCard } from "@/components/ProductCard";
 import { ProductEnquiryForm } from "@/components/ProductEnquiryForm";
 import { InfoCard } from "@/components/InfoCard";
+import { JsonLd } from "@/components/JsonLd";
+import { PhotoPending } from "@/components/PhotoPending";
+import { optimizedImageUrl, productImageAlt } from "@/lib/images";
+import { sharedProbeNote } from "@/lib/probeSpecs";
+import { absoluteImageUrl, pageMetadata, SITE_URL } from "@/lib/seo";
 
 type Params = { slug: string };
+
+const excludedSpecLabels = new Set([
+  "Brand",
+  "Packaging Type",
+  "Pack Type",
+  "Minimum Order Quantity",
+  "I Deal In",
+  "Display Type",
+  "Storage Material",
+  "Head Material",
+  "Metal Pole Diameter",
+  "Metal Club Weight",
+  "Max Measure Range",
+  "Max Strength",
+  "Creepage Distances",
+  "Finishing",
+]);
 
 export function generateStaticParams(): Params[] {
   return products.map((p) => ({ slug: p.slug }));
@@ -32,10 +55,56 @@ export async function generateMetadata({
   const product = getProduct(slug);
   if (!product) return { title: "Product" };
 
-  return {
+  const image = productImages[product.slug];
+  return pageMetadata({
     title: product.name,
     description: product.description,
-  };
+    path: `/products/${product.slug}`,
+    image: image ? optimizedImageUrl(image) : undefined,
+    imageAlt: productImageAlt(product.slug, product.name, product.categorySlug),
+  });
+}
+
+function SpecRows({ rows }: { rows: { label: string; value: string }[] }) {
+  return (
+    <dl className="divide-y divide-slate-100 px-3 py-1 sm:px-4">
+      {rows.map((row) => (
+        <div
+          key={row.label}
+          className="grid grid-cols-[1fr_1.5fr] gap-3 rounded-lg px-2 py-3 text-[13px] transition-colors even:bg-slate-50/70 hover:bg-brand-50/70 sm:px-3"
+        >
+          <dt className="font-medium text-slate-500">{row.label}</dt>
+          <dd className="break-words font-semibold text-slate-900">{row.value}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
+function CardShell({
+  title,
+  subtitle,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+      <div className="border-b border-slate-100 bg-gradient-to-r from-brand-50 via-white to-white px-5 py-4">
+        <h2 className="text-xs font-extrabold uppercase tracking-[0.12em] text-slate-800">
+          {title}
+        </h2>
+        {subtitle ? <p className="mt-0.5 text-[11px] text-slate-500">{subtitle}</p> : null}
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function summarySpecs(product: Product): { label: string; value: string }[] {
+  return (product.specs ?? []).filter((spec) => !excludedSpecLabels.has(spec.label));
 }
 
 export default async function ProductPage({
@@ -50,6 +119,8 @@ export default async function ProductPage({
   const category = getCategory(product.categorySlug);
   const related = getRelatedProducts(product);
   const image = productImages[product.slug];
+  const specs = summarySpecs(product);
+  const hasProbeFields = Boolean(product.dimensions?.length || product.materials?.length);
   const enquirySubject = encodeURIComponent(`Quotation Request: ${product.name}`);
   const enquiryBody = encodeURIComponent(
     `Hello Standard Test Equipment,\n\nI would like to receive pricing and availability for:\n${product.name}\n\nCompany Name:\nLocation:\nQuantity:\n\nThank you.`,
@@ -62,6 +133,7 @@ export default async function ProductPage({
   // products without a named standard (e.g. EMI tapes) must not claim IEC.
   const isGlOptic = product.subcategorySlug?.startsWith("gl-") ?? false;
   const hasStandard =
+    Boolean(product.standard) ||
     /IEC|IS \d/.test(product.name) ||
     (product.specs ?? []).some(
       (s) => /standard/i.test(s.label) && /IEC|IS \d/.test(s.value),
@@ -74,18 +146,40 @@ export default async function ProductPage({
       ]
     : [
         hasStandard
-          ? { label: "IEC Compliant", sub: "Built to Standard", color: "text-brand-700" }
+          ? { label: "Standards-Based", sub: "Built to named standard", color: "text-brand-700" }
           : { label: "Quotation", sub: "On Request", color: "text-brand-700" },
         { label: "Made in India", sub: "Mohali, Punjab", color: "text-slate-800" },
         { label: "Manufacturer", sub: "Direct Supply", color: "text-cyan-700" },
       ];
 
+
   const keyFeatures = product.keyFeatures ?? [];
   const whatItDoes = product.whatItDoes ?? [];
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    sku: getProductCode(product),
+    description: product.description,
+    category: category?.name,
+    image: image ? [absoluteImageUrl(optimizedImageUrl(image))] : undefined,
+    brand: { "@type": "Brand", name: siteInfo.name },
+    offers: product.priceOnRequest
+      ? undefined
+      : {
+          "@type": "Offer",
+          price: product.price,
+          priceCurrency: "INR",
+          availability: "https://schema.org/InStock",
+          url: `${SITE_URL}/products/${product.slug}`,
+        },
+  };
+
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* ─── Breadcrumb ─── */}
+      <JsonLd data={jsonLd} />
+
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex flex-wrap items-center gap-1.5 py-3 text-[12px] font-medium text-slate-500">
@@ -104,42 +198,30 @@ export default async function ProductPage({
               {category?.name}
             </Link>
             <span className="text-slate-300">/</span>
-            <span className="truncate font-semibold text-slate-800">
-              {product.name}
-            </span>
+            <span className="truncate font-semibold text-slate-800">{product.name}</span>
           </nav>
         </div>
       </div>
 
-      {/* ─── Main Product Section ─── */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
-
-          {/* ── Left: Image Column ── */}
           <div className="lg:sticky lg:top-24 lg:self-start">
-            {/* Product Image */}
             <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="absolute inset-0 bg-radial-glow opacity-40" />
               {image ? (
                 <Image
-                  src={image}
-                  alt={product.name}
+                  src={optimizedImageUrl(image)}
+                  alt={productImageAlt(product.slug, product.name, product.categorySlug)}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
               ) : (
-                <div className="relative text-brand-600">
-                  <CategoryIcon
-                    slug={product.categorySlug}
-                    className="h-28 w-28 drop-shadow-md"
-                  />
-                </div>
+                <PhotoPending />
               )}
             </div>
 
-            {/* Trust Badges */}
             <div className="mt-3 grid grid-cols-3 gap-2">
                {trustBadges.map((badge) => (
                 <div
@@ -153,18 +235,16 @@ export default async function ProductPage({
             </div>
           </div>
 
-          {/* ── Right: Info Column ── */}
           <div className="flex flex-col gap-5">
-            {/* Header Block */}
             <div>
-              {category && (
+              {category ? (
                 <Link
                   href={`/category/${category.slug}`}
                   className="mb-2 inline-block rounded-md bg-brand-50 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60 transition hover:bg-brand-100"
                 >
                   {category.name}
                 </Link>
-              )}
+              ) : null}
 
               <h1 className="text-xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-2xl">
                 {product.name}
@@ -177,77 +257,163 @@ export default async function ProductPage({
                     {getProductCode(product)}
                   </span>
                 </span>
-                <span className="text-slate-300">•</span>
-                <span>Manufacturer Warranty</span>
+                {product.standard ? (
+                  <>
+                    <span className="text-slate-300">•</span>
+                    <span>{product.standard}</span>
+                  </>
+                ) : null}
               </div>
             </div>
 
-            {/* Overview Card */}
-            <InfoCard title="Product Overview">
-              {product.description}
-            </InfoCard>
+            <InfoCard title="Product Overview">{product.description}</InfoCard>
 
-            {/* Technical Specifications Card */}
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className="border-b border-slate-100 bg-gradient-to-r from-brand-50 via-white to-white px-5 py-4">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-100 text-brand-700">
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16M8 4v4m8 2v4m-5 2v4" />
-                    </svg>
-                  </span>
-                  <div>
-                    <h2 className="text-xs font-extrabold uppercase tracking-[0.12em] text-slate-800">
-                      Technical Specifications
-                    </h2>
-                    <p className="mt-0.5 text-[11px] text-slate-500">Product details at a glance</p>
+            {hasProbeFields ? (
+              <>
+                <InfoCard title="Standard & Figure">
+                  <p className="text-[13px] leading-relaxed text-slate-700">
+                    {product.definition}
+                  </p>
+                  <div className="mt-3 flex flex-wrap gap-2 text-[11px] font-bold">
+                    <span className="rounded-full bg-brand-50 px-3 py-1 text-brand-700 ring-1 ring-brand-200/60">
+                      {product.standard}
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">
+                      {product.figure}
+                    </span>
+                    <span className="rounded-full bg-slate-100 px-3 py-1 text-slate-700">
+                      Probe {product.probeCode}
+                    </span>
                   </div>
-                </div>
-              </div>
-              {product.specs && product.specs.length > 0 ? (
-                <dl className="divide-y divide-slate-100 px-3 py-1 sm:px-4">
-                  {product.specs.map((spec) => (
-                    <div
-                      key={spec.label}
-                      className="grid grid-cols-[1fr_1.5fr] gap-3 rounded-lg px-2 py-3 text-[13px] transition-colors even:bg-slate-50/70 hover:bg-brand-50/70 sm:px-3"
-                    >
-                      <dt className="font-medium text-slate-500">{spec.label}</dt>
-                      <dd className="break-words font-semibold text-slate-900">{spec.value}</dd>
+                </InfoCard>
+
+                {product.dimensions?.length ? (
+                  <CardShell title="Key Dimensions" subtitle="Values and tolerances are stated without reproducing the standard drawing">
+                    <div className="overflow-x-auto px-3 py-2 sm:px-4">
+                      <table className="w-full min-w-[420px] text-left text-[12px]">
+                        <thead>
+                          <tr className="border-b border-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                            <th className="py-2 pr-3">Parameter</th>
+                            <th className="py-2 pr-3">Value</th>
+                            <th className="py-2">Tolerance</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                          {product.dimensions.map((row) => (
+                            <tr key={row.parameter} className="align-top">
+                              <td className="py-2.5 pr-3 font-medium text-slate-600">{row.parameter}</td>
+                              <td className="py-2.5 pr-3 font-bold text-slate-900">{row.value}</td>
+                              <td className="py-2.5 text-slate-600">{row.tolerance}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
                     </div>
-                  ))}
-                </dl>
+                  </CardShell>
+                ) : null}
+
+                {product.materials?.length ? (
+                  <CardShell title="Materials & Finish">
+                    <div className="overflow-x-auto px-3 py-2 sm:px-4">
+                      <table className="w-full min-w-[320px] text-left text-[12px]">
+                        <thead>
+                          <tr className="border-b border-slate-200 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                            <th className="py-2 pr-3">Part</th>
+                            <th className="py-2">Material</th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-100">
+                          {product.materials.map((row) => (
+                            <tr key={row.part}>
+                              <td className="py-2.5 pr-3 font-medium text-slate-600">{row.part}</td>
+                              <td className="py-2.5 font-bold text-slate-900">{row.material}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <p className="border-t border-slate-100 px-5 py-3 text-[12px] leading-relaxed text-slate-600">
+                      {sharedProbeNote}
+                    </p>
+                  </CardShell>
+                ) : null}
+
+                <InfoCard title="Test Conditions & Supply">
+                  <div className="space-y-3 text-[13px] leading-relaxed text-slate-700">
+                    {product.testForce ? (
+                      <p>
+                        <span className="font-bold text-slate-900">Test force: </span>
+                        {product.testForce}
+                      </p>
+                    ) : null}
+                    {product.usedIn?.length ? (
+                      <div>
+                        <p className="font-bold text-slate-900">Used in:</p>
+                        <ul className="mt-1 space-y-1">
+                          {product.usedIn.map((use) => (
+                            <li key={`${use.standard}-${use.clause}`}>
+                              {use.standard} {use.clause} - {use.test}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
+                    {product.supplied ? (
+                      <p>
+                        <span className="font-bold text-slate-900">Supplied with: </span>
+                        {product.supplied}
+                      </p>
+                    ) : null}
+                  </div>
+                </InfoCard>
+              </>
+            ) : null}
+
+            <CardShell title="Technical Specifications" subtitle="Product details at a glance">
+              {specs.length > 0 ? (
+                <SpecRows rows={specs} />
+              ) : hasProbeFields ? (
+                <div className="px-5 py-4">
+                  <p className="text-[13px] text-slate-600">
+                    The standard-compliant values are listed in the tables above.
+                  </p>
+                </div>
               ) : (
                 <div className="px-5 py-4">
                   <p className="text-[13px] leading-relaxed text-slate-600">
                     Detailed specifications are available on request. Contact our
-                    engineering team for a complete datasheet and calibration details.
+                    engineering team for the applicable clause list and dimensions.
                   </p>
                 </div>
               )}
-            </div>
+            </CardShell>
 
-            {/* Price & CTA Card */}
             <div className="rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-sky-50/60 shadow-xs">
               <div className="flex items-baseline justify-between gap-3 border-b border-brand-100/80 px-5 py-3">
                 <p className="text-[11px] font-bold uppercase tracking-wider text-brand-700">
                   Catalogue Price
                 </p>
-                <p className="text-[11px] font-medium text-slate-500">
-                  Ex. Tax / GST extra
-                </p>
+                <p className="text-[11px] font-medium text-slate-500">Ex. Tax / GST extra</p>
               </div>
               <div className="px-5 py-4">
                 <p className="text-2xl font-extrabold tracking-tight text-brand-800">
-                  {formatPrice(product.price)}
+                  {product.priceOnRequest ? "Price on request" : formatPrice(product.price)}
+                </p>
+                <p className="mt-1 text-[12px] text-slate-600">
+                  {product.supplied ?? "Inspection report: confirm with supplier"}
                 </p>
 
-                {/* CTA Buttons */}
                 <div className="mt-4 flex flex-wrap gap-2">
+                  <a
+                    href={`/products/${product.slug}/datasheet.pdf`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-brand-300 bg-white px-5 py-2 text-[13px] font-bold text-brand-700 shadow-xs transition hover:border-brand-500 hover:bg-brand-50"
+                  >
+                    Download Datasheet
+                  </a>
                   <a
                     href={`tel:${siteInfo.phoneHref}`}
                     className="inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-5 py-2 text-[13px] font-bold text-white shadow-sm transition hover:bg-brand-500"
                   >
-                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                     Call to Order
                   </a>
                   <a
@@ -256,14 +422,12 @@ export default async function ProductPage({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-5 py-2 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#20ba5a]"
                   >
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.24-8.24a8.2 8.2 0 0 1 5.83 2.42 8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.65-1.23-1.46-1.38-1.71-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.13-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.56.13.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.15-1.18-.06-.11-.23-.17-.48-.29Z" /></svg>
                     WhatsApp
                   </a>
                   <a
                     href={`mailto:${siteInfo.email}?subject=${enquirySubject}&body=${enquiryBody}`}
                     className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 py-2 text-[13px] font-bold text-slate-700 shadow-xs transition hover:border-brand-400 hover:text-brand-700"
                   >
-                    <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" /><path d="m3.5 8 8.5 6 8.5-6" /></svg>
                     Email
                   </a>
                 </div>
@@ -272,10 +436,8 @@ export default async function ProductPage({
           </div>
         </div>
 
-        {/* ─── Additional Info Sections ─── */}
         <div className="mt-10 space-y-8">
-          {/* What It Does */}
-          {whatItDoes.length > 0 && (
+          {whatItDoes.length > 0 ? (
             <InfoCard title="What It Does">
               <div className="space-y-4">
                 {whatItDoes.map((item) => (
@@ -293,10 +455,9 @@ export default async function ProductPage({
                 ))}
               </div>
             </InfoCard>
-          )}
+          ) : null}
 
-          {/* Key Features */}
-          {keyFeatures.length > 0 && (
+          {keyFeatures.length > 0 ? (
             <section>
               <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-700">
                 Key Features
@@ -315,26 +476,22 @@ export default async function ProductPage({
                       </span>
                       <div>
                         <p className="text-[13px] font-bold leading-snug text-slate-800">{item.title}</p>
-                        <p className="mt-2 text-[13px] leading-relaxed text-slate-600">
-                      {item.text}
-                        </p>
+                        <p className="mt-2 text-[13px] leading-relaxed text-slate-600">{item.text}</p>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
-          )}
+          ) : null}
 
-          {/* Enquiry Form */}
           <section>
             <div className="mx-auto max-w-3xl">
               <ProductEnquiryForm productName={product.name} />
             </div>
           </section>
 
-          {/* Related Products */}
-          {related.length > 0 && (
+          {related.length > 0 ? (
             <section className="border-t border-slate-200 pt-8">
               <div className="flex items-end justify-between gap-4">
                 <div>
@@ -358,7 +515,7 @@ export default async function ProductPage({
                 ))}
               </div>
             </section>
-          )}
+          ) : null}
         </div>
       </div>
     </div>

@@ -36,7 +36,8 @@ const nextConfig: NextConfig = {
        { source: "/products/black-test-probe-13-short-test-pin-as-per-iec-61032", destination: "/products/test-probe-13-short-test-pin-as-per-iec-61032", permanent: true },
        { source: "/products/gauges-for-testing-insertion-of-caps-in-lampholders-b22-p38", destination: "/products/b22-lampholder-insertion-gauge-iec-60061-3", permanent: true },
        { source: "/products/not-go-gauges-for-caps-on-finished-lamps-b22-p41", destination: "/products/b22-not-go-gauge-finished-lamps-iec-60061-3", permanent: true },
-       { source: "/products/ip-testing", destination: "/category/ip-test-apparatus", permanent: true },
+        { source: "/products/ip-testing", destination: "/category/ip-test-apparatus", permanent: true },
+        { source: "/products/spillage-tester-as-per-iec-60335-2", destination: "/products/spillage-tester-as-per-iec-60335-1", permanent: true },
      ];
    },
  };

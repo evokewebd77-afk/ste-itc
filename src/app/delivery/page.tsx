@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
 import { PageShell } from "@/components/PageShell";
 import { siteInfo } from "@/lib/data";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Delivery Information",
   description:
-    "Shipping and delivery information for orders from Standard Test Equipment - shipments are generally dispatched within 2 days after receipt of payment.",
-};
+    "Shipping and delivery information for Standard Test Equipment orders, including dispatch timelines and packing details.",
+  path: "/delivery",
+});
 
 export default function DeliveryPage() {
   return (

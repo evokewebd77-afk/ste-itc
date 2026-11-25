@@ -1,19 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { categories, products } from "@/lib/data";
 import { ProductCard } from "@/components/ProductCard";
 
 type SortKey = "default" | "name-asc" | "name-desc" | "price-asc" | "price-desc";
 
 export function ProductsExplorer() {
-  const params = useSearchParams();
-  const initialQuery = params.get("q") ?? "";
-
-  const [query, setQuery] = useState(initialQuery);
+  const [query, setQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [sort, setSort] = useState<SortKey>("default");
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      const q = new URLSearchParams(window.location.search).get("q");
+      if (q) setQuery(q);
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   const filtered = useMemo(() => {
     let list = products;
