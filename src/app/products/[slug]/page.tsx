@@ -177,10 +177,10 @@ export default async function ProductPage({
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50">
       <JsonLd data={jsonLd} />
 
-      <div className="border-b border-slate-200 bg-white">
+      <div className="border-b border-slate-200/80 bg-white/80 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <nav className="flex flex-wrap items-center gap-1.5 py-3 text-[12px] font-medium text-slate-500">
             <Link href="/" className="whitespace-nowrap transition hover:text-brand-600">
@@ -204,27 +204,39 @@ export default async function ProductPage({
       </div>
 
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8">
-        <div className="grid gap-6 lg:grid-cols-2 lg:gap-10">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-10">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-              <div className="absolute inset-0 bg-radial-glow opacity-40" />
-              {image ? (
-                <ProductImageViewer
-                  src={optimizedImageUrl(image, product.slug)}
-                  alt={productImageAlt(product.slug, product.name, product.categorySlug)}
-                />
-              ) : (
-                <PhotoPending />
-              )}
+            <div className="relative rounded-3xl bg-gradient-to-br from-brand-200 via-cyan-100 to-slate-200 p-1 shadow-lg shadow-brand-500/10">
+              <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-[1.35rem] border border-white bg-white">
+                <div className="absolute inset-0 bg-radial-glow opacity-50" />
+                <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-200/40 blur-3xl" />
+                {image ? (
+                  <ProductImageViewer
+                    src={optimizedImageUrl(image, product.slug)}
+                    alt={productImageAlt(product.slug, product.name, product.categorySlug)}
+                  />
+                ) : (
+                  <PhotoPending />
+                )}
+              </div>
             </div>
 
-            <div className="mt-3 grid grid-cols-3 gap-2">
-               {trustBadges.map((badge) => (
+            <div className="mt-4 grid grid-cols-3 gap-2">
+              {trustBadges.map((badge, i) => (
                 <div
                   key={badge.label}
-                  className="rounded-xl border border-slate-200 bg-white px-3 py-2.5 text-center shadow-xs"
+                  className={`rounded-2xl border px-3 py-2.5 text-center shadow-xs backdrop-blur ${
+                    i === 0
+                      ? "border-brand-200 bg-gradient-to-br from-brand-50 to-white"
+                      : "border-slate-200 bg-white/80"
+                  }`}
                 >
-                  <p className={`text-[11px] font-bold ${badge.color}`}>{badge.label}</p>
+                  <span
+                    className={`mx-auto mb-1 block h-1.5 w-1.5 rounded-full ${
+                      i === 0 ? "bg-brand-600" : i === 1 ? "bg-slate-700" : "bg-cyan-600"
+                    }`}
+                  />
+                  <p className={`text-[11px] font-extrabold ${badge.color}`}>{badge.label}</p>
                   <p className="mt-0.5 text-[10px] text-slate-500">{badge.sub}</p>
                 </div>
               ))}
@@ -232,32 +244,30 @@ export default async function ProductPage({
           </div>
 
           <div className="flex flex-col gap-5">
-            <div>
+            <div className="relative overflow-hidden rounded-3xl border border-slate-200/80 bg-white/85 p-5 shadow-sm backdrop-blur sm:p-6">
+              <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-600 via-cyan-500 to-brand-200" />
               {category ? (
                 <Link
                   href={`/category/${category.slug}`}
-                  className="mb-2 inline-block rounded-md bg-brand-50 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60 transition hover:bg-brand-100"
+                  className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-50 to-cyan-50 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60 transition hover:from-brand-100 hover:to-cyan-100"
                 >
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
                   {category.name}
                 </Link>
               ) : null}
 
-              <h1 className="text-xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-2xl">
+              <h1 className="mt-4 text-2xl font-extrabold leading-snug tracking-tight text-slate-900 sm:text-3xl">
                 {product.name}
               </h1>
 
-              <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-medium text-slate-600">
-                <span>
-                  Code:&nbsp;
-                  <span className="font-mono font-bold text-slate-800">
-                    {getProductCode(product)}
-                  </span>
+              <div className="mt-4 flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-slate-900 px-3 py-1 font-mono text-[11px] font-bold text-white">
+                  Code: {getProductCode(product)}
                 </span>
                 {product.standard ? (
-                  <>
-                    <span className="text-slate-300">•</span>
-                    <span>{product.standard}</span>
-                  </>
+                  <span className="rounded-full bg-brand-50 px-3 py-1 text-[11px] font-bold text-brand-700 ring-1 ring-brand-200/60">
+                    {product.standard}
+                  </span>
                 ) : null}
               </div>
             </div>
@@ -384,15 +394,16 @@ export default async function ProductPage({
               )}
             </CardShell>
 
-            <div className="rounded-xl border border-brand-200 bg-gradient-to-br from-brand-50 to-sky-50/60 shadow-xs">
-              <div className="flex items-baseline justify-between gap-3 border-b border-brand-100/80 px-5 py-3">
-                <p className="text-[11px] font-bold uppercase tracking-wider text-brand-700">
+            <div className="relative overflow-hidden rounded-3xl border border-brand-200 bg-gradient-to-br from-brand-50 via-sky-50/70 to-white shadow-md shadow-brand-500/10">
+              <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-cyan-200/50 blur-3xl" />
+              <div className="relative flex items-baseline justify-between gap-3 border-b border-brand-100/80 px-5 py-3">
+                <p className="text-[11px] font-extrabold uppercase tracking-wider text-brand-700">
                   Catalogue Price
                 </p>
                 <p className="text-[11px] font-medium text-slate-500">Ex. Tax / GST extra</p>
               </div>
-              <div className="px-5 py-4">
-                <p className="text-2xl font-extrabold tracking-tight text-brand-800">
+              <div className="relative px-5 py-4">
+                <p className="text-3xl font-extrabold tracking-tight text-brand-800">
                   {product.priceOnRequest ? "Price on request" : formatPrice(product.price)}
                 </p>
                 <p className="mt-1 text-[12px] text-slate-600">
@@ -401,14 +412,8 @@ export default async function ProductPage({
 
                 <div className="mt-4 flex flex-wrap gap-2">
                   <a
-                    href={`/products/${product.slug}/datasheet.pdf`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-brand-300 bg-white px-5 py-2 text-[13px] font-bold text-brand-700 shadow-xs transition hover:border-brand-500 hover:bg-brand-50"
-                  >
-                    Download Datasheet
-                  </a>
-                  <a
                     href={`tel:${siteInfo.phoneHref}`}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-brand-600 px-5 py-2 text-[13px] font-bold text-white shadow-sm transition hover:bg-brand-500"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-brand-600 to-cyan-600 px-5 py-2.5 text-[13px] font-bold text-white shadow-md shadow-brand-500/20 transition hover:-translate-y-0.5 hover:from-brand-500 hover:to-cyan-500"
                   >
                     Call to Order
                   </a>
@@ -416,13 +421,19 @@ export default async function ProductPage({
                     href={`https://wa.me/${siteInfo.whatsappHref}?text=${whatsappMsg}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-5 py-2 text-[13px] font-bold text-white shadow-sm transition hover:bg-[#20ba5a]"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-[#25D366] px-5 py-2.5 text-[13px] font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#20ba5a]"
                   >
                     WhatsApp
                   </a>
                   <a
+                    href={`/products/${product.slug}/datasheet.pdf`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-brand-300 bg-white px-5 py-2.5 text-[13px] font-bold text-brand-700 shadow-xs transition hover:border-brand-500 hover:bg-brand-50"
+                  >
+                    Download Datasheet
+                  </a>
+                  <a
                     href={`mailto:${siteInfo.email}?subject=${enquirySubject}&body=${enquiryBody}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 py-2 text-[13px] font-bold text-slate-700 shadow-xs transition hover:border-brand-400 hover:text-brand-700"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-slate-300 bg-white px-5 py-2.5 text-[13px] font-bold text-slate-700 shadow-xs transition hover:border-brand-400 hover:text-brand-700"
                   >
                     Email
                   </a>
@@ -455,9 +466,12 @@ export default async function ProductPage({
 
           {keyFeatures.length > 0 ? (
             <section>
-              <h2 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-700">
-                Key Features
-              </h2>
+              <div className="mb-4 flex items-center gap-3">
+                <span className="h-5 w-1 rounded-full bg-gradient-to-b from-brand-600 to-cyan-500" />
+                <h2 className="text-sm font-extrabold uppercase tracking-wider text-slate-800">
+                  Key Features
+                </h2>
+              </div>
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {keyFeatures.map((item) => (
                   <div
@@ -491,10 +505,13 @@ export default async function ProductPage({
             <section className="border-t border-slate-200 pt-8">
               <div className="flex items-end justify-between gap-4">
                 <div>
-                  <p className="text-[11px] font-bold uppercase tracking-wider text-brand-600">
-                    Related Equipment
-                  </p>
-                  <h2 className="mt-0.5 text-lg font-extrabold text-slate-900 sm:text-xl">
+                  <div className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                    <p className="text-[11px] font-bold uppercase tracking-wider text-brand-600">
+                      Related Equipment
+                    </p>
+                  </div>
+                  <h2 className="mt-1 text-lg font-extrabold text-slate-900 sm:text-xl">
                     More from {category?.name}
                   </h2>
                 </div>

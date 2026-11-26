@@ -19,18 +19,21 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative flex min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:border-brand-300 hover:shadow-lg hover:shadow-brand-500/8"
+      className="group relative flex min-w-0 flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-brand-300 hover:shadow-xl hover:shadow-brand-500/15"
     >
       {/* Visual Product Box */}
-      <div className="relative flex h-40 items-center justify-center overflow-hidden border border-slate-300 bg-slate-50">
+      <div className="relative flex h-44 items-center justify-center overflow-hidden border-x border-t border-slate-200 bg-gradient-to-br from-slate-50 to-slate-100">
         {image ? (
-          <Image
-            src={optimizedImageUrl(image, product.slug)}
-            alt={productImageAlt(product.slug, product.name, product.categorySlug)}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover"
-          />
+          <>
+            <Image
+              src={optimizedImageUrl(image, product.slug)}
+              alt={productImageAlt(product.slug, product.name, product.categorySlug)}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              className="object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/20 via-transparent to-transparent" />
+          </>
         ) : (
           <PhotoPending compact />
         )}
@@ -40,7 +43,7 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="flex flex-1 flex-col p-4">
         {/* Category & Standard */}
         <div className="mb-2 flex items-center justify-between gap-2">
-          <span className="inline-block max-w-[65%] truncate rounded bg-brand-50 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/50">
+          <span className="inline-block max-w-[65%] truncate rounded-full bg-gradient-to-r from-brand-50 to-cyan-50 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60">
             {category?.name ?? "Equipment"}
           </span>
           {standard ? (
@@ -51,7 +54,7 @@ export function ProductCard({ product }: { product: Product }) {
         </div>
 
         {/* Title */}
-        <h3 className="line-clamp-2 text-sm font-bold leading-snug text-slate-900 transition group-hover:text-brand-600">
+        <h3 className="line-clamp-2 text-[15px] font-bold leading-snug text-slate-900 transition group-hover:text-brand-600">
           {product.name}
         </h3>
 
@@ -71,7 +74,7 @@ export function ProductCard({ product }: { product: Product }) {
             </p>
           </div>
 
-          <span className="inline-flex items-center gap-1 rounded-lg bg-slate-100 px-2.5 py-1.5 text-[11px] font-bold text-slate-600 transition group-hover:bg-brand-600 group-hover:text-white">
+          <span className="inline-flex items-center gap-1 rounded-full bg-slate-100 px-3 py-1.5 text-[11px] font-bold text-brand-700 transition group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-cyan-600 group-hover:text-white">
             Details
             <svg
               className="h-3 w-3 transition-transform duration-200 group-hover:translate-x-0.5"

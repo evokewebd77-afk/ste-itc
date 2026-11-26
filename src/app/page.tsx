@@ -435,31 +435,45 @@ export default function Home() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-md bg-amber-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-700 ring-1 ring-amber-200/60">
-              Industry Bestsellers
+      <section className="relative overflow-hidden border-y border-slate-200/70 bg-gradient-to-b from-amber-50/40 via-white to-slate-50/70 py-16 sm:py-24">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_10%,rgba(245,158,11,0.12),transparent_42%)]" />
+        <div className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-cyan-400/10 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-4">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-50 to-orange-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-amber-700 shadow-xs ring-1 ring-amber-200/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                Industry Bestsellers
+              </div>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.5rem] lg:leading-[1.1]">
+                Featured{" "}
+                <span className="bg-gradient-to-r from-amber-600 via-brand-600 to-cyan-600 bg-clip-text text-transparent">
+                  Testing Apparatus
+                </span>
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+                Frequently requested apparatus for quality control, R&amp;D and test laboratories across India.
+              </p>
             </div>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Featured Testing Apparatus
-            </h2>
-            <p className="mt-1 text-sm text-slate-600">
-              Frequently requested apparatus for quality control, R&D and test laboratories across India.
-            </p>
+            <Link
+              href="/category/test-probes-and-test-pins"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-cyan-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition hover:-translate-y-0.5 hover:from-brand-500 hover:to-cyan-500"
+            >
+              <span>Explore Test Probes &amp; Pins</span>
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+            </Link>
           </div>
-          <Link
-            href="/category/test-probes-and-test-pins"
-            className="text-sm font-bold text-brand-700 transition hover:text-brand-900"
-          >
-            Explore Test Probes &amp; Pins →
-          </Link>
-        </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {featured.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {featured.map((product, i) => (
+              <div key={product.slug} className="relative">
+                <span className="absolute -top-2 left-4 z-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-3 py-1 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md shadow-amber-500/25">
+                  Top Pick 0{i + 1}
+                </span>
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
