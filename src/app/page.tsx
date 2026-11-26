@@ -114,7 +114,7 @@ export default function Home() {
               sizes="100vw"
               className="object-cover object-right opacity-90"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/75 to-ink-950/10" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/20" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/75 via-transparent to-transparent" />
           </>
         ) : null}
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="pointer-events-none absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:py-24">
-          <div className="rounded-3xl border border-white/10 bg-ink-950/55 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8">
+          <div className="w-full">
             {/* Live Indicator Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-950/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
