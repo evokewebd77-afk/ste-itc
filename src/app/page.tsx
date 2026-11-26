@@ -103,8 +103,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-ink-950 via-[#0a1e3f] to-[#073259] text-white">
-        {/* Background photo (optional) */}
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-ink-950 via-[#0a1e3f] to-[#073259] text-white">
         {siteInfo.heroBg ? (
           <>
             <Image
@@ -113,26 +112,25 @@ export default function Home() {
               fill
               priority
               sizes="100vw"
-              className="object-cover object-center opacity-55"
+              className="object-cover object-right opacity-90"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/85 to-ink-950/25" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-ink-950/50" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-ink-950 via-ink-950/75 to-ink-950/10" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/75 via-transparent to-transparent" />
           </>
         ) : null}
 
-        {/* Grid + soft glow */}
-        <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-20" />
+        <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-[0.08]" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 25% 20%, rgba(6, 182, 212, 0.16), transparent 50%)",
+              "radial-gradient(circle at 20% 25%, rgba(6, 182, 212, 0.12), transparent 55%)",
           }}
         />
-        <div className="pointer-events-none absolute -bottom-40 right-0 h-[24rem] w-[24rem] rounded-full bg-brand-500/15 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-16 sm:py-20 lg:grid-cols-2 lg:py-24">
-          <div>
+        <div className="relative mx-auto flex min-h-[540px] max-w-7xl items-center px-4 py-16 sm:min-h-[600px] sm:py-20 lg:py-24">
+          <div className="max-w-2xl rounded-3xl border border-white/10 bg-ink-950/45 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8">
             {/* Live Indicator Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-950/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
@@ -199,7 +197,7 @@ export default function Home() {
 
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-white/15 hover:border-white/40"
+                className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:bg-white/20 hover:border-white/50"
               >
                 Request a Quote
               </Link>
@@ -233,13 +231,22 @@ export default function Home() {
               ))}
             </div>
           </div>
-
-          {/* Hero Slider */}
-          <div className="relative">
-            <HeroSlider />
-          </div>
         </div>
       </section>
+
+      {siteInfo.banners?.length ? (
+        <section className="relative z-10 bg-slate-950/95 pb-12">
+          <div className="mx-auto max-w-7xl px-4">
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
+              <div className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-cyan-300">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                Featured Instruments
+              </div>
+              <HeroSlider />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* Compliance Standards Ticker / Strip */}
       <section className="border-b border-slate-200/80 bg-slate-900 text-slate-200 py-3.5 px-4 overflow-x-auto">
@@ -282,29 +289,36 @@ export default function Home() {
       </section>
 
       {/* Product Categories Section */}
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:py-24">
-        <div className="flex flex-wrap items-end justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-md bg-brand-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-700 ring-1 ring-brand-200/60">
-              Complete Catalogue
+      <section className="relative overflow-hidden border-y border-slate-200/80 bg-gradient-to-b from-slate-50/80 via-white to-slate-50/60 py-16 sm:py-24">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(6,182,212,0.10),transparent_45%)]" />
+        <div className="pointer-events-none absolute -right-24 top-10 h-72 w-72 rounded-full bg-brand-500/10 blur-3xl" />
+        <div className="relative mx-auto max-w-7xl px-4">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-50 to-cyan-50 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 shadow-xs ring-1 ring-brand-200/70">
+                <span className="h-1.5 w-1.5 rounded-full bg-cyan-500" />
+                Complete Catalogue
+              </div>
+              <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.1]">
+                Specialized{" "}
+                <span className="bg-gradient-to-r from-brand-700 via-brand-600 to-cyan-600 bg-clip-text text-transparent">
+                  Product Categories
+                </span>
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+                Precision apparatus built to IEC standard specifications for electrical, mechanical and ingress verification.
+              </p>
             </div>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              Specialized Product Categories
-            </h2>
-            <p className="mt-2 text-sm text-slate-600 max-w-xl">
-              Precision apparatus built to IEC standard specifications for electrical, mechanical and ingress verification.
-            </p>
+            <Link
+              href="/products"
+              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-cyan-600 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-brand-500/20 transition hover:-translate-y-0.5 hover:from-brand-500 hover:to-cyan-500"
+            >
+              <span>View all products</span>
+              <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+            </Link>
           </div>
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-5 py-2.5 text-sm font-bold text-brand-700 transition hover:bg-brand-600 hover:text-white"
-          >
-            <span>View all products</span>
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 sm:mt-14 sm:grid-cols-2 lg:grid-cols-3">
           {catalogueCategories.map((cat, i) => {
             const accent = cardAccents[i % cardAccents.length];
             const banner = categoryImages[cat.slug];
@@ -312,7 +326,7 @@ export default function Home() {
               <Link
                 key={cat.slug}
                 href={`/category/${cat.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-300 hover:shadow-2xl hover:shadow-brand-500/15"
+                className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200/80 bg-white/95 shadow-sm backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:border-cyan-300 hover:shadow-2xl hover:shadow-cyan-500/15"
               >
                 {/* Accent top strip */}
                 <span
@@ -321,16 +335,22 @@ export default function Home() {
 
                 {/* Visual banner with icon */}
                 <div
-                  className={`relative flex h-40 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br ${accent.visual} m-3 border border-slate-100`}
+                  className={`relative flex h-44 items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br ${accent.visual} m-3 border border-slate-100/90 shadow-inner sm:h-48`}
                 >
                   {banner ? (
-                    <Image
-                      src={optimizedBannerUrl(banner.src)}
-                      alt={banner.alt}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                    />
+                    <>
+                      <Image
+                        src={optimizedBannerUrl(banner.src)}
+                        alt={banner.alt}
+                        fill
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        className="object-cover transition duration-500 group-hover:scale-110"
+                      />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/35 via-transparent to-transparent" />
+                      <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 text-brand-700 shadow-lg ring-1 ring-white/60 backdrop-blur transition duration-300 group-hover:scale-110 group-hover:-rotate-3">
+                        <CategoryIcon slug={cat.slug} className="h-5 w-5" />
+                      </span>
+                    </>
                   ) : (
                     <>
                       <div className="pointer-events-none absolute inset-0 bg-grid-pattern-light opacity-70" />
@@ -359,18 +379,18 @@ export default function Home() {
                     Standards-Based
                   </span>
 
-                  <span className="absolute right-3 top-3 font-mono text-xs font-extrabold tracking-wider text-slate-400/80">
+                  <span className="absolute right-3 top-3 rounded-xl bg-white/90 px-2.5 py-1 font-mono text-xs font-extrabold tracking-wider text-brand-700 shadow-sm ring-1 ring-white/60">
                     0{i + 1}
                   </span>
                 </div>
 
                 {/* Body */}
-                <div className="flex flex-1 flex-col px-5 pb-5">
+                <div className="flex flex-1 flex-col px-5 pb-5 pt-1">
                   <div className="flex items-start justify-between gap-2">
-                    <h3 className="text-sm font-extrabold uppercase leading-snug tracking-wide text-slate-900 transition group-hover:text-brand-700">
+                    <h3 className="text-sm font-extrabold uppercase leading-snug tracking-wide text-slate-900 transition group-hover:text-brand-700 sm:text-[15px]">
                       {cat.name}
                     </h3>
-                    <span className="shrink-0 rounded-full bg-brand-50 px-2.5 py-1 text-[11px] font-bold text-brand-700 ring-1 ring-brand-100">
+                    <span className="shrink-0 rounded-full bg-gradient-to-r from-brand-50 to-cyan-50 px-2.5 py-1 text-[11px] font-bold text-brand-700 ring-1 ring-brand-100">
                       {cat.count ?? 0} Items
                     </span>
                   </div>
@@ -379,11 +399,11 @@ export default function Home() {
                     {cat.description}
                   </p>
 
-                  <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5">
-                    <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-600">
+                  <div className="mt-auto flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-widest text-slate-500">
                       Standard Test Equipment
                     </span>
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 transition group-hover:text-cyan-600">
+                    <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-bold text-brand-700 transition group-hover:bg-gradient-to-r group-hover:from-brand-600 group-hover:to-cyan-600 group-hover:text-white">
                       <span>Explore Range</span>
                       <span className="transition-transform duration-200 group-hover:translate-x-1">→</span>
                     </span>
@@ -392,6 +412,7 @@ export default function Home() {
               </Link>
             );
           })}
+          </div>
         </div>
       </section>
 

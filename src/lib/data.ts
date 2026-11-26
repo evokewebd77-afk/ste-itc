@@ -106,7 +106,8 @@ export const siteInfo = {
       href: "/products/test-probe-31-as-per-iec-61032",
     },
   ],
-  heroBg: "",
+  heroBg:
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795669570/6007c8b3-6899-45a5-b0db-72c90aabe7e5_chv5ie.png",
   intro:
     "Welcome to Standard Test Equipment. Please read these terms and conditions carefully before using our website, or services.",
 };
@@ -685,45 +686,6 @@ const baseProducts: Product[] = [
     ],
   },
   {
-    slug: "test-probe-with-round-end-as-per-iec-60529",
-    name: "Round-End Test Probe as per IEC 60529 (probe number to be confirmed)",
-    price: 10000,
-    categorySlug: "test-probes-and-test-pins",
-    description:
-      "Round-ended stainless steel access probe for enclosure and seal checks. The smooth polished tip reduces the risk of marking seals or mating surfaces. Confirm the IEC 60529 probe number and dimensions with our engineering team before ordering.",
-    specs: [
-      { label: "Standard", value: "IEC 60529 (probe number to be confirmed)" },
-      { label: "Identification", value: "Confirm probe number before ordering" },
-      { label: "Material", value: "Stainless steel" },
-      { label: "Finish", value: "Polished" },
-      { label: "Tip shape", value: "Round" },
-    ],
-    keyFeatures: [
-      {
-        title: "Standardised Design",
-        text: "Round-end probe for ingress-protection and access checks; the probe number and dimensions are confirmed against the customer's test requirement.",
-      },
-      {
-        title: "Construction",
-        text: "Polished stainless steel body with rounded head and end to reduce marking of the enclosure, packed in a protective box.",
-      },
-      {
-        title: "Application Range",
-        text: "Used in IP testing laboratories wherever a smooth, rounded rigid probe is specified for opening and access checks.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "Safety Check",
-        text: "The probe is applied to enclosure openings to verify access protection, with its rounded end ensuring the test does not damage seals or surfaces while still detecting unsafe openings.",
-      },
-      {
-        title: "Pass / Fail",
-        text: "If the probe reaches a hazardous part inside the enclosure, the product fails the access test and the opening must be reduced, baffled or guarded.",
-      },
-    ],
-  },
-  {
     slug: "white-ip-2x-test-finger-test-probe-b-as-per-iec-60529-and-61032",
     name: "IP2X Test Finger Probe B as per IEC 60529 and IEC 61032 Fig. 2",
     price: 18000,
@@ -862,40 +824,6 @@ const baseProducts: Product[] = [
       {
         title: "EMI Problem Solver",
         text: "Applied wherever an EMI leak or ground-loop problem exists: it closes seams, bonds shield foils, and creates conductive gaskets between metal surfaces.",
-      },
-    ],
-  },
-  {
-    slug: "black-amucor-foil-with-a-reinforcement-net",
-    name: "Amucor Foil With a Reinforcement Net",
-    price: 12000,
-    categorySlug: "emi-shielding-material",
-    description:
-      "Amucor foil with a reinforcement net for applications in EMI shielding, self adhesive and designed for industrial purpose.",
-    specs: [
-      { label: "Adhesive Type", value: "Self Adhesive" },
-      { label: "Color", value: "Beige / Silver" },
-      { label: "Usage/Application", value: "Industrial Purpose" },
-      { label: "Features", value: "Applications EMI shielding" },
-    ],
-    keyFeatures: [
-      {
-        title: "Reinforced Construction",
-        text: "Embedded reinforcement net gives the foil exceptional tear and stretch resistance, so it survives handling on curved surfaces and around corners without splitting.",
-      },
-      {
-        title: "Self-Adhesive Backing",
-        text: "Conductive self-adhesive backing bonds on contact and maintains electrical continuity between the foil and the substrate.",
-      },
-      {
-        title: "Surface Finish",
-        text: "Beige/silver finish suited to visible surfaces where a bright metallic foil would be cosmetically unacceptable.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "Durable EMI Sealing",
-        text: "Seals large or irregular enclosure openings and reinforcement areas where standard foil would tear, keeping the shielding envelope intact under vibration and handling.",
       },
     ],
   },
@@ -2004,111 +1932,6 @@ const baseProducts: Product[] = [
     ],
   },
   {
-    slug: "water-jet-nozzle-ipx5-or-x6-fig-6",
-    name: "Water Jet Nozzle IPX5 or IPX6, Fig-6 (single tip)",
-    price: 33000,
-    categorySlug: "ip-test-apparatus",
-    description:
-      "Water jet nozzle as per Figure 6 of IEC 60529, supplied for one test only: either IPX5 (6.3 mm tip) or IPX6 (12.5 mm tip). Choose this version if you test to a single jet level; for both levels see the Water Jet Nozzle IPX5 and IPX6 (both tips).",
-    specs: [
-      { label: "HSN", value: "8424" },
-      { label: "Standard", value: "IEC 60529 Fig. 6" },
-      { label: "Selectable tip", value: "6.3 mm for IPX5 or 12.5 mm for IPX6" },
-      { label: "IPX5 flow", value: "12.5 L/min" },
-      { label: "IPX6 flow", value: "100 L/min" },
-    ],
-    keyFeatures: [
-      {
-        title: "IEC 60529 Figure 6 Nozzle",
-        text: "Nozzle made to the standard hose-nozzle design shown in Figure 6 of IEC 60529.",
-      },
-      {
-        title: "Single Test Level",
-        text: "Supplied with one tip, for either the IPX5 test (6.3 mm tip) or the IPX6 test (12.5 mm tip) — state which when ordering.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "Water Jet Test",
-        text: "The jet is played on the enclosure from all practicable directions to check that water does not enter in harmful quantities.",
-      },
-      {
-        title: "Pass / Fail",
-        text: "After the test the enclosure is opened and inspected; water that has entered in harmful quantity or reached live parts is a fail.",
-      },
-    ],
-  },
-  {
-    slug: "water-jet-nozzle-tip-for-ipx5-dia-6-3-mm",
-    name: "Water Jet Nozzle Tip for IPX5 (Dia-6.3 mm)",
-    price: 8000,
-    categorySlug: "ip-test-apparatus",
-    description:
-      "Replacement nozzle tip with a 6.3 mm bore for the IEC 60529 IPX5 water jet test. Fits the standard water jet nozzle to deliver the specified jet stream.",
-    specs: [
-      { label: "HSN", value: "8424" },
-      { label: "Standard", value: "IEC 60529 cl. 14.2.5" },
-      { label: "Bore diameter", value: "6.3 mm" },
-      { label: "Test", value: "IPX5" },
-      { label: "Flow rate", value: "12.5 L/min" },
-    ],
-    keyFeatures: [
-      {
-        title: "6.3 mm Bore",
-        text: "Nozzle tip with the 6.3 mm bore that IEC 60529 specifies for the IPX5 water jet test.",
-      },
-      {
-        title: "Fits the Fig-6 Nozzle",
-        text: "Screws onto the IEC 60529 Figure 6 water jet nozzle as a replacement or additional tip.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "IPX5 Water Jet Test",
-        text: "Used with a water supply set to the IPX5 flow rate to project the specified jet onto the enclosure under test.",
-      },
-      {
-        title: "Accurate Jet",
-        text: "A correctly sized, undamaged bore is needed for the jet to match the standard, so worn tips should be replaced.",
-      },
-    ],
-  },
-  {
-    slug: "water-jet-nozzle-tip-for-ipx6-dia-12-5-mm",
-    name: "Water Jet Nozzle Tip for IPX6 (Dia-12.5 mm)",
-    price: 8000,
-    categorySlug: "ip-test-apparatus",
-    description:
-      "Replacement nozzle tip with a 12.5 mm bore for the IEC 60529 IPX6 water jet test. Fits the standard water jet nozzle to deliver the specified jet stream.",
-    specs: [
-      { label: "HSN", value: "8424" },
-      { label: "Standard", value: "IEC 60529 cl. 14.2.6" },
-      { label: "Bore diameter", value: "12.5 mm" },
-      { label: "Test", value: "IPX6" },
-      { label: "Flow rate", value: "100 L/min" },
-    ],
-    keyFeatures: [
-      {
-        title: "12.5 mm Bore",
-        text: "Nozzle tip with the 12.5 mm bore that IEC 60529 specifies for the IPX6 powerful water jet test.",
-      },
-      {
-        title: "Fits the Fig-6 Nozzle",
-        text: "Screws onto the IEC 60529 Figure 6 water jet nozzle as a replacement or additional tip.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "IPX6 Water Jet Test",
-        text: "Used with a water supply set to the IPX6 flow rate to project the powerful jet specified for the second IP digit 6.",
-      },
-      {
-        title: "Accurate Jet",
-        text: "A correctly sized, undamaged bore is needed for the jet to match the standard, so worn tips should be replaced.",
-      },
-    ],
-  },
-  {
     slug: "flow-meter-iec-60529",
     name: "Flow Meter for IEC 60529 Jet and Spray Tests",
     price: 14000,
@@ -2461,37 +2284,6 @@ const baseProducts: Product[] = [
     ],
   },
   {
-    slug: "b22-lampholder-insertion-gauge-iec-60061-3",
-    name: "B22 Lampholder Insertion Gauge as per IEC 60061-3",
-    price: 15000,
-    categorySlug: "test-probes-and-test-pins",
-    description:
-      "B22 lampholder gauge for testing the insertion of lamp caps in lampholders, made to the relevant gauge sheet of IEC 60061-3. Contact us for the gauge sheet number.",
-    specs: [
-      { label: "Standard", value: "IEC 60061-3" },
-    ],
-    keyFeatures: [
-      {
-        title: "B22 Bayonet Gauge",
-        text: "Gauge for B22 bayonet lampholders, made to the gauge sheet of IEC 60061-3.",
-      },
-      {
-        title: "Precision Gauge",
-        text: "Precision gauge for repeatable checks in production and type testing.",
-      },
-    ],
-    whatItDoes: [
-      {
-        title: "Insertion Check",
-        text: "Used to check that a B22 lamp cap can be inserted into the lampholder as the standard requires.",
-      },
-      {
-        title: "Pass / Fail",
-        text: "A lampholder that does not accept the gauge as specified does not meet the dimensional requirement.",
-      },
-    ],
-  },
-  {
     slug: "b22-not-go-gauge-finished-lamps-iec-60061-3",
     name: "B22 Not-Go Gauge for Finished Lamps as per IEC 60061-3",
     price: 15000,
@@ -2554,19 +2346,6 @@ const baseProducts: Product[] = [
       },
     ],
   },
-  {
-    slug: "conduit-gauge-for-rigid-plastic-conduit-iec-61386-21",
-    name: "Conduit Gauge for Rigid Plastic Conduit as per IEC 61386-21",
-    price: 8000,
-    categorySlug: "test-probes-and-test-pins",
-    description:
-      "Conduit gauge for rigid plastic conduit as per IEC 61386-21, used to verify conduit dimensions and fit during routine testing.",
-    specs: [
-      { label: "Standard", value: "IEC 61386-21" },
-      { label: "Application", value: "Rigid plastic conduit" },
-    ],
-  },
-
   {
     slug: "weld-bend-jig",
     name: "Weld Bend Jig",
@@ -2789,6 +2568,32 @@ export const getProductCode = (product: Product): string =>
 
 export const productImages: Record<string, string> = {
   "ball-pressure-test-apparatus": "/ball-pressure-test-apparatus.png",
+  "3mm-long-test-pin-probe-as-per-iec-61010":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795666978/unnamed_ltxayw.jpg",
+  "4mm-long-test-pin-probe-as-per-iec-61010":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667111/unnamed_xprtzc.jpg",
+  "test-hook-fig-7-as-per-iec-60601":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667232/unnamed_tzaeeu.jpg",
+  "test-probe-14-as-per-iec-61032":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667296/unnamed_bqkxts.jpg",
+  "b22-not-go-gauge-finished-lamps-iec-60061-3":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667394/unnamed_czeuvj.jpg",
+  "wedge-probe-fig-ee-1-as-per-iec-60950-1":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667543/unnamed_qthttp.jpg",
+  "dust-powder-per-kg-iec-60068-2-68":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795667634/unnamed_pv55zl.jpg",
+  "conduit-gauge-for-plastic-pipe-iec-61386-23":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668227/unnamed_gyugr1.jpg",
+  "cone-tool-iec-60601-2-52":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668271/unnamed_uhhkxd.jpg",
+  "cylinder-tool-iec-60601-2-52":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668302/unnamed_hxgcib.jpg",
+  "wedge-tool-iec-60601-2-52":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668352/unnamed_e9rsv6.jpg",
+  "dielectric-strength-tester-as-per-iec-62368":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668603/mail.google_eiz3ip.jpg",
+  "test-probe-1-sphere-50mm-fig-5":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668822/unnamed_i7kwte.jpg",
   "test-probe-13-short-test-pin-as-per-iec-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791613912/7._Test_Probe_-13_Fig-9_as_per_IEC_61032_q2jxgn.jpg",
   "ip1x-test-probe-a-50-mm-sphere-as-per-iec-60529-and-61032":
@@ -2855,7 +2660,9 @@ export const productImages: Record<string, string> = {
   "white-ip-2x-test-finger-test-probe-b-as-per-iec-60529-and-61032":
     "https://res.cloudinary.com/didtfhfme/image/upload/v1791786934/iec-60529-and-61032-ip-2x-test-finger-test-probe-500x500-330x409_qnykvj.jpg",
   "white-stainless-steel-ip3x-test-probe-c-as-per-iec-60529-and-61032":
-    "https://res.cloudinary.com/didtfhfme/image/upload/v1791786978/iec-60529-and-61032-ip3x-test-probe-500x500-330x409_ytv2ms.jpg",
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795668483/unnamed_o98pe4.jpg",
+  "water-jet-nozzle-ipx5-x6-fig-6":
+    "https://res.cloudinary.com/didtfhfme/image/upload/v1795666170/unnamed_cavhmr.jpg",
 };
 
 export function formatPrice(price: number): string {

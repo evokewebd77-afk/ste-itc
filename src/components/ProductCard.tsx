@@ -25,11 +25,11 @@ export function ProductCard({ product }: { product: Product }) {
       <div className="relative flex h-40 items-center justify-center overflow-hidden border border-slate-300 bg-slate-50">
         {image ? (
           <Image
-            src={optimizedImageUrl(image)}
+            src={optimizedImageUrl(image, product.slug)}
             alt={productImageAlt(product.slug, product.name, product.categorySlug)}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-            className="object-cover transition-transform duration-300 group-hover:scale-105"
+            className="object-cover"
           />
         ) : (
           <PhotoPending compact />

@@ -25,7 +25,7 @@ export async function GET(
   const image = productImages[slug];
   const pdf = buildProductDatasheetPdf(
     product,
-    image ? absoluteImageUrl(optimizedImageUrl(image)) : undefined,
+    image ? absoluteImageUrl(optimizedImageUrl(image, slug)) : undefined,
   );
   const body: ArrayBuffer = new Uint8Array(pdf).buffer as ArrayBuffer;
 

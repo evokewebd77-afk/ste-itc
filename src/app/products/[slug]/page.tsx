@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import {
   formatPrice,
@@ -15,6 +14,7 @@ import {
   type Product,
 } from "@/lib/data";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductImageViewer } from "@/components/ProductImageViewer";
 import { ProductEnquiryForm } from "@/components/ProductEnquiryForm";
 import { InfoCard } from "@/components/InfoCard";
 import { JsonLd } from "@/components/JsonLd";
@@ -60,7 +60,7 @@ export async function generateMetadata({
     title: product.name,
     description: product.description,
     path: `/products/${product.slug}`,
-    image: image ? optimizedImageUrl(image) : undefined,
+    image: image ? optimizedImageUrl(image, product.slug) : undefined,
     imageAlt: productImageAlt(product.slug, product.name, product.categorySlug),
   });
 }
@@ -163,7 +163,7 @@ export default async function ProductPage({
     sku: getProductCode(product),
     description: product.description,
     category: category?.name,
-    image: image ? [absoluteImageUrl(optimizedImageUrl(image))] : undefined,
+    image: image ? [absoluteImageUrl(optimizedImageUrl(image, product.slug))] : undefined,
     brand: { "@type": "Brand", name: siteInfo.name },
     offers: product.priceOnRequest
       ? undefined
@@ -209,13 +209,9 @@ export default async function ProductPage({
             <div className="relative flex aspect-square items-center justify-center overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="absolute inset-0 bg-radial-glow opacity-40" />
               {image ? (
-                <Image
-                  src={optimizedImageUrl(image)}
+                <ProductImageViewer
+                  src={optimizedImageUrl(image, product.slug)}
                   alt={productImageAlt(product.slug, product.name, product.categorySlug)}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain"
-                  priority
                 />
               ) : (
                 <PhotoPending />

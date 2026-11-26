@@ -1,12 +1,48 @@
 const CLOUDINARY_UPLOAD = "/image/upload/";
 
-export function optimizedImageUrl(src: string): string {
+const productImageTransforms: Record<string, string> = {
+  "test-probe-13-short-test-pin-as-per-iec-61032":
+    "c_crop,w_800,h_800,x_1270,y_400/w_1200,h_1200,c_fill,q_auto:good,f_webp",
+  "water-jet-nozzle-ipx5-x6-fig-6":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "3mm-long-test-pin-probe-as-per-iec-61010":
+    "c_crop,w_2950,h_850,x_200,y_250/w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "4mm-long-test-pin-probe-as-per-iec-61010":
+    "c_crop,w_2950,h_650,x_200,y_600/w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "test-hook-fig-7-as-per-iec-60601":
+    "c_crop,w_4010,h_500,x_150,y_1200/w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "test-probe-14-as-per-iec-61032":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "b22-not-go-gauge-finished-lamps-iec-60061-3":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "wedge-probe-fig-ee-1-as-per-iec-60950-1":
+    "c_crop,w_2850,h_1100,x_500,y_280/w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "dust-powder-per-kg-iec-60068-2-68":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "conduit-gauge-for-plastic-pipe-iec-61386-23":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "cone-tool-iec-60601-2-52":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "cylinder-tool-iec-60601-2-52":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "wedge-tool-iec-60601-2-52":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "white-stainless-steel-ip3x-test-probe-c-as-per-iec-60529-and-61032":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "dielectric-strength-tester-as-per-iec-62368":
+    "w_1200,h_1200,c_fit,q_auto:good,f_webp",
+  "test-probe-1-sphere-50mm-fig-5":
+    "c_crop,w_4010,h_500,x_150,y_1200/w_1200,h_1200,c_fit,q_auto:good,f_webp",
+};
+
+export function optimizedImageUrl(src: string, slug?: string): string {
   if (!src.startsWith("http") || !src.includes(CLOUDINARY_UPLOAD)) return src;
-  return src.replace(
-    CLOUDINARY_UPLOAD,
-    `${CLOUDINARY_UPLOAD}w_1200,h_1200,c_fill,g_center,q_auto:good,f_webp/`,
-  );
+  const transformations =
+    (slug ? productImageTransforms[slug] : undefined) ??
+    "w_1200,h_1200,c_fill,g_center,q_auto:good,f_webp";
+  return src.replace(CLOUDINARY_UPLOAD, `${CLOUDINARY_UPLOAD}${transformations}/`);
 }
+
 
 export function optimizedBannerUrl(src: string): string {
   if (!src.startsWith("http") || !src.includes(CLOUDINARY_UPLOAD)) return src;
@@ -70,8 +106,6 @@ const imageAltOverrides: Record<string, string> = {
     "Test Probe 41: white cylindrical body with a steel conical tip for hot part testing",
   "test-probe-43-as-per-iec-61032":
     "Test Probe 43: flat steel test bar with a white insulated handle",
-  "test-probe-with-round-end-as-per-iec-60529":
-    "Round-end stainless steel access probe with a smooth polished tip",
   "ball-pressure-test-apparatus":
     "Ball pressure test apparatus with steel ball, loading weight and specimen holder",
   "spring-hammer-test-apparatus-as-per-iec-60068-2-75":

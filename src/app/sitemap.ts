@@ -45,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly" as const,
         priority: 0.6,
         images: image
-          ? [optimizedImageUrl(image)]
+          ? [optimizedImageUrl(image, product.slug)]
           : [`${SITE_URL}/Logo_y5mqli-removebg-preview.png`],
       };
     }),
