@@ -129,8 +129,8 @@ export default function Home() {
         />
         <div className="pointer-events-none absolute -bottom-40 right-0 h-[28rem] w-[28rem] rounded-full bg-cyan-400/10 blur-3xl" />
 
-        <div className="relative mx-auto flex min-h-[540px] max-w-7xl items-center px-4 py-16 sm:min-h-[600px] sm:py-20 lg:py-24">
-          <div className="max-w-2xl rounded-3xl border border-white/10 bg-ink-950/45 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-16 sm:py-20 lg:grid-cols-[minmax(0,1.1fr)_minmax(320px,0.9fr)] lg:py-24">
+          <div className="rounded-3xl border border-white/10 bg-ink-950/55 p-6 shadow-2xl shadow-black/30 backdrop-blur-md sm:p-8">
             {/* Live Indicator Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-950/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-cyan-300 backdrop-blur-sm">
               <span className="relative flex h-2 w-2">
@@ -231,22 +231,12 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          <div className="relative">
+            <HeroSlider />
+          </div>
         </div>
       </section>
-
-      {siteInfo.banners?.length ? (
-        <section className="relative z-10 bg-slate-950/95 pb-12">
-          <div className="mx-auto max-w-7xl px-4">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.04] p-4 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-5">
-              <div className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-cyan-300">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                Featured Instruments
-              </div>
-              <HeroSlider />
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       {/* Compliance Standards Ticker / Strip */}
       <section className="border-b border-slate-200/80 bg-slate-900 text-slate-200 py-3.5 px-4 overflow-x-auto">
